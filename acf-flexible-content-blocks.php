@@ -103,9 +103,10 @@ License: MIT
         // ======================================================================== //		
         // Hook the ACF Flexible Content Blocks after the_content();
         // ======================================================================== //
-
-            function acffcb_add_to_content( $content ) {    
-                $content .= do_shortcode('[acffcb-blocks]');
+            function acffcb_add_to_content( $content ) {
+                $content_before     = (!empty($content)) ? '<section class="block-wrap block-wp-content"><div class="block">' : '';
+                $content_after      = (!empty($content)) ? '</div></section>' : '';
+                $content = $content_before . $content . $content_after . do_shortcode('[acffcb-blocks]');
                 return $content;
             }
 

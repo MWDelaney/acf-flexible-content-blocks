@@ -22,7 +22,7 @@ class ACFFCB_Template_Loader extends Gamajo_Template_Loader {
 	 * @since 1.0.0
 	 * @type string
 	 */
-	protected $theme_template_directory = 'fcb-templates';
+	protected $theme_template_directory = 'acffcb-templates';
  
 	/**
 	 * Reference to the root directory path of this plugin.
