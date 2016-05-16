@@ -6,7 +6,7 @@ if( have_rows('blocks') ): ?>
     // loop through the rows of data
     while ( have_rows('blocks') ) : the_row(); ?>
 
-        <?php cfb_template('blocks/block', 'base'); ?>
+        <?php cfb_template('blocks/layout', 'base'); ?>
 <?php
     endwhile;
 

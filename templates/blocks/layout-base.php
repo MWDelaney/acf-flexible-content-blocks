@@ -4,8 +4,8 @@
 <section class="block-wrap <?=$classes?>">
     <div class="block">
         
-        <?php cfb_template('blocks/block', 'title'); ?>
-        <?php cfb_template('blocks/block', get_row_layout()); ?>
+        <?php cfb_template('blocks/parts/block', 'title'); ?>
+        <?php cfb_template('blocks/layout', get_row_layout()); ?>
 
     </div> <!-- /block -->
 </section> <!-- /block-wrap -->

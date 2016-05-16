@@ -1,0 +1,1 @@
+<figure><?php cfb_template('blocks/parts/media/media', get_sub_field('type_of_media')); ?></figure>
