@@ -2,24 +2,24 @@
 
   /*--------------------------------------------------------------------------------------
     *
-    * Layout: Content With Media
+    * Layout: Content
     *
     * @author Michael W. Delaney
     * @since 1.0
     *
-    * A simple content block with optional media include (image or video) and optional Call to Action button
+    * A simple content block with optional Call to Action button
     *
     *-------------------------------------------------------------------------------------*/
 
-$content_with_media = 			
+$featured_content = 	
     array (
-        'key' => '57392236ab5e2',
-        'name' => 'content_with_media',
-        'label' => 'Content with Media',
+        'key' => '5739d9a42c502',
+        'name' => 'featured_content',
+        'label' => 'Featured Content',
         'display' => 'block',
         'sub_fields' => array (
             array (
-                'key' => 'field_57392245f9c6a',
+                'key' => 'field_5739d9f32c503',
                 'label' => 'Title',
                 'name' => 'title',
                 'type' => 'text',
@@ -40,7 +40,7 @@ $content_with_media =
                 'disabled' => 0,
             ),
             array (
-                'key' => 'field_57392259f9c6b',
+                'key' => 'field_5739da082c504',
                 'label' => 'Navigation Title',
                 'name' => 'navigation_title',
                 'type' => 'text',
@@ -61,7 +61,7 @@ $content_with_media =
                 'disabled' => 0,
             ),
             array (
-                'key' => 'field_57392265f9c6c',
+                'key' => 'field_57392265f9c6e',
                 'label' => 'Content',
                 'name' => '',
                 'type' => 'tab',
@@ -77,7 +77,7 @@ $content_with_media =
                 'endpoint' => 0,
             ),
             array (
-                'key' => 'field_57392274f9c6d',
+                'key' => 'field_57392274f9c6f',
                 'label' => 'Content',
                 'name' => 'content',
                 'type' => 'wysiwyg',
@@ -95,8 +95,8 @@ $content_with_media =
                 'media_upload' => 1,
             ),
             array (
-                'key' => 'field_5739227ef9c6e',
-                'label' => 'Media',
+                'key' => 'field_5739227ef9c6g',
+                'label' => 'Features',
                 'name' => '',
                 'type' => 'tab',
                 'instructions' => '',
@@ -111,10 +111,10 @@ $content_with_media =
                 'endpoint' => 0,
             ),
             array (
-                'key' => 'field_57392285f9c6f',
-                'label' => 'Type of Media',
-                'name' => 'type_of_media',
-                'type' => 'radio',
+                'key' => 'field_5739da2a2c506',
+                'label' => 'Featured Content',
+                'name' => 'featured_content',
+                'type' => 'relationship',
                 'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => 0,
@@ -123,99 +123,22 @@ $content_with_media =
                     'class' => '',
                     'id' => '',
                 ),
-                'choices' => array (
-                    'none' => 'None',
-                    'image' => 'Image',
-                    'video' => 'Video',
+                'post_type' => array (
                 ),
-                'other_choice' => 0,
-                'save_other_choice' => 0,
-                'default_value' => '',
-                'layout' => 'horizontal',
+                'taxonomy' => array (
+                ),
+                'filters' => array (
+                    0 => 'search',
+                    1 => 'post_type',
+                    2 => 'taxonomy',
+                ),
+                'elements' => '',
+                'min' => 0,
+                'max' => 3,
+                'return_format' => 'object',
             ),
             array (
-                'key' => 'field_573922a4f9c70',
-                'label' => 'Media Placeholder',
-                'name' => '',
-                'type' => 'message',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => array (
-                    array (
-                        array (
-                            'field' => 'field_57392285f9c6f',
-                            'operator' => '==',
-                            'value' => 'none',
-                        ),
-                    ),
-                ),
-                'wrapper' => array (
-                    'width' => '',
-                    'class' => 'acf-media',
-                    'id' => '',
-                ),
-                'message' => 'No media will be displayed.',
-                'new_lines' => 'wpautop',
-                'esc_html' => 0,
-            ),
-            array (
-                'key' => 'field_573922bdf9c71',
-                'label' => 'Image',
-                'name' => 'image',
-                'type' => 'image',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => array (
-                    array (
-                        array (
-                            'field' => 'field_57392285f9c6f',
-                            'operator' => '==',
-                            'value' => 'image',
-                        ),
-                    ),
-                ),
-                'wrapper' => array (
-                    'width' => '',
-                    'class' => 'acf-media',
-                    'id' => '',
-                ),
-                'return_format' => 'array',
-                'preview_size' => 'medium',
-                'library' => 'all',
-                'min_width' => '',
-                'min_height' => '',
-                'min_size' => '',
-                'max_width' => '',
-                'max_height' => '',
-                'max_size' => '',
-                'mime_types' => '',
-            ),
-            array (
-                'key' => 'field_573922d4f9c72',
-                'label' => 'Video',
-                'name' => 'video',
-                'type' => 'oembed',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => array (
-                    array (
-                        array (
-                            'field' => 'field_57392285f9c6f',
-                            'operator' => '==',
-                            'value' => 'video',
-                        ),
-                    ),
-                ),
-                'wrapper' => array (
-                    'width' => '',
-                    'class' => 'acf-media',
-                    'id' => '',
-                ),
-                'width' => '',
-                'height' => '',
-            ),
-            array (
-                'key' => 'field_5739cae32ed68',
+                'key' => 'field_5739cae32ed70',
                 'label' => 'Background',
                 'name' => 'background',
                 'type' => 'tab',
@@ -231,7 +154,7 @@ $content_with_media =
                 'endpoint' => 0,
             ),
             array (
-                'key' => 'field_5739caf52ed69',
+                'key' => 'field_5739caf52ed61',
                 'label' => 'Background Image',
                 'name' => 'background_image',
                 'type' => 'image',
@@ -255,7 +178,7 @@ $content_with_media =
                 'mime_types' => '',
             ),
             array (
-                'key' => 'field_5739cb252ed6a',
+                'key' => 'field_5739cb252ed6c',
                 'label' => 'Background Color',
                 'name' => 'background_color',
                 'type' => 'color_picker',
@@ -270,7 +193,7 @@ $content_with_media =
                 'default_value' => '',
             ),
             array (
-                'key' => 'field_573922e8f9c73',
+                'key' => 'field_573922e8f9c75',
                 'label' => '',
                 'name' => '',
                 'type' => 'tab',
@@ -286,7 +209,7 @@ $content_with_media =
                 'endpoint' => 1,
             ),
             array (
-                'key' => 'field_573922faf9c74',
+                'key' => 'field_573922faf9c76',
                 'label' => 'Display Call to Action?',
                 'name' => 'display_call_to_action',
                 'type' => 'true_false',
@@ -302,7 +225,7 @@ $content_with_media =
                 'default_value' => 0,
             ),
            array (
-                'key' => 'field_57392389f9c78',
+                'key' => 'field_57392389f9c80',
                 'label' => 'Placeholder',
                 'name' => '',
                 'type' => 'message',
@@ -311,7 +234,7 @@ $content_with_media =
                 'conditional_logic' => array (
                     array (
                         array (
-                            'field' => 'field_573922faf9c74',
+                            'field' => 'field_573922faf9c76',
                             'operator' => '!=',
                             'value' => '1',
                         ),
@@ -327,7 +250,7 @@ $content_with_media =
                 'esc_html' => 0,
             ),
             array (
-                'key' => 'field_5739230af9c75',
+                'key' => 'field_5739230af9c77',
                 'label' => 'Text',
                 'name' => 'call_to_action_text',
                 'type' => 'text',
@@ -336,7 +259,7 @@ $content_with_media =
                 'conditional_logic' => array (
                     array (
                         array (
-                            'field' => 'field_573922faf9c74',
+                            'field' => 'field_573922faf9c76',
                             'operator' => '==',
                             'value' => '1',
                         ),
@@ -356,7 +279,7 @@ $content_with_media =
                 'disabled' => 0,
             ),
             array (
-                'key' => 'field_57392314f9c76',
+                'key' => 'field_57392314f9c78',
                 'label' => 'Link',
                 'name' => 'call_to_action_link',
                 'type' => 'page_link',
@@ -365,7 +288,7 @@ $content_with_media =
                 'conditional_logic' => array (
                     array (
                         array (
-                            'field' => 'field_573922faf9c74',
+                            'field' => 'field_573922faf9c76',
                             'operator' => '==',
                             'value' => '1',
                         ),
@@ -384,7 +307,7 @@ $content_with_media =
                 'multiple' => 0,
             ),
             array (
-                'key' => 'field_57392349f9c77',
+                'key' => 'field_57392349f9c79',
                 'label' => 'Type',
                 'name' => 'call_to_action_type',
                 'type' => 'select',
@@ -393,7 +316,7 @@ $content_with_media =
                 'conditional_logic' => array (
                     array (
                         array (
-                            'field' => 'field_573922faf9c74',
+                            'field' => 'field_573922faf9c76',
                             'operator' => '==',
                             'value' => '1',
                         ),
@@ -423,5 +346,5 @@ $content_with_media =
                 'disabled' => 0,
                 'readonly' => 0,
             ),
-        )
+        ),
     );
