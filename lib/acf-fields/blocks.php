@@ -68,31 +68,27 @@ if( function_exists('acf_add_local_field_group') ):
     *
     *-------------------------------------------------------------------------------------*/
 
-    function acffcb_include_layouts() {
         
-        //Check if theme support is explicitly defined. If so, only enable layouts declared in theme support.
-        if( current_theme_supports( 'flexible-content-blocks' ) ) {
-            $layouts_supported = get_theme_support( 'flexible-content-blocks' );
-            $layouts_enabled = $layouts_supported[0];
-        } else {
-            // If theme support is not explicitly defined, enable all layouts as a fallback.
-            $layouts_enabled = array();
-            foreach(glob(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/layouts/*.php') as $layout) {
-                $layouts_enabled[] = basename($layout, '.php');
-            }
-        }
-
-        // Enable each layout
-        foreach ($layouts_enabled as $layout) {
-            $layouts[] = include(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/layouts/' . $layout . '.php');
-            $layout  = ${str_replace( '-', '_', $layout)};
-            $args['fields'][0]['layouts'][] = $layout;
-
+    //Check if theme support is explicitly defined. If so, only enable layouts declared in theme support.
+    if( current_theme_supports( 'flexible-content-blocks' ) ) {
+        $layouts_supported = get_theme_support( 'flexible-content-blocks' );
+        $layouts_enabled = $layouts_supported[0];
+    } else {
+        // If theme support is not explicitly defined, enable all layouts as a fallback.
+        $layouts_enabled = array();
+        foreach(glob(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/layouts/*.php') as $layout) {
+            $layouts_enabled[] = basename($layout, '.php');
         }
     }
 
-    // Execute the layouts function.
-    acffcb_include_layouts();
+    // Enable each layout
+    foreach ($layouts_enabled as $layout) {
+        $layouts[] = include(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/layouts/' . $layout . '.php');
+        $layout  = ${str_replace( '-', '_', $layout)};
+        $args['fields'][0]['layouts'][] = $layout;
+
+    }
+
 
 
 

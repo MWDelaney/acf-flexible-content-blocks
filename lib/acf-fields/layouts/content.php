@@ -1,4 +1,16 @@
 <?php
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * Layout: Content
+    *
+    * @author Michael W. Delaney
+    * @since 1.0
+    *
+    * A simple content block with optional Call to Action button
+    *
+    *-------------------------------------------------------------------------------------*/
+
 $content = 			
     array (
         'key' => '57392236ab5e3',

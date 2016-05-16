@@ -1,4 +1,16 @@
 <?php
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * Layout: Content With Media
+    *
+    * @author Michael W. Delaney
+    * @since 1.0
+    *
+    * A simple content block with optional media include (image or video) and optional Call to Action button
+    *
+    *-------------------------------------------------------------------------------------*/
+
 $content_with_media = 			
     array (
         'key' => '57392236ab5e2',
