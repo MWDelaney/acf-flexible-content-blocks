@@ -10,7 +10,7 @@
         $link = get_sub_field('call_to_action_link');
 
         // Set the link text
-        $link = get_sub_field('call_to_action_text');
+        $text = get_sub_field('call_to_action_text');
 
     ?>
 
