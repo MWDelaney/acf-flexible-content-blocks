@@ -1,4 +1,6 @@
 # Advanced Custom Fields Flexible Content Blocks
+**NOTE:** This plugin is very much a work in progress. It includes a small number of layouts now, and will include more as time allows.
+
 A WordPress plugin that provides a collection of useful, reusable flexible content blocks for use with ACF Pro 5. Basic templates included and automatically loaded, can be optionally overridden at the theme level.
 
 This plugin creates a Flexible Content Field below the content editor on Pages and automatically includes content entered there below `the_content()` on page templates.
