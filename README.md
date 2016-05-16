@@ -3,6 +3,8 @@ A collection of useful, reusable flexible content blocks for use with ACF Pro 5.
 
 This plugin creates a Flexible Content Field below the content editor on Pages and automatically includes content entered there below `the_content()` on page templates.
 
+Also wraps `the_content()` in some basic HTML to make it easy to differentiate from the added content blocks.
+
 ## Requirements
 
 1. WordPress 4.5+
