@@ -2,12 +2,12 @@
 
   /*--------------------------------------------------------------------------------------
     *
-    * Layout: Content
+    * Layout: Featured Content
     *
     * @author Michael W. Delaney
     * @since 1.0
     *
-    * A simple content block with optional Call to Action button
+    * Content block with relationship field to feature other site content and optional Call to Action button
     *
     *-------------------------------------------------------------------------------------*/
 
