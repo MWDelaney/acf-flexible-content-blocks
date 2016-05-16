@@ -5,6 +5,9 @@ This plugin creates a Flexible Content Field below the content editor on Pages a
 
 Also wraps `the_content()` in some basic HTML to make it easy to differentiate from the added content blocks.
 
+![Screenshot](/../gh-pages/screenshot.png?raw=true "Advanced Custom Fields Flexible Content Blocks")
+
+
 ## Requirements
 
 1. WordPress 4.5+
