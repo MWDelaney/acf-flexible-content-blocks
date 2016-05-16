@@ -1,7 +1,14 @@
 <?php
-    $classes = 'block-' . get_row_layout();
+
+    $classes    = 'block-' . get_row_layout();
+
+    $image = get_sub_field('background_image');
+
+    $styles      = (get_sub_field('background_image')) ? 'background-image: url(' . $image['url'] . ');' : '';
+    $styles     .= (get_sub_field('background_color')) ? 'background-color: ' . get_sub_field('background_color') . ';' : '';
+
 ?>
-<section class="block-wrap <?=$classes?>">
+<section class="block-wrap <?=$classes?>" style="<?=$styles?>">
     <div class="block">
         
         <?php cfb_template('blocks/parts/block', 'title'); ?>
