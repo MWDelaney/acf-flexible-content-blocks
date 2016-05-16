@@ -22,9 +22,17 @@ By default all included layouts are available:
 2. Content With Media
 3. Featured Content
 
+### Enable only some layouts
 To remove layouts from the available list, declare theme support for only the layouts you wish to use:
 ````
 add_theme_support( 'flexible-content-blocks', array( 'content', 'content-with-media' ) );
+````
+
+### Change post type blocks appear on
+By default content blocks are enabled for Pages, to define which post types blocks should be available on, declare theme support:
+
+````
+add_theme_support( 'flexible-content-location', array( 'page', 'post' ) );
 ````
 
 ## Templates

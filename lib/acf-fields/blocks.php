@@ -36,13 +36,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
         ),
         'location' => array (
-            array (
-                array (
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'page',
-                ),
-            ),
+            array (),
         ),
         'menu_order' => 0,
         'position' => 'normal',
@@ -55,6 +49,41 @@ if( function_exists('acf_add_local_field_group') ):
     );
 
 
+
+  /*--------------------------------------------------------------------------------------
+    *
+    * Check for declared post types to attach fields to
+    *
+    * @author Michael W. Delaney
+    * @since 1.0
+    *
+    * Default: page
+    *
+    * Declare theme support for specific post types:
+    *   add_theme_support( 'flexible-content-location', array( 'page', 'post' ) );
+    *
+    *-------------------------------------------------------------------------------------*/
+    //Check if theme support is explicitly defined. If so, enable all attachments declared in theme support.
+
+    if( current_theme_supports( 'flexible-content-location' ) ) {
+        $locations_supported    = get_theme_support( 'flexible-content-location' );
+        $locations_enabled      = $locations_supported[0];
+    } else {
+        // If theme support is not explicitly defined, enable default attachments.
+        $locations_enabled = array();
+        $locations_enabled[] = 'page';
+    }
+
+    // Enable each location
+    foreach ($locations_enabled as $location) {
+        $location_array = array();
+        $location_array['param']    = 'post_type';
+        $location_array['operator'] = '==';
+        $location_array['value'] = $location;
+
+        $args['location'][][] = $location_array;
+
+    }
 
   /*--------------------------------------------------------------------------------------
     *
