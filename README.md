@@ -22,6 +22,7 @@ By default all included layouts are available:
 2. Media
 3. Content With Media
 4. Featured Content
+5. Slider
 
 ### Enable only some layouts
 To remove layouts from the available list, declare theme support for only the layouts you wish to use:
