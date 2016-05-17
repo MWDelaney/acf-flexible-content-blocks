@@ -11,8 +11,9 @@
     *
     *-------------------------------------------------------------------------------------*/
 
-$slider = 			
-    array (
+$layouts_array[] =
+    array ( 'order' => '200', 
+    'layout' => array (
         'key' => '573b5057ebf46',
         'name' => 'slider',
         'label' => 'Slider',
@@ -417,4 +418,5 @@ $slider =
                 'readonly' => 0,
             ),
         )
-    );
+    )
+);

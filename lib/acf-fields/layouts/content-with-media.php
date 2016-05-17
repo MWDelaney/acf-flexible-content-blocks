@@ -11,8 +11,9 @@
     *
     *-------------------------------------------------------------------------------------*/
 
-$content_with_media = 			
-    array (
+$layouts_array[] =
+    array ( 'order' => '20', 
+    'layout' => array (
         'key' => '57392236ab5e2',
         'name' => 'content_with_media',
         'label' => 'Content with Media',
@@ -424,4 +425,5 @@ $content_with_media =
                 'readonly' => 0,
             ),
         )
-    );
+    )
+);

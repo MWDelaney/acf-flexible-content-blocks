@@ -11,8 +11,9 @@
     *
     *-------------------------------------------------------------------------------------*/
 
-$featured_content = 	
-    array (
+$layouts_array[] =
+    array ( 'order' => '100', 
+    'layout' => array (
         'key' => '5739d9a42c502',
         'name' => 'featured_content',
         'label' => 'Featured Content',
@@ -347,4 +348,5 @@ $featured_content =
                 'readonly' => 0,
             ),
         ),
-    );
+    )
+);

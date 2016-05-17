@@ -11,8 +11,9 @@
     *
     *-------------------------------------------------------------------------------------*/
 
-$content = 			
-    array (
+$layouts_array[] =
+    array ( 'order' => '10', 
+    'layout' => array (
         'key' => '57392236ab5e3',
         'name' => 'content',
         'label' => 'Content',
@@ -304,4 +305,5 @@ $content =
                 'readonly' => 0,
             ),
         )
-    );
+    )
+);

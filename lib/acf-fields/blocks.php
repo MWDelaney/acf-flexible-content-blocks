@@ -111,15 +111,17 @@ if( function_exists('acf_add_local_field_group') ):
     }
 
     // Enable each layout
+    $layouts_array = array();
     foreach ($layouts_enabled as $layout) {
-        $layouts[] = include(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/layouts/' . $layout . '.php');
-        $layout  = ${str_replace( '-', '_', $layout)};
-        $args['fields'][0]['layouts'][] = $layout;
-
+        include(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/layouts/' . $layout . '.php');
     }
-
-
-
+    usort($layouts_array, function ($a, $b) {
+        if ($a['order'] == $b['order']) return 0;
+        return $a['order'] < $b['order'] ? -1 : 1;
+    });
+    foreach ( $layouts_array as $layout) {
+        $args['fields'][0]['layouts'][] = $layout['layout'];
+    }
 
   /*--------------------------------------------------------------------------------------
     *
