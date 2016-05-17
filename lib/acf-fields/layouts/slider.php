@@ -2,24 +2,24 @@
 
   /*--------------------------------------------------------------------------------------
     *
-    * Layout: Media
+    * Layout: Slider
     *
     * @author Michael W. Delaney
     * @since 1.0
     *
-    * A simple media block optional Call to Action button
+    * Media slider with optional Call to Action button
     *
     *-------------------------------------------------------------------------------------*/
 
-$media = 			
+$slider = 			
     array (
-        'key' => '5739d9a42c504',
-        'name' => 'media',
-        'label' => 'Media',
+        'key' => '573b5057ebf46',
+        'name' => 'slider',
+        'label' => 'Slider',
         'display' => 'block',
         'sub_fields' => array (
             array (
-                'key' => 'field_5739d9f32c505',
+                'key' => 'field_573b506bebf47',
                 'label' => 'Title',
                 'name' => 'title',
                 'type' => 'text',
@@ -40,7 +40,7 @@ $media =
                 'disabled' => 0,
             ),
             array (
-                'key' => 'field_5739da082c506',
+                'key' => 'field_573b5077ebf48',
                 'label' => 'Navigation Title',
                 'name' => 'navigation_title',
                 'type' => 'text',
@@ -61,8 +61,8 @@ $media =
                 'disabled' => 0,
             ),
             array (
-                'key' => 'field_573b35ee4f53d',
-                'label' => 'Media',
+                'key' => 'field_573b5086ebf49',
+                'label' => 'Content',
                 'name' => '',
                 'type' => 'tab',
                 'instructions' => '',
@@ -77,10 +77,10 @@ $media =
                 'endpoint' => 0,
             ),
             array (
-                'key' => 'field_5739da1b2c505',
-                'label' => 'Type of Media',
-                'name' => 'type_of_media',
-                'type' => 'radio',
+                'key' => 'field_573b509aebf4a',
+                'label' => 'Content',
+                'name' => 'content',
+                'type' => 'wysiwyg',
                 'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => 0,
@@ -89,99 +89,175 @@ $media =
                     'class' => '',
                     'id' => '',
                 ),
-                'choices' => array (
-                    'none' => 'None',
-                    'image' => 'Image',
-                    'video' => 'Video',
-                ),
-                'other_choice' => 0,
-                'save_other_choice' => 0,
                 'default_value' => '',
-                'layout' => 'horizontal',
+                'tabs' => 'all',
+                'toolbar' => 'full',
+                'media_upload' => 1,
             ),
             array (
-                'key' => 'field_573b3550c57d8',
-                'label' => 'Media Placeholder',
+                'key' => 'field_573b50a0ebf4b',
+                'label' => 'Slides',
                 'name' => '',
-                'type' => 'message',
+                'type' => 'tab',
                 'instructions' => '',
                 'required' => 0,
-                'conditional_logic' => array (
-                    array (
-                        array (
-                            'field' => 'field_5739da1b2c505',
-                            'operator' => '==',
-                            'value' => 'none',
-                        ),
-                    ),
-                ),
+                'conditional_logic' => 0,
                 'wrapper' => array (
                     'width' => '',
-                    'class' => 'acf-media',
+                    'class' => '',
                     'id' => '',
                 ),
-                'message' => 'No media will be displayed.',
-                'new_lines' => 'wpautop',
-                'esc_html' => 0,
+                'placement' => 'top',
+                'endpoint' => 0,
             ),
             array (
-                'key' => 'field_573b3241fc83d',
-                'label' => 'Image',
-                'name' => 'image',
-                'type' => 'image',
+                'key' => 'field_573b50a9ebf4c',
+                'label' => 'Slides',
+                'name' => 'slides',
+                'type' => 'repeater',
                 'instructions' => '',
                 'required' => 0,
-                'conditional_logic' => array (
-                    array (
-                        array (
-                            'field' => 'field_5739da1b2c505',
-                            'operator' => '==',
-                            'value' => 'image',
-                        ),
-                    ),
-                ),
+                'conditional_logic' => 0,
                 'wrapper' => array (
                     'width' => '',
-                    'class' => 'acf-media',
+                    'class' => '',
                     'id' => '',
                 ),
-                'return_format' => 'array',
-                'preview_size' => 'large',
-                'library' => 'all',
-                'min_width' => '',
-                'min_height' => '',
-                'min_size' => '',
-                'max_width' => '',
-                'max_height' => '',
-                'max_size' => '',
-                'mime_types' => '',
-            ),
-            array (
-                'key' => 'field_573b3272fc83e',
-                'label' => 'Video',
-                'name' => 'video',
-                'type' => 'oembed',
-                'instructions' => '',
-                'required' => 0,
-                'conditional_logic' => array (
+                'collapsed' => 'field_573b50b3ebf4d',
+                'min' => '',
+                'max' => '',
+                'layout' => 'row',
+                'button_label' => 'Add Slide',
+                'sub_fields' => array (
                     array (
-                        array (
-                            'field' => 'field_5739da1b2c505',
-                            'operator' => '==',
-                            'value' => 'video',
+                        'key' => 'field_573b50b3ebf4d',
+                        'label' => 'Title',
+                        'name' => 'title',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array (
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
                         ),
+                        'default_value' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'maxlength' => '',
+                        'readonly' => 0,
+                        'disabled' => 0,
+                    ),
+                    array (
+                        'key' => 'field_573b50bdebf4e',
+                        'label' => 'Type of Media',
+                        'name' => 'type_of_media',
+                        'type' => 'radio',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array (
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'choices' => array (
+                            'none' => 'None',
+                            'image' => 'Image',
+                            'video' => 'Video',
+                        ),
+                        'other_choice' => 0,
+                        'save_other_choice' => 0,
+                        'default_value' => '',
+                        'layout' => 'horizontal',
+                    ),
+                    array (
+                        'key' => 'field_573b510cebf4f',
+                        'label' => 'Media Placeholder',
+                        'name' => '',
+                        'type' => 'message',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array (
+                            array (
+                                array (
+                                    'field' => 'field_573b50bdebf4e',
+                                    'operator' => '==',
+                                    'value' => 'none',
+                                ),
+                            ),
+                        ),
+                        'wrapper' => array (
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'message' => 'No media will be displayed.',
+                        'new_lines' => 'wpautop',
+                        'esc_html' => 0,
+                    ),
+                    array (
+                        'key' => 'field_573b5129ebf50',
+                        'label' => 'Image',
+                        'name' => 'image',
+                        'type' => 'image',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array (
+                            array (
+                                array (
+                                    'field' => 'field_573b50bdebf4e',
+                                    'operator' => '==',
+                                    'value' => 'image',
+                                ),
+                            ),
+                        ),
+                        'wrapper' => array (
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'return_format' => 'array',
+                        'preview_size' => 'thumbnail',
+                        'library' => 'all',
+                        'min_width' => '',
+                        'min_height' => '',
+                        'min_size' => '',
+                        'max_width' => '',
+                        'max_height' => '',
+                        'max_size' => '',
+                        'mime_types' => '',
+                    ),
+                    array (
+                        'key' => 'field_573b5137ebf51',
+                        'label' => 'Video',
+                        'name' => 'video',
+                        'type' => 'oembed',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => array (
+                            array (
+                                array (
+                                    'field' => 'field_573b50bdebf4e',
+                                    'operator' => '==',
+                                    'value' => 'video',
+                                ),
+                            ),
+                        ),
+                        'wrapper' => array (
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'width' => '',
+                        'height' => '',
                     ),
                 ),
-                'wrapper' => array (
-                    'width' => '',
-                    'class' => 'acf-media',
-                    'id' => '',
-                ),
-                'width' => '',
-                'height' => '',
             ),
             array (
-                'key' => 'field_573b36154f53f',
+                'key' => 'field_573b5154ebf52',
                 'label' => 'Background',
                 'name' => '',
                 'type' => 'tab',
@@ -197,7 +273,7 @@ $media =
                 'endpoint' => 0,
             ),
             array (
-                'key' => 'field_573b362a4f540',
+                'key' => 'field_573b5161ebf53',
                 'label' => 'Background Image',
                 'name' => 'background_image',
                 'type' => 'image',
@@ -221,7 +297,7 @@ $media =
                 'mime_types' => '',
             ),
             array (
-                'key' => 'field_573b36444f541',
+                'key' => 'field_573b5177ebf54',
                 'label' => 'Background Color',
                 'name' => 'background_color',
                 'type' => 'color_picker',
@@ -236,7 +312,7 @@ $media =
                 'default_value' => '',
             ),
             array (
-                'key' => 'field_573b36004f53e',
+                'key' => 'field_573b5187ebf55',
                 'label' => '',
                 'name' => '',
                 'type' => 'tab',
@@ -252,7 +328,7 @@ $media =
                 'endpoint' => 1,
             ),
             array (
-                'key' => 'field_573b3576c57d9',
+                'key' => 'field_573b519bebf56',
                 'label' => 'Display Call to Action?',
                 'name' => 'display_call_to_action',
                 'type' => 'true_false',
@@ -268,7 +344,7 @@ $media =
                 'default_value' => 0,
             ),
             array (
-                'key' => 'field_573b3593c57da',
+                'key' => 'field_573b51ceebf57',
                 'label' => 'Text',
                 'name' => 'call_to_action_text',
                 'type' => 'text',
@@ -289,7 +365,7 @@ $media =
                 'disabled' => 0,
             ),
             array (
-                'key' => 'field_573b35a5c57db',
+                'key' => 'field_573b51deebf58',
                 'label' => 'Link',
                 'name' => 'call_to_action_link',
                 'type' => 'page_link',
@@ -309,7 +385,7 @@ $media =
                 'multiple' => 0,
             ),
             array (
-                'key' => 'field_573b35bbc57dc',
+                'key' => 'field_573b51efebf59',
                 'label' => 'Type',
                 'name' => 'call_to_action_type',
                 'type' => 'select',

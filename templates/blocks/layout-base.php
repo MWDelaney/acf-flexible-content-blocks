@@ -11,7 +11,7 @@
 <section class="block-wrap <?=$classes?>" style="<?=$styles?>">
     <div class="block">
         
-        <?php cfb_template('blocks/parts/block', 'title'); ?>
+        <?php cfb_template('blocks/parts/block-title', get_row_layout()); ?>
         <?php cfb_template('blocks/layout', get_row_layout()); ?>
 
     </div> <!-- /block -->

@@ -1,1 +1,3 @@
-IT'S A VIDEO
+<div class="embed-container">
+	<?php the_sub_field('oembed'); ?>
+</div>
