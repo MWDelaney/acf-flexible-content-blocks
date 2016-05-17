@@ -19,8 +19,9 @@ Also wraps `the_content()` in some basic HTML to make it easy to differentiate f
 By default all included layouts are available:
 
 1. Content
-2. Content With Media
-3. Featured Content
+2. Media
+3. Content With Media
+4. Featured Content
 
 ### Enable only some layouts
 To remove layouts from the available list, declare theme support for only the layouts you wish to use:
