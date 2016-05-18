@@ -1,15 +1,14 @@
 <?php
 
-  /*--------------------------------------------------------------------------------------
-    *
-    * Layout: Content
-    *
-    * @author Michael W. Delaney
-    * @since 1.0
-    *
-    * A simple content block with optional Call to Action button
-    *
-    *-------------------------------------------------------------------------------------*/
+/**
+ *
+ * Layout: Content
+ *
+ * @author Michael W. Delaney
+ * @since 1.0
+ * 
+ * A simple content block with optional Call to Action button
+ */
 
 $layouts_array[] =
     array ( 'order' => '10', 

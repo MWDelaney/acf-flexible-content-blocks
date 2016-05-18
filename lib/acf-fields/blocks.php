@@ -1,17 +1,20 @@
 <?php
-
-  /*--------------------------------------------------------------------------------------
-    *
-    * Set up local field group that we'll add layouts to
-    *
-    * @author Michael W. Delaney
-    * @since 1.0
-    *
-    *-------------------------------------------------------------------------------------*/
+/**
+ * Create custom fields for ACF Flexible Content Blocks
+ *
+ * @package   acf-flexible-content-blocks
+ * @author    Michael W. Delaney
+ * @link      https://github.com/MWDelaney/acf-flexible-content-blocks
+ * @copyright 2016 Michael W. Delaney
+ * @license   MIT
+ * @version   1.0
+ */
 
 if( function_exists('acf_add_local_field_group') ):
 
-
+    /**
+     * Variable holding the ACF fields definition to be automatically created
+     */
     $args = array (
         'key' => 'cfb_blocks',
         'title' => 'Content Blocks',
@@ -35,9 +38,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'layouts' => array (),
             ),
         ),
-        'location' => array (
-            array (),
-        ),
+        'location' => array (),
         'menu_order' => 0,
         'position' => 'normal',
         'style' => 'default',
@@ -50,19 +51,17 @@ if( function_exists('acf_add_local_field_group') ):
 
 
 
-  /*--------------------------------------------------------------------------------------
-    *
+    /**
     * Check for declared post types to attach fields to
     *
     * @author Michael W. Delaney
     * @since 1.0
     *
-    * Default: page
+    * Default: post_type == page
     *
     * Declare theme support for specific post types:
     *   add_theme_support( 'flexible-content-location', array( array('post_type', '==', 'page'), array('post_type', '==', 'post') ) );
-    *
-    *-------------------------------------------------------------------------------------*/
+    */
 
     //Check if theme support is explicitly defined. If so, enable all attachments declared in theme support.
     if( current_theme_supports( 'flexible-content-location' ) ) {
@@ -78,27 +77,27 @@ if( function_exists('acf_add_local_field_group') ):
     // Enable each location
     $location_array = array();
     foreach ($locations_enabled as $location) {
+        // There is probably a better way to do this, but this makes it easy to visualize each location being added
         $this_array = array();
         $this_array['param']        = ($location[0]) ? $location[0] : 'post_type';
         $this_array['operator']     = ($location[1]) ? $location[1] : '==';
         $this_array['value']        = ($location[2]) ? $location[2] : '';
         $location_array[]           = array($this_array);
     }
-
+    // Insert each location into the $args array
     $args['location'] = $location_array;
 
-  /*--------------------------------------------------------------------------------------
-    *
+
+
+    /**
     * Include all enabled layouts
-    *
+    * 
     * @author Michael W. Delaney
     * @since 1.0
     *
     * Declare theme support for specific layouts. Default is to include all layouts: 
     *   add_theme_support( 'flexible-content-blocks', array( 'content', 'content-with-media' ) );
-    *
-    *-------------------------------------------------------------------------------------*/
-
+    */
         
     //Check if theme support is explicitly defined. If so, only enable layouts declared in theme support.
     if( current_theme_supports( 'flexible-content-blocks' ) ) {
@@ -117,24 +116,26 @@ if( function_exists('acf_add_local_field_group') ):
     foreach ($layouts_enabled as $layout) {
         include(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/layouts/' . $layout . '.php');
     }
+    // Sort layouts by the 'order' element
     usort($layouts_array, function ($a, $b) {
         if ($a['order'] == $b['order']) return 0;
         return $a['order'] < $b['order'] ? -1 : 1;
     });
+    // Insert each layouts into the $args array
     foreach ( $layouts_array as $layout) {
         $args['fields'][0]['layouts'][] = $layout['layout'];
     }
 
-  /*--------------------------------------------------------------------------------------
-    *
+
+
+    /**
     * Add the local field group, with its layouts, to ACF
     *
     * @author Michael W. Delaney
     * @since 1.0
     *
-    *-------------------------------------------------------------------------------------*/
-
-    //Create local field group with all enabled layouts.
+    */
+   
     acf_add_local_field_group($args);
 
 endif;

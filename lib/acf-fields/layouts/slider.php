@@ -1,15 +1,14 @@
 <?php
 
-  /*--------------------------------------------------------------------------------------
-    *
-    * Layout: Slider
-    *
-    * @author Michael W. Delaney
-    * @since 1.0
-    *
-    * Media slider with optional Call to Action button
-    *
-    *-------------------------------------------------------------------------------------*/
+/**
+ *
+ * Layout: Slider
+ *
+ * @author Michael W. Delaney
+ * @since 1.0
+ * 
+ * Media slider with optional Call to Action button
+ */
 
 $layouts_array[] =
     array ( 'order' => '200', 

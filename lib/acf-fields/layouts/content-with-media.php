@@ -1,15 +1,14 @@
 <?php
 
-  /*--------------------------------------------------------------------------------------
-    *
-    * Layout: Content With Media
-    *
-    * @author Michael W. Delaney
-    * @since 1.0
-    *
-    * A simple content block with optional media include (image or video) and optional Call to Action button
-    *
-    *-------------------------------------------------------------------------------------*/
+/**
+ *
+ * Layout: Content With Media
+ *
+ * @author Michael W. Delaney
+ * @since 1.0
+ * 
+ * A simple content block with optional media include (image or video) and optional Call to Action button
+ */
 
 $layouts_array[] =
     array ( 'order' => '20', 

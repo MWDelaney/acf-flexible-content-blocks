@@ -1,15 +1,14 @@
 <?php
 
-  /*--------------------------------------------------------------------------------------
-    *
-    * Layout: Media
-    *
-    * @author Michael W. Delaney
-    * @since 1.0
-    *
-    * A simple media block optional Call to Action button
-    *
-    *-------------------------------------------------------------------------------------*/
+/**
+ *
+ * Layout: Media
+ *
+ * @author Michael W. Delaney
+ * @since 1.0
+ * 
+ * A simple media block optional Call to Action button
+ */
 
 $layouts_array[] =
     array ( 'order' => '60', 

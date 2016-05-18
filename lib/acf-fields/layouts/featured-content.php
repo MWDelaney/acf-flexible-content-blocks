@@ -1,15 +1,14 @@
 <?php
 
-  /*--------------------------------------------------------------------------------------
-    *
-    * Layout: Featured Content
-    *
-    * @author Michael W. Delaney
-    * @since 1.0
-    *
-    * Content block with relationship field to feature other site content and optional Call to Action button
-    *
-    *-------------------------------------------------------------------------------------*/
+/**
+ *
+ * Layout: Featured Content
+ *
+ * @author Michael W. Delaney
+ * @since 1.0
+ * 
+ * Content block with relationship field to feature other site content and optional Call to Action button
+ */
 
 $layouts_array[] =
     array ( 'order' => '100', 
