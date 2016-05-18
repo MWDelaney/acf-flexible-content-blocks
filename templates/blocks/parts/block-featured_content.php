@@ -3,7 +3,7 @@
 $posts = get_sub_field('featured_content');
 
 if( $posts ): ?>
-    <ul>
+    <ul class="featured-content">
     <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
         <?php setup_postdata($post); ?>
         <li>
