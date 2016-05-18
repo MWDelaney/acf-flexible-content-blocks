@@ -1,3 +1,3 @@
 <div class="embed-container">
-	<?php the_sub_field('oembed'); ?>
+	<?php the_sub_field('video'); ?>
 </div>
