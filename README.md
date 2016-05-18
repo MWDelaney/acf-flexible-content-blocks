@@ -26,14 +26,14 @@ By default all included layouts are available:
 
 ### Enable only some layouts
 To remove layouts from the available list, declare theme support for only the layouts you wish to use:
-````
+````{r, engine='php', count_lines}
 add_theme_support( 'flexible-content-blocks', array( 'content', 'content-with-media' ) );
 ````
 
 ### Change post type blocks appear on
 By default content blocks are enabled for Pages, to define which post types blocks should be available on, declare theme support:
 
-````
+````{r, engine='php', count_lines}
 add_theme_support( 'flexible-content-location', array( array('post_type', '==', 'page'), array('post_type', '==', 'post') ) );
 ````
 
