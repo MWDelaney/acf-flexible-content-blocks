@@ -1,0 +1,19 @@
+{
+  "name": "MWDelaney/acf-flexible-content-blocks",
+  "description": "A collection of useful, reusable flexible content blocks for content development in WordPress with ACF 5 Pro. Templates included and automatically loaded.",
+  "keywords": ["wordpress", "plugin", "advanced custom fields"],
+  "homepage": "https://github.com/MWDelaney/acf-flexible-content-blocks",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Michael W. Delaney",
+      "email": "michael@michaeldelaney.me",
+      "homepage": ""
+    }
+  ],
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=5.3.2",
+    "composer/installers": "v1.0.6"
+  }
+}
