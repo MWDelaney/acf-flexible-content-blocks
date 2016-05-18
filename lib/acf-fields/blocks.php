@@ -60,30 +60,32 @@ if( function_exists('acf_add_local_field_group') ):
     * Default: page
     *
     * Declare theme support for specific post types:
-    *   add_theme_support( 'flexible-content-location', array( 'page', 'post' ) );
+    *   add_theme_support( 'flexible-content-location', array( array('post_type', '==', 'page'), array('post_type', '==', 'post') ) );
     *
     *-------------------------------------------------------------------------------------*/
-    //Check if theme support is explicitly defined. If so, enable all attachments declared in theme support.
 
+    //Check if theme support is explicitly defined. If so, enable all attachments declared in theme support.
     if( current_theme_supports( 'flexible-content-location' ) ) {
         $locations_supported    = get_theme_support( 'flexible-content-location' );
         $locations_enabled      = $locations_supported[0];
+
     } else {
         // If theme support is not explicitly defined, enable default attachments.
         $locations_enabled = array();
-        $locations_enabled[] = 'page';
+        $locations_enabled[] = array('post_type', '==', 'page');
     }
 
     // Enable each location
+    $location_array = array();
     foreach ($locations_enabled as $location) {
-        $location_array = array();
-        $location_array['param']    = 'post_type';
-        $location_array['operator'] = '==';
-        $location_array['value'] = $location;
-
-        $args['location'][][] = $location_array;
-
+        $this_array = array();
+        $this_array['param']        = ($location[0]) ? $location[0] : 'post_type';
+        $this_array['operator']     = ($location[1]) ? $location[1] : '==';
+        $this_array['value']        = ($location[2]) ? $location[2] : '';
+        $location_array[]           = array($this_array);
     }
+
+    $args['location'] = $location_array;
 
   /*--------------------------------------------------------------------------------------
     *
