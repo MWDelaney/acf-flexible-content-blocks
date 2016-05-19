@@ -26,7 +26,7 @@
 				<?php echo ($content_source == 'excerpt') ? get_the_excerpt() : $content; ?>
 			</div>
 			<aside>
-				<a class="link-list-item-link" href="<?php the_permalink(); ?>">
+				<a class="link-list-item-link btn" href="<?php the_permalink(); ?>">
 					<?=$link_text?>
 				</a>
 			    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
