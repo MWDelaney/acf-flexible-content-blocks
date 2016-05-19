@@ -13,21 +13,25 @@
 
 ?>
 <li class="<?=$classes?>" style="<?=$styles?>">
-	<h3><?php the_sub_field('title'); ?></h3>
-	<?php
-	$post_object = get_sub_field('link');
-	if( $post_object ): 
-		$post = $post_object;
-		setup_postdata( $post ); 
-	?>
-	<article>
-		<?php echo ($content_source == 'excerpt') ? get_the_excerpt() : $content; ?>
-		<aside>
-			<a class="link-list-item-link" href="<?php the_permalink(); ?>">
-				<?=$link_text?>
-			</a>
-		    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-		</aside>
-	</article>
-	<?php endif; ?>
+	<div class="link-list-item-inner">
+		<h3><?php the_sub_field('title'); ?></h3>
+		<?php
+		$post_object = get_sub_field('link');
+		if( $post_object ): 
+			$post = $post_object;
+			setup_postdata( $post ); 
+		?>
+		<article>
+			<div class="link-list-content">
+				<?php echo ($content_source == 'excerpt') ? get_the_excerpt() : $content; ?>
+			</div>
+			<aside>
+				<a class="link-list-item-link" href="<?php the_permalink(); ?>">
+					<?=$link_text?>
+				</a>
+			    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+			</aside>
+		</article>
+		<?php endif; ?>
+	</div>
 </li>
