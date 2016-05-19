@@ -29,8 +29,8 @@
 				<a class="link-list-item-link btn" href="<?php the_permalink(); ?>">
 					<?=$link_text?>
 				</a>
-			    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 			</aside>
+		    <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 		</article>
 		<?php endif; ?>
 	</div>
