@@ -267,6 +267,31 @@ $layouts_array[] =
                 'message' => '',
                 'default_value' => 0,
             ),
+           array (
+                'key' => 'field_57392389f9c79',
+                'label' => 'Placeholder',
+                'name' => '',
+                'type' => 'message',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array (
+                    array (
+                        array (
+                            'field' => 'field_573b3576c57d9',
+                            'operator' => '!=',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'wrapper' => array (
+                    'width' => 80,
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'No Call to Action will be displayed.',
+                'new_lines' => 'wpautop',
+                'esc_html' => 0,
+            ),
             array (
                 'key' => 'field_573b3593c57da',
                 'label' => 'Text',
@@ -339,7 +364,7 @@ $layouts_array[] =
                 'placeholder' => '',
                 'disabled' => 0,
                 'readonly' => 0,
-            ),
+            )
         )
     )
 );

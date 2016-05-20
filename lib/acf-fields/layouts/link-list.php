@@ -9,7 +9,6 @@
  * 
  * List of links with titles and content
  */
-
 $layouts_array[] =
     array ( 'order' => '60',
 	'layout' =>  array (
@@ -61,6 +60,56 @@ $layouts_array[] =
 				'disabled' => 0,
 			),
 			array (
+				'key' => 'field_573f10256aa33',
+				'label' => 'Content',
+				'name' => '',
+				'type' => 'tab',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'placement' => 'top',
+				'endpoint' => 0,
+			),
+			array (
+				'key' => 'field_573f10326aa34',
+				'label' => 'Content',
+				'name' => 'content',
+				'type' => 'wysiwyg',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'tabs' => 'all',
+				'toolbar' => 'full',
+				'media_upload' => 1,
+			),
+			array (
+				'key' => 'field_573f103b6aa35',
+				'label' => 'Linked Items',
+				'name' => '',
+				'type' => 'tab',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'placement' => 'top',
+				'endpoint' => 0,
+			),
+			array (
 				'key' => 'field_573e0e351c7f6',
 				'label' => 'Linked Items',
 				'name' => 'linked_items',
@@ -70,7 +119,7 @@ $layouts_array[] =
 				'conditional_logic' => 0,
 				'wrapper' => array (
 					'width' => '',
-					'class' => '',
+					'class' => 'acf-media',
 					'id' => '',
 				),
 				'collapsed' => 'field_573e0e481c7f7',
@@ -302,9 +351,218 @@ $layouts_array[] =
 						'maxlength' => '',
 						'readonly' => 0,
 						'disabled' => 0,
-					)
-				)
+					),
+				),
+			),
+			array (
+				'key' => 'field_573f11236aa3b',
+				'label' => 'Background',
+				'name' => '',
+				'type' => 'tab',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'placement' => 'top',
+				'endpoint' => 0,
+			),
+			array (
+				'key' => 'field_573f11396aa3c',
+				'label' => 'Background Image',
+				'name' => 'background_image',
+				'type' => 'image',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '',
+					'class' => 'acf-media',
+					'id' => '',
+				),
+				'return_format' => 'array',
+				'preview_size' => 'large',
+				'library' => 'all',
+				'min_width' => '',
+				'min_height' => '',
+				'min_size' => '',
+				'max_width' => '',
+				'max_height' => '',
+				'max_size' => '',
+				'mime_types' => '',
+			),
+			array (
+				'key' => 'field_573f11526aa3d',
+				'label' => 'Background Color',
+				'name' => 'background_color',
+				'type' => 'color_picker',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+			),
+			array (
+				'key' => 'field_573f10476aa36',
+				'label' => '',
+				'name' => '',
+				'type' => 'tab',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'placement' => 'top',
+				'endpoint' => 1,
+			),
+			array (
+				'key' => 'field_573f105d6aa37',
+				'label' => 'Display Call to Action?',
+				'name' => 'display_call_to_action',
+				'type' => 'true_false',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array (
+					'width' => 20,
+					'class' => 'acf-cta',
+					'id' => '',
+				),
+				'message' => '',
+				'default_value' => 0,
+			),
+           array (
+                'key' => 'field_57392389f9c80',
+                'label' => 'Placeholder',
+                'name' => '',
+                'type' => 'message',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array (
+                    array (
+                        array (
+                            'field' => 'field_573f105d6aa37',
+                            'operator' => '!=',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'wrapper' => array (
+                    'width' => 80,
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'No Call to Action will be displayed.',
+                'new_lines' => 'wpautop',
+                'esc_html' => 0,
+            ),
+			array (
+				'key' => 'field_573f10906aa38',
+				'label' => 'Text',
+				'name' => 'call_to_action_text',
+				'type' => 'text',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array (
+					array (
+						array (
+							'field' => 'field_573f105d6aa37',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+				),
+				'wrapper' => array (
+					'width' => 30,
+					'class' => 'acf-cta',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'maxlength' => '',
+				'readonly' => 0,
+				'disabled' => 0,
+			),
+			array (
+				'key' => 'field_573f10ab6aa39',
+				'label' => 'Link',
+				'name' => 'call_to_action_link',
+				'type' => 'page_link',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array (
+					array (
+						array (
+							'field' => 'field_573f105d6aa37',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+				),
+				'wrapper' => array (
+					'width' => 30,
+					'class' => 'acf-cta',
+					'id' => '',
+				),
+				'post_type' => array (
+				),
+				'taxonomy' => array (
+				),
+				'allow_null' => 0,
+				'multiple' => 0,
+			),
+			array (
+				'key' => 'field_573f10d76aa3a',
+				'label' => 'Type',
+				'name' => 'call_to_action_type',
+				'type' => 'select',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array (
+					array (
+						array (
+							'field' => 'field_573f105d6aa37',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+				),
+				'wrapper' => array (
+					'width' => 20,
+					'class' => 'acf-cta',
+					'id' => '',
+				),
+				'choices' => array (
+					'primary' => 'Primary',
+					'default' => 'Default',
+					'success' => 'Success',
+					'info' => 'Info',
+					'warning' => 'Warning',
+					'danger' => 'Danger',
+					'link' => 'Link Only',
+				),
+				'default_value' => array (
+				),
+				'allow_null' => 0,
+				'multiple' => 0,
+				'ui' => 0,
+				'ajax' => 0,
+				'placeholder' => '',
+				'disabled' => 0,
+				'readonly' => 0,
 			)
 		)
-	)
+    )
 );
