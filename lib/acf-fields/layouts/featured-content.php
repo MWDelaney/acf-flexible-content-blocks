@@ -225,7 +225,7 @@ $layouts_array[] =
                 'default_value' => 0,
             ),
            array (
-                'key' => 'field_57392389f9c80',
+                'key' => 'field_57392389f9e80',
                 'label' => 'Placeholder',
                 'name' => '',
                 'type' => 'message',
