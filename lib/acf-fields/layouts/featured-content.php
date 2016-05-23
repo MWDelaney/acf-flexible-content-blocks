@@ -134,7 +134,7 @@ $layouts_array[] =
                 ),
                 'elements' => '',
                 'min' => 0,
-                'max' => 3,
+                'max' => 0,
                 'return_format' => 'object',
             ),
             array (
