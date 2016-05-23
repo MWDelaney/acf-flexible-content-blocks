@@ -1,11 +1,12 @@
 <?php
-
-    $classes    = 'block-' . get_row_layout();
-
     $image = get_sub_field('background_image');
 
+    $classes    = 'block-' . get_row_layout();
+    $classes   .= ($image) ? ' block-with-bg-image' : '';
+
+
     $styles      = (get_sub_field('background_color')) ? 'background-color: ' . get_sub_field('background_color') . ';' : '';
-    $styles     .= (get_sub_field('background_image')) ? ' background-image: url(' . $image['url'] . ');' : '';
+    $styles     .= ($image) ? ' background-image: url(' . $image['url'] . ');' : '';
 
 ?>
 <section class="block-wrap <?=$classes?>" style="<?=$styles?>">
