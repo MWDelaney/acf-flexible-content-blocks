@@ -299,7 +299,15 @@ $layouts_array[] =
                 'type' => 'text',
                 'instructions' => '',
                 'required' => 0,
-                'conditional_logic' => 0,
+                'conditional_logic' => array (
+                    array (
+                        array (
+                            'field' => 'field_573b3576c57d9',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
                 'wrapper' => array (
                     'width' => 30,
                     'class' => 'acf-cta',
@@ -320,7 +328,15 @@ $layouts_array[] =
                 'type' => 'page_link',
                 'instructions' => '',
                 'required' => 0,
-                'conditional_logic' => 0,
+                'conditional_logic' => array (
+                    array (
+                        array (
+                            'field' => 'field_573b3576c57d9',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
                 'wrapper' => array (
                     'width' => 30,
                     'class' => 'acf-cta',
@@ -340,7 +356,15 @@ $layouts_array[] =
                 'type' => 'select',
                 'instructions' => '',
                 'required' => 0,
-                'conditional_logic' => 0,
+                'conditional_logic' => array (
+                    array (
+                        array (
+                            'field' => 'field_573b3576c57d9',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
                 'wrapper' => array (
                     'width' => 20,
                     'class' => 'acf-cta',

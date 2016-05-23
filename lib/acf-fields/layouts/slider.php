@@ -343,6 +343,31 @@ $layouts_array[] =
                 'message' => '',
                 'default_value' => 0,
             ),
+           array (
+                'key' => 'field_57392389f9g91',
+                'label' => 'Placeholder',
+                'name' => '',
+                'type' => 'message',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array (
+                    array (
+                        array (
+                            'field' => 'field_573b519bebf56',
+                            'operator' => '!=',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'wrapper' => array (
+                    'width' => 80,
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'No Call to Action will be displayed.',
+                'new_lines' => 'wpautop',
+                'esc_html' => 0,
+            ),
             array (
                 'key' => 'field_573b51ceebf57',
                 'label' => 'Text',
@@ -350,7 +375,15 @@ $layouts_array[] =
                 'type' => 'text',
                 'instructions' => '',
                 'required' => 0,
-                'conditional_logic' => 0,
+                'conditional_logic' => array (
+                    array (
+                        array (
+                            'field' => 'field_573b519bebf56',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
                 'wrapper' => array (
                     'width' => 30,
                     'class' => 'acf-cta',
@@ -371,7 +404,15 @@ $layouts_array[] =
                 'type' => 'page_link',
                 'instructions' => '',
                 'required' => 0,
-                'conditional_logic' => 0,
+                'conditional_logic' => array (
+                    array (
+                        array (
+                            'field' => 'field_573b519bebf56',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
                 'wrapper' => array (
                     'width' => 30,
                     'class' => 'acf-cta',
@@ -391,7 +432,15 @@ $layouts_array[] =
                 'type' => 'select',
                 'instructions' => '',
                 'required' => 0,
-                'conditional_logic' => 0,
+                'conditional_logic' => array (
+                    array (
+                        array (
+                            'field' => 'field_573b519bebf56',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
                 'wrapper' => array (
                     'width' => 20,
                     'class' => 'acf-cta',
