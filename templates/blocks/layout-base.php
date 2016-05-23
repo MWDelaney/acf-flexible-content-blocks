@@ -4,6 +4,7 @@
 
     $classes    = 'block-' . get_row_layout();
     $classes   .= ($image) ? ' block-with-bg-image' : '';
+    $classes   .= (get_sub_field('title')) ? '' : ' block-no-title';
     $classes   .= ' block-' . $GLOBALS['fcb_rows_count'];
 
     $styles      = (get_sub_field('background_color')) ? 'background-color: ' . get_sub_field('background_color') . ';' : '';
