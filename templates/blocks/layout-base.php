@@ -1,9 +1,10 @@
 <?php
+
     $image = get_sub_field('background_image');
 
     $classes    = 'block-' . get_row_layout();
     $classes   .= ($image) ? ' block-with-bg-image' : '';
-
+    $classes   .= ' block-' . $GLOBALS['fcb_rows_count'];
 
     $styles      = (get_sub_field('background_color')) ? 'background-color: ' . get_sub_field('background_color') . ';' : '';
     $styles     .= ($image) ? ' background-image: url(' . $image['url'] . ');' : '';

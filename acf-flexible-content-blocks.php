@@ -41,6 +41,47 @@ License: MIT
 
 
 
+    /**
+     * Set the HTML header tag (h1, h2) for block titles. Defaults to 'h2'.
+     * This can be overridden using filters like the following:
+     *
+     *     remove_filter( 'set_block_htag', 'block_htag_level', 10 );
+     *     add_filter( 'set_block_htag', 'custom_htag_level', 10, 2 );
+     *     function custom_htag_level($title, $htag) {
+     *         if($GLOBALS['fcb_rows_count'] == 0) {
+     *             $htag = 'h1';
+     *         } else {
+     *             $htag = 'h2';
+     *         }
+     *         return '<' . $htag . '>' . $title . '</' . $htag . '>';
+     *     }
+     *     
+     * @param  string $title The sub-field containing the title.
+     * @param  string $htag  The default header tag (defaults to h2)
+     * @return string        The formatted title wrapped in the proper h-tag.
+     */
+    function block_htag_level($title, $htag) {
+        return '<' . $htag . '>' . $title . '</' . $htag . '>';
+    }
+
+
+
+    /**
+     * Set a filter to change the block title output.
+     */
+    add_filter( 'set_block_htag', 'block_htag_level', 10, 2 );
+
+
+
+    /**
+     * Echo the block title with applied filters
+     * @return string The formatted title
+     */
+    function the_block_title() {
+        echo apply_filters( 'set_block_htag', get_sub_field('title'), 'h2' );
+    }
+
+
 /**
  * Main Complex a Titles class
  */
