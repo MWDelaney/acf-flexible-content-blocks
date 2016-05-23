@@ -3,7 +3,8 @@
 $posts = get_sub_field('featured_content');
 
 if( $posts ): ?>
-    <ul class="featured-content">
+<div class="block-featured-content">
+    <ul class="featured-content-list">
     <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
         <?php setup_postdata($post); ?>
         <li>
@@ -17,5 +18,6 @@ if( $posts ): ?>
         </li>
     <?php endforeach; ?>
     </ul>
+</div>
     <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
 <?php endif; ?>
