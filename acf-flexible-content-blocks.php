@@ -45,7 +45,7 @@ License: MIT
      * Set the HTML header tag (h1, h2) for block titles. Defaults to 'h2'.
      * This can be overridden using filters like the following:
      *
-     *     remove_filter( 'set_block_htag', 'block_htag_level', 10 );
+     *     remove_filter( 'fcb_set_block_htag', 'block_htag_level', 10 );
      *     add_filter( 'set_block_htag', 'custom_htag_level', 10, 2 );
      *     function custom_htag_level($title, $htag) {
      *         if($GLOBALS['fcb_rows_count'] == 0) {
@@ -69,7 +69,7 @@ License: MIT
     /**
      * Set a filter to change the block title output.
      */
-    add_filter( 'set_block_htag', 'block_htag_level', 10, 2 );
+    add_filter( 'fcb_set_block_htag', 'block_htag_level', 10, 2 );
 
 
 
@@ -78,14 +78,14 @@ License: MIT
      * @return string The formatted title
      */
     function the_block_title() {
-        echo apply_filters( 'set_block_htag', get_sub_field('title'), 'h2' );
+        echo apply_filters( 'fcb_set_block_htag', get_sub_field('title'), 'h2' );
     }
 
 
 
     /**
      * Set classes for a block. These can be overridden or added to with a filter like the following:
-     *     add_filter( 'set_block_classes', 'custom_block_classes' );
+     *     add_filter( 'fcb_set_block_classes', 'custom_block_classes' );
      *     function custom_block_classes($classes) {
      *         if(is_page_template('template-landing-page.php') {
      *             $classes[]   = 'on-landing-page';
@@ -104,7 +104,7 @@ License: MIT
         $classes[]  = 'block-' . $GLOBALS['fcb_rows_count'];
         
         $classes = array_filter(array_map('trim', $classes));
-        echo trim(implode(' ', apply_filters( 'set_block_classes', $classes )));
+        echo trim(implode(' ', apply_filters( 'fcb_set_block_classes', $classes )));
     }
 
 
