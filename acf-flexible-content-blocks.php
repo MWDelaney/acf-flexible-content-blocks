@@ -87,7 +87,9 @@ License: MIT
      * Set classes for a block. These can be overridden or added to with a filter like the following:
      *     add_filter( 'set_block_classes', 'custom_block_classes' );
      *     function custom_block_classes($classes) {
-     *         $classes[]   = 'on-landing-page';
+     *         if(is_page_template('template-landing-page.php') {
+     *             $classes[]   = 'on-landing-page';
+     *         }
      *         return $classes;
      *     }
      *         
@@ -97,9 +99,9 @@ License: MIT
         $classes    = array();
         $classes[]  = 'block-wrap';
         $classes[]  = 'block-' . get_row_layout();
-        $classes[]  = (get_sub_field('background_image')) ? ' block-with-bg-image' : '';
-        $classes[]  = (get_sub_field('title')) ? '' : ' block-no-title';
-        $classes[]  = ' block-' . $GLOBALS['fcb_rows_count'];
+        $classes[]  = (get_sub_field('background_image')) ? 'block-with-bg-image' : '';
+        $classes[]  = (get_sub_field('title')) ? '' : 'block-no-title';
+        $classes[]  = 'block-' . $GLOBALS['fcb_rows_count'];
         
         echo trim(implode(' ', apply_filters( 'set_block_classes', $classes )));
     }
@@ -125,7 +127,7 @@ License: MIT
     }
 
 /**
- * Main Complex a Titles class
+ * Main Flexible Content Blocks class
  */
 
     class ACFFlexibleContentBlocks {
