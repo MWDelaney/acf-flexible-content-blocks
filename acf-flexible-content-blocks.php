@@ -82,6 +82,48 @@ License: MIT
     }
 
 
+
+    /**
+     * Set classes for a block. These can be overridden or added to with a filter like the following:
+     *     add_filter( 'set_block_classes', 'custom_block_classes' );
+     *     function custom_block_classes($classes) {
+     *         $classes[]   = 'on-landing-page';
+     *         return $classes;
+     *     }
+     *         
+     * @return string string of classes
+     */
+    function fcb_block_classes() {
+        $classes    = array();
+        $classes[]  = 'block-wrap';
+        $classes[]  = 'block-' . get_row_layout();
+        $classes[]  = (get_sub_field('background_image')) ? ' block-with-bg-image' : '';
+        $classes[]  = (get_sub_field('title')) ? '' : ' block-no-title';
+        $classes[]  = ' block-' . $GLOBALS['fcb_rows_count'];
+        
+        echo trim(implode(' ', apply_filters( 'set_block_classes', $classes )));
+    }
+
+
+
+    /**
+     * Set styles for a block. These can be overridden or added to with a filter like the following:
+     *     add_filter( 'set_block_styles', 'custom_block_styles' );
+     *     function custom_block_styles($styles) {
+     *         $styles[]   = 'border: 1px solid green;';
+     *         return $styles;
+     *     }
+     * @return string string of styles
+     */
+    function fcb_block_styles() {
+        $image      = get_sub_field('background_image');
+
+        $styles     = array();
+        $styles[]   = (get_sub_field('background_color')) ? 'background-color: ' . get_sub_field('background_color') . ';' : '';
+        $styles[]   = ($image) ? 'background-image: url(' . $image['url'] . ');' : '';
+        echo trim(implode(' ', apply_filters( 'set_block_styles', $styles )));
+    }
+
 /**
  * Main Complex a Titles class
  */
@@ -98,7 +140,7 @@ License: MIT
             add_action( 'init', array( $this, 'add_shortcodes' ) );
 
             //Initialize ACF fields
-            add_action( 'init', array( $this, 'create_acf_fields' ) );	  
+            add_action( 'init', array( $this, 'create_acf_fields' ) );    
 
             // Append shortcode to the_content
             add_filter( 'the_content', array( $this, 'acffcb_add_to_content' ) );
