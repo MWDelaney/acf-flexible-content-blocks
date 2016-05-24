@@ -103,6 +103,7 @@ License: MIT
         $classes[]  = (get_sub_field('title')) ? '' : 'block-no-title';
         $classes[]  = 'block-' . $GLOBALS['fcb_rows_count'];
         
+        $classes = array_filter(array_map('trim', $classes));
         echo trim(implode(' ', apply_filters( 'set_block_classes', $classes )));
     }
 
