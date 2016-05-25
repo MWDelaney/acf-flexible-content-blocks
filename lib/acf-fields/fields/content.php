@@ -9,7 +9,7 @@
  * WYSIWYG content field
  */
 
-$fields_array['content'] = array (
+$array['content'] = array (
     'key' => $key,
     'label' => 'Content',
     'name' => 'content',

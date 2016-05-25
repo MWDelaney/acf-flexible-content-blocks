@@ -9,7 +9,7 @@
  * Title fields shared by all layouts
  */
 
-$fields_array['title'] = array (
+$array['title'] = array (
     'key' => $key,
     'label' => 'Title',
     'name' => 'title',

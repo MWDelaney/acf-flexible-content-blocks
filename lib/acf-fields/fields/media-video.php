@@ -9,7 +9,7 @@
  * Video field for media selector
  */
 
-$fields_array['media_video'] = array (
+$array['media_video'] = array (
     'key' => $key,
     'label' => 'Video',
     'name' => 'video',
@@ -19,7 +19,7 @@ $fields_array['media_video'] = array (
     'conditional_logic' => array (
         array (
             array (
-                'field' => 'fcb-media-type-of-media-' . $layout,
+                'field' => 'fcb-media-type-of-media-' . $repeater_name . $layout,
                 'operator' => '==',
                 'value' => 'video',
             ),

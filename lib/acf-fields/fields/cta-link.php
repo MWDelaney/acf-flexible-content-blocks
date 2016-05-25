@@ -9,7 +9,7 @@
  * Page Link field for call to action link
  */
 
-$fields_array['cta_link'] = array (
+$array['cta_link'] = array (
     'key' => $key,
     'label' => 'Link',
     'name' => 'call_to_action_link',
@@ -19,7 +19,7 @@ $fields_array['cta_link'] = array (
     'conditional_logic' => array (
         array (
             array (
-                'field' => 'fcb-cta-checkbox-' . $layout,
+                'field' => 'fcb-cta-checkbox-' . $repeater_name . $layout,
                 'operator' => '==',
                 'value' => '1',
             ),

@@ -1,17 +1,17 @@
 <?php
 /**
  *
- * Field: Media Tab
+ * Field: Slides Tab
  *
  * @author Michael W. Delaney
  * @since 1.0
  * 
- * Tab titled "Media"
+ * Tab titled "Slides"
  */
 
-$array['tab_media'] = array (
+$array['tab_slides'] = array (
     'key' => $key,
-    'label' => 'Media',
+    'label' => 'Slides',
     'name' => '',
     'type' => 'tab',
     'instructions' => '',

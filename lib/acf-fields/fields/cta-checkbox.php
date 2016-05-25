@@ -9,7 +9,7 @@
  * True/False field to display call to action or not
  */
 
-$fields_array['cta_checkbox'] = array (
+$array['cta_checkbox'] = array (
     'key' => $key,
     'label' => 'Display Call to Action?',
     'name' => 'display_call_to_action',

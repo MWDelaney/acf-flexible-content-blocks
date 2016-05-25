@@ -9,7 +9,7 @@
  * Text field for CTA
  */
 
-$fields_array['cta_text'] = array (
+$array['cta_text'] = array (
     'key' => $key,
     'label' => 'Text',
     'name' => 'call_to_action_text',
@@ -19,7 +19,7 @@ $fields_array['cta_text'] = array (
     'conditional_logic' => array (
         array (
             array (
-                'field' => 'fcb-cta-checkbox-' . $layout,
+                'field' => 'fcb-cta-checkbox-' . $repeater_name . $layout,
                 'operator' => '==',
                 'value' => '1',
             ),

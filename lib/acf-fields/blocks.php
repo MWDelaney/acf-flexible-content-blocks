@@ -112,13 +112,47 @@ if( function_exists('acf_add_local_field_group') ):
     }
 
     // Enable each layout
-    $layouts_array = array();
-    $fields_array = array();
+    $layouts_array      = array();
+    $array              = array();
+    $repeater_name      = null;
     foreach ($layouts_enabled as $layout) {
+        empty($array);
+
+        // Get each field from the 'fields' subdirectory
         foreach(glob(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/fields/*.php') as $field) {
             $field_name = basename($field, '.php');
             $key        = 'fcb-' . $field_name . '-' . $layout;
+
+            // Build $array by including field files
             include($field);
+
+            // Set $array to a unique variable so we can do it again for repeaters.
+            $fields_array       = $array;
+        }
+
+        // Empty $array so we can reuse it.
+        empty($array);
+
+        // Get each repeater
+        foreach(glob(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/repeaters/*.php') as $repeater) {
+            $repeater_name  = basename($repeater, '.php');
+            // For each repeater, build its own array of fields
+            foreach(glob(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/fields/*.php') as $repeater_field) {
+                $repeater_field_name  = basename($repeater_field, '.php');
+                $key            = 'fcb-' . $repeater_field_name . '-' . $repeater_name . $layout;
+
+                // Build $array again by including field files
+                include($repeater_field);
+
+                // Set $array to a unique variable
+                $repeater_fields_array = $array;
+
+            }
+            $repeater_name      = basename($repeater, '.php');
+            $repeater_key       = 'fcb-' . $repeater_name . '-' . $layout;
+            $key                = 'fcb-' . $repeater_name . '-' . $field_name . '-' . $layout;
+            include($repeater);
+            $repeater_name      = null;
         }
         include(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/layouts/' . $layout . '.php');
     }

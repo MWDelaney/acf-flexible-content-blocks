@@ -9,7 +9,7 @@
  * Background image
  */
 
-$fields_array['background_image'] = array (
+$array['background_image'] = array (
     'key' => $key,
     'label' => 'Background Image',
     'name' => 'background_image',

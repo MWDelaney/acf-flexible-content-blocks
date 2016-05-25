@@ -9,7 +9,7 @@
  * Tab titled "Background"
  */
 
-$fields_array['tab_background'] = array (
+$array['tab_background'] = array (
     'key' => $key,
     'label' => 'Background',
     'name' => 'background',

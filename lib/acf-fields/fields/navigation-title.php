@@ -9,7 +9,7 @@
  * Navigation Title fields shared by all layouts
  */
 
-$fields_array['navigation_title'] = array (
+$array['navigation_title'] = array (
     'key' => $key,
     'label' => 'Navigation Title',
     'name' => 'navigation_title',

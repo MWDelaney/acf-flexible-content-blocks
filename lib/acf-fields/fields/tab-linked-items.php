@@ -9,7 +9,7 @@
  * Tab titled "Linked Items"
  */
 
-$fields_array['tab_linked_items'] = array (
+$array['tab_linked_items'] = array (
 	'key' => $key,
 	'label' => 'Linked Items',
 	'name' => '',

@@ -9,7 +9,7 @@
  * Background color selector field
  */
 
-$fields_array['background_color'] = array (
+$array['background_color'] = array (
     'key' => $key,
     'label' => 'Background Color',
     'name' => 'background_color',

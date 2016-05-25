@@ -9,7 +9,7 @@
  * Message field for CTA placeholder
  */
 
-$fields_array['cta_placeholder'] = array (
+$array['cta_placeholder'] = array (
     'key' => $key,
     'label' => 'Placeholder',
     'name' => '',
@@ -19,7 +19,7 @@ $fields_array['cta_placeholder'] = array (
     'conditional_logic' => array (
         array (
             array (
-                'field' => 'fcb-cta-checkbox-' . $layout,
+                'field' => 'fcb-cta-checkbox-' . $repeater_name . $layout,
                 'operator' => '!=',
                 'value' => '1',
             ),

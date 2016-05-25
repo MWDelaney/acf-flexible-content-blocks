@@ -9,7 +9,7 @@
  * Select field to choose the semantic button type for the CTA
  */
 
-$fields_array['cta_type'] = array (
+$array['cta_type'] = array (
     'key' => $key,
     'label' => 'Type',
     'name' => 'call_to_action_type',
@@ -19,7 +19,7 @@ $fields_array['cta_type'] = array (
     'conditional_logic' => array (
         array (
             array (
-                'field' => 'fcb-cta-checkbox-' . $layout,
+                'field' => 'fcb-cta-checkbox-' . $repeater_name . $layout,
                 'operator' => '==',
                 'value' => '1',
             ),

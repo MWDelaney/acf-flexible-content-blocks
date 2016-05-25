@@ -9,7 +9,7 @@
  * Endpoint field for content tabs
  */
 
-$fields_array['tab_endpoint'] = array (
+$array['tab_endpoint'] = array (
     'key' => $key,
     'label' => '',
     'name' => '',

@@ -9,7 +9,7 @@
  * Radio button field for Type of Media attachment
  */
 
-$fields_array['type_of_media'] = array (
+$array['type_of_media'] = array (
     'key' => $key,
     'label' => 'Type of Media',
     'name' => 'type_of_media',

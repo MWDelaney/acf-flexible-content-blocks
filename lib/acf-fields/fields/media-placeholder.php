@@ -9,7 +9,7 @@
  * Placeholder for when no media is selected
  */
 
-$fields_array['media_placeholder'] = array (
+$array['media_placeholder'] = array (
     'key' => $key,
     'label' => 'Media Placeholder',
     'name' => '',
@@ -19,7 +19,7 @@ $fields_array['media_placeholder'] = array (
     'conditional_logic' => array (
         array (
             array (
-                'field' => 'fcb-media-type-of-media-' . $layout,
+                'field' => 'fcb-media-type-of-media-' . $repeater_name . $layout,
                 'operator' => '==',
                 'value' => 'none',
             ),

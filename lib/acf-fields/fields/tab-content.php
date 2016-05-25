@@ -9,7 +9,7 @@
  * Tab titled "Content"
  */
 
-$fields_array['tab_content'] = array (
+$array['tab_content'] = array (
     'key' => $key,
     'label' => 'Content',
     'name' => '',

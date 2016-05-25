@@ -9,7 +9,7 @@
  * Image field for media selector
  */
 
-$fields_array['media_image'] = array (
+$array['media_image'] = array (
     'key' => $key,
     'label' => 'Image',
     'name' => 'image',
@@ -19,7 +19,7 @@ $fields_array['media_image'] = array (
     'conditional_logic' => array (
         array (
             array (
-                'field' => 'fcb-media-type-of-media-' . $layout,
+                'field' => 'fcb-media-type-of-media-' . $repeater_name . $layout,
                 'operator' => '==',
                 'value' => 'image',
             ),
