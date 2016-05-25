@@ -54,7 +54,7 @@ Set the tag that block titles are wrapped in. This defaults to `<h2>`. First rem
 
 ````{r, engine='php', count_lines}
 /**
-* Make the first block's title an h1 and subsequent blocks default to h2
+* Make the first block title an h1 and subsequent blocks default to h2
 */
 remove_filter( 'fcb_set_block_htag', 'block_htag_level', 10 );
 add_filter( 'fcb_set_block_htag', 'custom_htag_level', 10, 2 );
