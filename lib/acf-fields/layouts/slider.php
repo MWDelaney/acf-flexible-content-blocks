@@ -13,7 +13,7 @@
 $layouts_array[] =
     array ( 'order' => '200', 
     'layout' => array (
-        'key' => '573b5057ebf46',
+        'key' => $layout,
         'name' => 'slider',
         'label' => 'Slider',
         'display' => 'block',

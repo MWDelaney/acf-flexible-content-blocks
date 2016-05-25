@@ -13,7 +13,7 @@
 $layouts_array[] =
     array ( 'order' => '100', 
     'layout' => array (
-        'key' => '5739d9a42c502',
+        'key' => $layout,
         'name' => 'featured_content',
         'label' => 'Featured Content',
         'display' => 'block',

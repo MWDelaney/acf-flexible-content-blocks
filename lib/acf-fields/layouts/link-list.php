@@ -12,7 +12,7 @@
 $layouts_array[] =
     array ( 'order' => '60',
 	'layout' =>  array (
-		'key' => '573e0cc0db8b1',
+        'key' => $layout,
 		'name' => 'link_list',
 		'label' => 'Link List',
 		'display' => 'block',

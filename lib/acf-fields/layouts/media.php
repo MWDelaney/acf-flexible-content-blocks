@@ -13,7 +13,7 @@
 $layouts_array[] =
     array ( 'order' => '60', 
     'layout' => array (
-        'key' => '5739d9a42c504',
+        'key' => $layout,
         'name' => 'media',
         'label' => 'Media',
         'display' => 'block',
