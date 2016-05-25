@@ -43,5 +43,5 @@ Basic templates for each layout are included. These templates are designed to be
 ### Base template wrapper
 The layout base can be overridden on a per-block-type basis. When a block is rendered, the plugin will first look in your theme, and then in the plugin directory, for `layout-base-[layout_name].php` (e.g. `layout-base-content_with_media.php`) if a specific base doesn't exist, the plugin will load the `layout-base.php` template. 
 
-### Block-specific template parts
+### Layout-specific template parts
 Like the base template, each template part's file name can be appended with a layout name (like `content_with_media` to override the template for that layout only. For example, `[your-theme]/fcb-templates/blocks/parts/block-cta-content_with_media.php` will be loaded only for calls to action in the "Content with Media" layout. 
