@@ -49,10 +49,10 @@ Like the base template, each template part's file name can be appended with a la
 ## Actions and filters
 Several filters are available to alter the plugin's output.
 
-### fcb_set_block_htag
+### Filter: fcb_set_block_htag
 Set the tag that block titles are wrapped in. This defaults to `<h2>`. First remove the existing filter and then add your own:
 
-````
+````{r, engine='php', count_lines}
 /**
 * Make the first block's title an h1 and subsequent blocks default to h2
 **/
@@ -65,5 +65,18 @@ function custom_htag_level($title, $htag) {
         $htag = 'h2';
     }
     return '<' . $htag . '>' . $title . '</' . $htag . '>';
+}
+````
+
+### Filter: fcb_set_block_classes
+Set the classes applied to content blocks. This filter runs each time a block is rendered, so classes can be conditionally applied per-block. 
+
+````{r, engine='php', count_lines}
+add_filter( 'fcb_set_block_classes', 'custom_block_classes' );
+function custom_block_classes($classes) {
+    if(is_page_template('template-landing-page.php') {
+        $classes[]   = 'on-landing-page';
+    }
+    return $classes;
 }
 ````
