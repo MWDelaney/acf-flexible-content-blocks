@@ -55,7 +55,7 @@ Set the tag that block titles are wrapped in. This defaults to `<h2>`. First rem
 ````{r, engine='php', count_lines}
 /**
 * Make the first block's title an h1 and subsequent blocks default to h2
-**/
+*/
 remove_filter( 'fcb_set_block_htag', 'block_htag_level', 10 );
 add_filter( 'fcb_set_block_htag', 'custom_htag_level', 10, 2 );
 function custom_htag_level($title, $htag) {
@@ -72,10 +72,13 @@ function custom_htag_level($title, $htag) {
 Set the classes applied to content blocks. This filter runs each time a block is rendered, so classes can be conditionally applied per-block. 
 
 ````{r, engine='php', count_lines}
+/**
+* Give the first block an additional class of 'block-first'
+*/
 add_filter( 'fcb_set_block_classes', 'custom_block_classes' );
 function custom_block_classes($classes) {
-    if(is_page_template('template-landing-page.php') {
-        $classes[]   = 'on-landing-page';
+    if($GLOBALS['fcb_rows_count'] == 0) {
+        $classes[]   = 'block-first';
     }
     return $classes;
 }
