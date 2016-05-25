@@ -113,7 +113,13 @@ if( function_exists('acf_add_local_field_group') ):
 
     // Enable each layout
     $layouts_array = array();
+    $fields_array = array();
     foreach ($layouts_enabled as $layout) {
+        foreach(glob(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/fields/*.php') as $field) {
+            $field_name = basename($field, '.php');
+            $key        = 'fcb-' . $field_name . '-' . $layout;
+            include($field);
+        }
         include(ACFFCB_PLUGIN_DIR . 'lib/acf-fields/layouts/' . $layout . '.php');
     }
     // Sort layouts by the 'order' element
