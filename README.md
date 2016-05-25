@@ -91,7 +91,7 @@ This filter isn't recommended for use --it's used by the plugin to apply backgro
 
 ````{r, engine='php', count_lines}
 /**
-* Give the first block an additional class of 'block-first'
+* Give the first block an ugly green border
 */
 add_filter( 'fcb_set_block_styles', 'custom_block_styles' );
 function custom_block_styles($styles) {
