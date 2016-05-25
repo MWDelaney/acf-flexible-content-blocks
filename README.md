@@ -45,3 +45,25 @@ The layout base can be overridden on a per-block-type basis. When a block is ren
 
 ### Layout-specific template parts
 Like the base template, each template part's file name can be appended with a layout name (like `content_with_media` to override the template for that layout only. For example, `[your-theme]/fcb-templates/blocks/parts/block-cta-content_with_media.php` will be loaded only for calls to action in the "Content with Media" layout. 
+
+## Actions and filters
+Several filters are available to alter the plugin's output.
+
+### fcb_set_block_htag
+Set the tag that block titles are wrapped in. This defaults to `<h2>`. First remove the existing filter and then add your own:
+
+````
+/**
+* Make the first block's title an h1 and subsequent blocks default to h2
+**/
+remove_filter( 'fcb_set_block_htag', 'block_htag_level', 10 );
+add_filter( 'fcb_set_block_htag', 'custom_htag_level', 10, 2 );
+function custom_htag_level($title, $htag) {
+    if($GLOBALS['fcb_rows_count'] == 0) {
+        $htag = 'h1';
+    } else {
+        $htag = 'h2';
+    }
+    return '<' . $htag . '>' . $title . '</' . $htag . '>';
+}
+````
