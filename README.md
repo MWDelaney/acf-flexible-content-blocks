@@ -83,3 +83,21 @@ function custom_block_classes($classes) {
     return $classes;
 }
 ````
+
+### Filter: fcb_set_block_styles
+Set the styles applied to content blocks. This filter runs each time a block is rendered, so styles can be conditionally applied per-block.
+
+This filter isn't recommended for use --it's used by the plugin to apply background styles which are set in the block. Semantic styles are always preferrable to style attributes applied per block.
+
+````{r, engine='php', count_lines}
+/**
+* Give the first block an additional class of 'block-first'
+*/
+add_filter( 'fcb_set_block_styles', 'custom_block_styles' );
+function custom_block_styles($styles) {
+    if($GLOBALS['fcb_rows_count'] == 0) {
+        $styles[]   = 'border: 1px solid green;';
+    }
+return $styles;
+}
+````
