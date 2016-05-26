@@ -835,6 +835,39 @@
 		}
 
 
+
+		/**
+		 *
+		 * Field: Tabs Tab
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Tab titled "Tabs"
+		 */
+		function tab_tabs() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Tabs',
+				    'name' => 'tabs',
+				    'type' => 'tab',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => '',
+				        'id' => '',
+				    ),
+				    'placement' => 'top',
+				    'endpoint' => 0,
+				)
+			);
+		}
+
+
+
 		/**
 		 *
 		 * Field: Content Tab

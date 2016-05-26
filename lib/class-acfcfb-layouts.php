@@ -57,6 +57,72 @@
 		}
 
 
+		/**
+		 *
+		 * Repeater: Slides
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Repeater field for slides
+		 */
+		function slides() {
+	        $FCBFields = new FCBFields(__FUNCTION__);
+	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
+	        return( 
+			    array ( 'order' => '90', 
+				    'layout' => array (
+					    'key' => $this->key . __FUNCTION__,
+					    'label' => 'Slides',
+					    'name' => 'slides',
+					    'type' => 'repeater',
+					    'instructions' => '',
+					    'required' => 0,
+					    'conditional_logic' => 0,
+					    'wrapper' => array (
+					        'width' => '',
+					        'class' => '',
+					        'id' => '',
+					    ),
+					    'collapsed' => 'field_573b50b3ebf4d',
+					    'min' => '',
+					    'max' => '',
+					    'layout' => 'row',
+					    'button_label' => 'Add Slide',
+					    'sub_fields' => array (
+				            // Titles
+				            $FCBFields->title(),
+				            $FCBFields->navigation_title(),
+
+				            // Content tab
+				            $FCBFields->tab_content(),
+				            $FCBFields->content(),
+
+				            // Slides tab
+				            $FCBFields->tab_tabs(),
+				            $FCBRepeaters->tabs(),
+
+				            // Background tab
+				            $FCBFields->tab_background(),
+				            $FCBFields->background_image(),
+				            $FCBFields->background_color(),
+
+				            // Tab Endpoint
+				            $FCBFields->tab_endpoint(),
+
+				            // Call to Action
+				            $FCBFields->cta_checkbox(),
+				            $FCBFields->cta_placeholder(),
+				            $FCBFields->cta_text(),
+				            $FCBFields->cta_link(),
+				            $FCBFields->cta_type(),
+						)
+					)
+				)
+			);
+		}
+
+
 
 		/**
 		 *
