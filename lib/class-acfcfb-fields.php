@@ -7,9 +7,10 @@
 		function __construct($layout, $repeater = null) {
 			$this->layout 	= $layout;
 			$this->repeater = $repeater;
+			$this->key 		= 'acffcb-';
 			$this->key 		= 'layout-' . $layout;
 			$this->key 	   .= (isset($repeater)) ? '-repeater-' . $repeater : null;
-        	$this->key     .= '-field-';
+        		$this->key     .= '-field-';
 		}
 
 
