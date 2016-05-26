@@ -5,8 +5,9 @@
 
 		function __construct($layout) {
 			$this->layout 	= $layout;
-			$this->key 		= 'layout-' . $layout;
-        	$this->key     .= '-field-';
+			$this->key 	= 'acffcb-';
+			$this->key 	.= 'layout-' . $layout;
+        		$this->key      .= '-field-';
 		}
 
 
