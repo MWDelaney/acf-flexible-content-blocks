@@ -9,8 +9,8 @@
 			$this->repeater = $repeater;
 			$this->key 		= 'acffcb-';
 			$this->key 		.= 'layout-' . $layout;
-			$this->key 	   .= (isset($repeater)) ? '-repeater-' . $repeater : null;
-        		$this->key     .= '-field-';
+			$this->key 		.= (isset($repeater)) ? '-repeater-' . $repeater : null;
+        	$this->key 		.= '-field-';
 		}
 
 
@@ -819,7 +819,7 @@
 				array (
 					'key' => $this->key . __FUNCTION__,
 				    'label' => 'Background',
-				    'name' => 'background',
+				    'name' => '',
 				    'type' => 'tab',
 				    'instructions' => '',
 				    'required' => 0,
@@ -851,7 +851,7 @@
 				array (
 					'key' => $this->key . __FUNCTION__,
 				    'label' => 'Tabs',
-				    'name' => 'tabs',
+				    'name' => '',
 				    'type' => 'tab',
 				    'instructions' => '',
 				    'required' => 0,

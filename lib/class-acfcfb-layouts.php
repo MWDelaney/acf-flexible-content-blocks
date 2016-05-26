@@ -86,7 +86,7 @@
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
 
-				            // Slides tab
+				            // Tabs tab
 				            $FCBFields->tab_tabs(),
 				            $FCBRepeaters->tabs(),
 

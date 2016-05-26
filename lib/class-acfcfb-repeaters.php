@@ -7,7 +7,7 @@
 			$this->layout 	= $layout;
 			$this->key 	= 'acffcb-';
 			$this->key 	.= 'layout-' . $layout;
-        		$this->key      .= '-field-';
+        	$this->key      .= '-repeater-';
 		}
 
 
@@ -98,7 +98,7 @@
 						'class' => 'acf-media',
 						'id' => '',
 					),
-					'collapsed' => 'field_573e0e481c7f7',
+					'collapsed' => '',
 					'min' => '',
 					'max' => '',
 					'layout' => 'block',

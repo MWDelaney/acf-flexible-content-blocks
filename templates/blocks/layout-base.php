@@ -1,6 +1,6 @@
 
-<section class="<?php fcb_block_classes(); ?>" style="<?php fcb_block_styles(); ?>">
-    <div class="block">
+<section class="<?php fcb_block_wrapper_classes(); ?>" style="<?php fcb_block_styles(); ?>">
+    <div class="<?php fcb_block_classes(); ?>">
         <div class="block-inner">
 
             <?php cfb_template('blocks/parts/block-title', get_row_layout()); ?>

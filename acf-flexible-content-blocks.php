@@ -87,6 +87,52 @@ License: MIT
 
 
     /**
+     * Return a attribute-friendly string based on input
+     * @return  string The formatted string
+     */
+    function fcb_the_block_id($string) {
+        echo preg_replace('/[^A-Za-z0-9]/', '', strtolower(str_replace(' ', '', $string)));
+    }
+
+
+
+    /**
+     * Return "active" if the input is less than or equal to 0, for tabs
+     */
+    function fcb_is_active($i, $classes = null) {
+        $return = ($i < 1) ? "active" : "";
+        $return .= ($classes) ? " " . $classes : "";
+        echo $return;
+    }
+
+
+    /**
+     * Set classes for a block wrapper. These can be overridden or added to with a filter like the following:
+     *     add_filter( 'fcb_set_block_wrapper_classes', 'custom_block_wrapper_classes' );
+     *     function custom_block_wrapper_classes($classes) {
+     *         if(is_page_template('template-landing-page.php') {
+     *             $classes[]   = 'on-landing-page';
+     *         }
+     *         return $classes;
+     *     }
+     *         
+     * @return string string of classes
+     */
+    function fcb_block_wrapper_classes() {
+        $classes    = array();
+        $classes[]  = 'block-wrap';
+        $classes[]  = 'block-wrap-' . get_row_layout();
+        $classes[]  = (get_sub_field('background_image')) ? 'block-with-bg-image' : '';
+        $classes[]  = (get_sub_field('title')) ? '' : 'block-no-title';
+        $classes[]  = 'block-' . $GLOBALS['fcb_rows_count'];
+        
+        $classes = array_filter(array_map('trim', $classes));
+        echo trim(implode(' ', apply_filters( 'fcb_set_block_classes', $classes )));
+    }
+
+
+
+    /**
      * Set classes for a block. These can be overridden or added to with a filter like the following:
      *     add_filter( 'fcb_set_block_classes', 'custom_block_classes' );
      *     function custom_block_classes($classes) {
@@ -100,11 +146,8 @@ License: MIT
      */
     function fcb_block_classes() {
         $classes    = array();
-        $classes[]  = 'block-wrap';
+        $classes[]  = 'block';
         $classes[]  = 'block-' . get_row_layout();
-        $classes[]  = (get_sub_field('background_image')) ? 'block-with-bg-image' : '';
-        $classes[]  = (get_sub_field('title')) ? '' : 'block-no-title';
-        $classes[]  = 'block-' . $GLOBALS['fcb_rows_count'];
         
         $classes = array_filter(array_map('trim', $classes));
         echo trim(implode(' ', apply_filters( 'fcb_set_block_classes', $classes )));
