@@ -111,9 +111,7 @@
 				        
 				    	// Content Tab 
 				    	$FCBRepeaterFields->tab_content(),
-				    	$FCBRepeaterFields->content_source(),
-				    	$FCBRepeaterFields->content_excerpt_placeholder(),
-				    	$FCBRepeaterFields->content_conditional(),
+				    	$FCBRepeaterFields->content(),
 
 				        // Media
 				        $FCBRepeaterFields->tab_media(),
