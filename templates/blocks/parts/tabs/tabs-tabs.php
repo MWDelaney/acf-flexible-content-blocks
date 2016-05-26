@@ -4,7 +4,7 @@
                     <li role="presentation" class="<?php fcb_is_active($i); ?>">
                         <a href="#tab-<?php fcb_the_block_id(get_sub_field('title')); ?>" aria-controls="<?php get_sub_field('title'); ?>" role="tab" data-toggle="tab">
                             <span>
-                                <?php the_sub_field('title') ?>
+                                <?php the_sub_field('navigation_title') ?>
                             </span>
                         </a>
                     </li>
