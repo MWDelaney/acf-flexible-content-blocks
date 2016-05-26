@@ -2,7 +2,8 @@
     class FCBLayouts {
 
 		function __construct() {
-			$this->key 		= 'layout-';
+			$this->key 		= 'acffcb-';
+			$this->key 		.= 'layout-';
 		}
 
 
