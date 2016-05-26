@@ -60,37 +60,24 @@
 
 		/**
 		 *
-		 * Repeater: Slides
+		 * Repeater: Tabs
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
-		 * Repeater field for slides
+		 * Repeater field for tabs
 		 */
-		function slides() {
+		function tabs() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
 	        return( 
-			    array ( 'order' => '90', 
-				    'layout' => array (
-					    'key' => $this->key . __FUNCTION__,
-					    'label' => 'Slides',
-					    'name' => 'slides',
-					    'type' => 'repeater',
-					    'instructions' => '',
-					    'required' => 0,
-					    'conditional_logic' => 0,
-					    'wrapper' => array (
-					        'width' => '',
-					        'class' => '',
-					        'id' => '',
-					    ),
-					    'collapsed' => 'field_573b50b3ebf4d',
-					    'min' => '',
-					    'max' => '',
-					    'layout' => 'row',
-					    'button_label' => 'Add Slide',
-					    'sub_fields' => array (
+			    array ( 'order' => '300', 
+					'layout' => array (
+						'key' => $this->key . __FUNCTION__,
+				        'name' => 'tabs',
+				        'label' => 'Tabs',
+				        'display' => 'block',
+				        'sub_fields' => array (
 				            // Titles
 				            $FCBFields->title(),
 				            $FCBFields->navigation_title(),
@@ -139,25 +126,12 @@
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
 	        return( 
 			    array ( 'order' => '90', 
-				    'layout' => array (
-					    'key' => $this->key . __FUNCTION__,
-					    'label' => 'Slides',
-					    'name' => 'slides',
-					    'type' => 'repeater',
-					    'instructions' => '',
-					    'required' => 0,
-					    'conditional_logic' => 0,
-					    'wrapper' => array (
-					        'width' => '',
-					        'class' => '',
-					        'id' => '',
-					    ),
-					    'collapsed' => 'field_573b50b3ebf4d',
-					    'min' => '',
-					    'max' => '',
-					    'layout' => 'row',
-					    'button_label' => 'Add Slide',
-					    'sub_fields' => array (
+					'layout' => array (
+						'key' => $this->key . __FUNCTION__,
+				        'name' => 'slides',
+				        'label' => 'Slides',
+				        'display' => 'block',
+				        'sub_fields' => array (
 				            // Titles
 				            $FCBFields->title(),
 				            $FCBFields->navigation_title(),
