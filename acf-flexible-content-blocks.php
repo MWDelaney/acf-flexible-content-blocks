@@ -132,6 +132,53 @@ License: MIT
 
 
 
+
+    /**
+     * Set classes for a collapsibles. These can be overridden or added to with a filter like the following:
+     *     add_filter( 'fcb_set_panel_classes', 'custom_panel_classes' );
+     *     function custom_panel_classes($classes) {
+     *         if(is_page_template('template-landing-page.php') {
+     *             $classes[]   = 'on-landing-page';
+     *         }
+     *         return $classes;
+     *     }
+     *         
+     * @return string string of classes
+     */
+    function fcb_panel_classes() {
+        $classes    = array();
+        $classes[]  = 'panel-body';
+        $classes[]  = (get_sub_field('type_of_media') != 'none' ) ? 'panel-with-media' : '';
+        
+        $classes = array_filter(array_map('trim', $classes));
+        echo trim(implode(' ', apply_filters( 'fcb_set_collapsible_classes', $classes )));
+    }
+
+
+
+    /**
+     * Set classes for a tabs. These can be overridden or added to with a filter like the following:
+     *     add_filter( 'fcb_set_tab_classes', 'custom_tab_classes' );
+     *     function custom_tab_classes($classes) {
+     *         if(is_page_template('template-landing-page.php') {
+     *             $classes[]   = 'on-landing-page';
+     *         }
+     *         return $classes;
+     *     }
+     *         
+     * @return string string of classes
+     */
+    function fcb_tab_classes() {
+        $classes    = array();
+        $classes[]  = 'tab-body';
+        $classes[]  = (get_sub_field('type_of_media') != 'none' ) ? 'tab-with-media' : '';
+        
+        $classes = array_filter(array_map('trim', $classes));
+        echo trim(implode(' ', apply_filters( 'fcb_set_collapsible_classes', $classes )));
+    }
+
+
+
     /**
      * Set classes for a block. These can be overridden or added to with a filter like the following:
      *     add_filter( 'fcb_set_block_classes', 'custom_block_classes' );

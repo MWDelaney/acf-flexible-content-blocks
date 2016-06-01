@@ -15,8 +15,10 @@
       </h4>
     </div>
     <div id="collapse<?=$i?>" class="panel-collapse collapse <?php fcb_is_active($i, 'in'); ?>" role="tabpanel" aria-labelledby="heading<?=$i?>" style="<?php fcb_block_styles(); ?>">
-      <div class="panel-body">
-        <?php cfb_template('blocks/parts/collapsibles/collapsibles-content', get_row_layout()); ?>
+      <div class="<?php fcb_panel_classes(); ?>">
+        <div class="panel-inner">
+          <?php cfb_template('blocks/parts/collapsibles/collapsibles-content', get_row_layout()); ?>
+        </div>
       </div>
     </div>
   </div>
