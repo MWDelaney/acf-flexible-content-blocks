@@ -101,7 +101,7 @@ License: MIT
      */
     function fcb_is_active($i, $classes = null) {
         $return = ($i < 1) ? "active" : "";
-        $return .= ($classes) ? " " . $classes : "";
+        $return .= ($i < 1 && $classes) ? " " . $classes : "";
         echo $return;
     }
 

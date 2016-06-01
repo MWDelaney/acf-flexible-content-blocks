@@ -80,7 +80,7 @@
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
-		 * Linked content items repeater
+		 * Tabs repeater
 		 */
 		function tabs() {
 	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
@@ -119,6 +119,77 @@
 			            $FCBRepeaterFields->media_placeholder(),
 			            $FCBRepeaterFields->media_image(),
 			            $FCBRepeaterFields->media_video(),
+			            $FCBRepeaterFields->media_content(),
+
+				    	// Background Tab 
+				    	$FCBRepeaterFields->tab_background(),
+				    	$FCBRepeaterFields->background_image(),
+				    	$FCBRepeaterFields->background_color(),
+
+				    	// Tab Endpoint
+				    	$FCBRepeaterFields->tab_endpoint(),
+
+			            // Call to Action
+			            $FCBRepeaterFields->cta_checkbox(),
+			            $FCBRepeaterFields->cta_placeholder(),
+			            $FCBRepeaterFields->cta_text(),
+			            $FCBRepeaterFields->cta_link(),
+			            $FCBRepeaterFields->cta_type(),
+
+					)
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Repeater: Collapsibles
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Collapsibles repeater
+		 */
+		function collapsibles() {
+	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+					'label' => 'Collapsibles',
+					'name' => 'collapsibles',
+					'type' => 'repeater',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => 'acf-media',
+						'id' => '',
+					),
+					'collapsed' => '',
+					'min' => '',
+					'max' => '',
+					'layout' => 'block',
+					'button_label' => 'Add Collapsible',
+					'sub_fields' => array (
+
+						// Title
+				        $FCBRepeaterFields->title(),
+				        $FCBRepeaterFields->navigation_title(),
+				        $FCBRepeaterFields->panel_type(),
+				    	// Content Tab 
+				    	$FCBRepeaterFields->tab_content(),
+				    	$FCBRepeaterFields->content(),
+
+				        // Media
+				        $FCBRepeaterFields->tab_media(),
+			            $FCBRepeaterFields->type_of_media(),
+			            $FCBRepeaterFields->media_placeholder(),
+			            $FCBRepeaterFields->media_image(),
+			            $FCBRepeaterFields->media_video(),
+			            $FCBRepeaterFields->media_content(),
 
 				    	// Background Tab 
 				    	$FCBRepeaterFields->tab_background(),
@@ -181,6 +252,7 @@
 			            $FCBRepeaterFields->media_placeholder(),
 			            $FCBRepeaterFields->media_image(),
 			            $FCBRepeaterFields->media_video(),
+			            $FCBRepeaterFields->media_content(),
 					)
 				)
 			);

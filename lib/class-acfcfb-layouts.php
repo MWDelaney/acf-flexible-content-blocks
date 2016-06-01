@@ -114,6 +114,60 @@
 
 		/**
 		 *
+		 * Repeater: Tabs
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Repeater field for tabs
+		 */
+		function collapsibles() {
+	        $FCBFields = new FCBFields(__FUNCTION__);
+	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
+	        return( 
+			    array ( 'order' => '400', 
+					'layout' => array (
+						'key' => $this->key . __FUNCTION__,
+				        'name' => 'collapsibles',
+				        'label' => 'Collapsibles',
+				        'display' => 'block',
+				        'sub_fields' => array (
+				            // Titles
+				            $FCBFields->title(),
+				            $FCBFields->navigation_title(),
+
+				            // Content tab
+				            $FCBFields->tab_content(),
+				            $FCBFields->content(),
+
+				            // Collapsibles tab
+				            $FCBFields->tab_collapsibles(),
+				            $FCBRepeaters->collapsibles(),
+
+				            // Background tab
+				            $FCBFields->tab_background(),
+				            $FCBFields->background_image(),
+				            $FCBFields->background_color(),
+
+				            // Tab Endpoint
+				            $FCBFields->tab_endpoint(),
+
+				            // Call to Action
+				            $FCBFields->cta_checkbox(),
+				            $FCBFields->cta_placeholder(),
+				            $FCBFields->cta_text(),
+				            $FCBFields->cta_link(),
+				            $FCBFields->cta_type(),
+						)
+					)
+				)
+			);
+		}
+
+
+
+		/**
+		 *
 		 * Repeater: Slides
 		 *
 		 * @author Michael W. Delaney
@@ -200,6 +254,7 @@
 				            $FCBFields->media_placeholder(),
 				            $FCBFields->media_image(),
 				            $FCBFields->media_video(),
+				            $FCBFields->media_content(),
 
 				            // Background tab
 				            $FCBFields->tab_background(),
@@ -361,6 +416,7 @@
 				            $FCBFields->media_placeholder(),
 				            $FCBFields->media_image(),
 				            $FCBFields->media_video(),
+				            $FCBFields->media_content(),
 
 				            // Background tab
 				            $FCBFields->tab_background(),

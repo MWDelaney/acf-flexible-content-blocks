@@ -667,6 +667,7 @@
 				        'none' => 'None',
 				        'image' => 'Image',
 				        'video' => 'Video',
+				        'media_content' => 'Content',
 				    ),
 				    'other_choice' => 0,
 				    'save_other_choice' => 0,
@@ -766,6 +767,49 @@
 		}
 
 
+
+		/**
+		 *
+		 * Field: Media Content
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * WYSIWYG field for media selector, intended for shortcode output
+		 */
+		function media_content() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Content',
+				    'name' => 'media_content',
+					'type' => 'wysiwyg',
+				    'instructions' => 'Intended for shortcode output',
+				    'required' => 0,
+				    'conditional_logic' => array (
+				        array (
+				            array (
+				                'field' => $this->key . 'type_of_media',
+				                'operator' => '==',
+				                'value' => 'media_content',
+				            ),
+				        ),
+				    ),
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-media',
+				        'id' => '',
+				    ),
+					'default_value' => '',
+					'tabs' => 'all',
+					'toolbar' => 'full',
+					'media_upload' => 1,
+				)
+			);
+		}
+
+
+
 		/**
 		 *
 		 * Field: Media Video
@@ -863,6 +907,85 @@
 				    ),
 				    'placement' => 'top',
 				    'endpoint' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Collapsibles Tab
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Tab titled "Collapsibles"
+		 */
+		function tab_collapsibles() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Collapsibles',
+				    'name' => '',
+				    'type' => 'tab',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => '',
+				        'id' => '',
+				    ),
+				    'placement' => 'top',
+				    'endpoint' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Panel Type
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Select field to choose the semantic button type for the CTA
+		 */
+		function panel_type() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Type',
+				    'name' => 'panel_type',
+				    'type' => 'select',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => '',
+				        'id' => '',
+				    ),
+				    'choices' => array (
+				        'default' => 'Default',
+				        'primary' => 'Primary',
+				        'success' => 'Success',
+				        'info' => 'Info',
+				        'warning' => 'Warning',
+				        'danger' => 'Danger',
+				    ),
+				    'default_value' => array (
+				    ),
+				    'allow_null' => 0,
+				    'multiple' => 0,
+				    'ui' => 0,
+				    'ajax' => 0,
+				    'placeholder' => '',
+				    'disabled' => 0,
+				    'readonly' => 0,
 				)
 			);
 		}
