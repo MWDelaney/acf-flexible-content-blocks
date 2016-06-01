@@ -1,5 +1,5 @@
 
-<section class="<?php fcb_block_wrapper_classes(); ?>" style="<?php fcb_block_styles(); ?>">
+<section class="<?php fcb_block_wrapper_classes(); ?>" style="<?php fcb_block_wrapper_styles(); ?>">
     <div class="<?php fcb_block_classes(); ?>">
         <div class="block-inner">
 

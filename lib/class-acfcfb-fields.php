@@ -88,6 +88,7 @@
 		}
 
 
+
 		/**
 		 *
 		 * Field: Background Color
@@ -95,27 +96,169 @@
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
-		 * Background color selector field
+		 * Radio button field to choose background color
 		 */
 		function background_color() {
 			return( 
 				array (
 					'key' => $this->key . __FUNCTION__,
-				    'label' => 'Background Color',
-				    'name' => 'background_color',
-				    'type' => 'color_picker',
-				    'instructions' => '',
-				    'required' => 0,
-				    'conditional_logic' => 0,
-				    'wrapper' => array (
-				        'width' => '',
-				        'class' => '',
-				        'id' => '',
-				    ),
-				    'default_value' => '',
+					'label' => 'Background Color',
+					'name' => 'background_color',
+					'type' => 'radio',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'none' => 'None',
+						'theme' => 'Theme Color',
+						'choose' => 'Choose Color',
+					),
+					'other_choice' => 0,
+					'save_other_choice' => 0,
+					'default_value' => '',
+					'layout' => 'horizontal',
 				)
 			);
 		}
+
+
+
+		/**
+		 *
+		 * Field: Choose Color
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Background color selector field
+		 */
+		function choose_color() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+					'label' => 'Choose Color',
+					'name' => 'choose_color',
+					'type' => 'color_picker',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+				                'field' => $this->key . 'background_color',
+								'operator' => '==',
+								'value' => 'choose',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Theme Color
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Select field for choosing a theme background color
+		 */
+		function theme_color() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+					'label' => 'Theme Color',
+					'name' => 'theme_color',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+				                'field' => $this->key . 'background_color',
+								'operator' => '==',
+								'value' => 'theme',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'primary' => 'Primary',
+						'success' => 'Success',
+						'info' => 'Info',
+						'warning' => 'Warning',
+						'danger' => 'Danger',
+					),
+					'default_value' => array (
+					),
+					'allow_null' => 0,
+					'multiple' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'placeholder' => '',
+					'disabled' => 0,
+					'readonly' => 0,
+				)
+			);
+		}
+
+
+		/**
+		 *
+		 * Field: Background Color Placeholder
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Placeholder for when the "background color" is not selected
+		 */
+		function background_color_placeholder() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+					'label' => 'Background Color Placeholder',
+					'name' => '',
+					'type' => 'message',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (
+						array (
+							array (
+				                'field' => $this->key . 'background_color',
+								'operator' => '==',
+								'value' => 'none',
+							),
+						),
+					),
+					'wrapper' => array (
+						'width' => '50',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => 'No special background color selected.',
+					'new_lines' => 'wpautop',
+					'esc_html' => 0,
+				)
+			);
+		}
+
 
 
 		/**

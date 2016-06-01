@@ -41,6 +41,9 @@
 				            $FCBFields->tab_background(),
 				            $FCBFields->background_image(),
 				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
@@ -94,6 +97,9 @@
 				            $FCBFields->tab_background(),
 				            $FCBFields->background_image(),
 				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
@@ -114,7 +120,7 @@
 
 		/**
 		 *
-		 * Repeater: Tabs
+		 * Repeater: Collapsibles
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
@@ -148,6 +154,9 @@
 				            $FCBFields->tab_background(),
 				            $FCBFields->background_image(),
 				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
@@ -202,6 +211,9 @@
 				            $FCBFields->tab_background(),
 				            $FCBFields->background_image(),
 				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
@@ -260,6 +272,9 @@
 				            $FCBFields->tab_background(),
 				            $FCBFields->background_image(),
 				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
@@ -314,6 +329,9 @@
 				            $FCBFields->tab_background(),
 				            $FCBFields->background_image(),
 				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
@@ -368,6 +386,9 @@
 				            $FCBFields->tab_background(),
 				            $FCBFields->background_image(),
 				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
@@ -422,6 +443,9 @@
 				            $FCBFields->tab_background(),
 				            $FCBFields->background_image(),
 				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
@@ -476,6 +500,9 @@
 				            $FCBFields->tab_background(),
 				            $FCBFields->background_image(),
 				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),

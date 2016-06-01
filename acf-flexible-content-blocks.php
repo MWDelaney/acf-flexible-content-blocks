@@ -125,6 +125,9 @@ License: MIT
         $classes[]  = (get_sub_field('background_image')) ? 'block-with-bg-image' : '';
         $classes[]  = (get_sub_field('title')) ? '' : 'block-no-title';
         $classes[]  = 'block-' . $GLOBALS['fcb_rows_count'];
+        $classes[]  = (get_sub_field('background_color') == "theme") ? 'bg-' . get_sub_field('theme_color') : '';
+        $classes[]  = (get_sub_field('background_color') == "choose") ? 'bg-choose' : '';
+
         
         $classes = array_filter(array_map('trim', $classes));
         echo trim(implode(' ', apply_filters( 'fcb_set_block_classes', $classes )));
@@ -211,11 +214,11 @@ License: MIT
      *     }
      * @return string string of styles
      */
-    function fcb_block_styles() {
+    function fcb_block_wrapper_styles() {
         $image      = get_sub_field('background_image');
 
         $styles     = array();
-        $styles[]   = (get_sub_field('background_color')) ? 'background-color: ' . get_sub_field('background_color') . ';' : '';
+        $styles[]   = (get_sub_field('background_color') == "choose" ) ? 'background-color: ' . get_sub_field('choose_color') . ';' : '';
         $styles[]   = ($image) ? 'background-image: url(' . $image['url'] . ');' : '';
         echo trim(implode(' ', apply_filters( 'set_block_styles', $styles )));
     }

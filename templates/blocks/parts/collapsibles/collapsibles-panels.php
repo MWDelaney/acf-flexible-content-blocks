@@ -8,11 +8,11 @@
 
   <div class="panel panel-<?php the_sub_field('panel_type'); ?>">
     <div class="panel-heading" role="tab" id="heading<?=$i?>">
-      <h4 class="panel-title">
+      <h3 class="panel-title">
         <a role="button" data-toggle="collapse" data-parent="#accordion-<?php fcb_the_block_id($accordion_title); ?>" href="#collapse<?=$i?>" aria-expanded="true" aria-controls="collapse<?=$i?>">
           <?php the_sub_field('navigation_title'); ?>
         </a>
-      </h4>
+      </h3>
     </div>
     <div id="collapse<?=$i?>" class="panel-collapse collapse <?php fcb_is_active($i, 'in'); ?>" role="tabpanel" aria-labelledby="heading<?=$i?>" style="<?php fcb_block_styles(); ?>">
       <div class="<?php fcb_panel_classes(); ?>">

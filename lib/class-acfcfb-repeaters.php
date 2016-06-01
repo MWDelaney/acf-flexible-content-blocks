@@ -58,6 +58,9 @@
 				    	$FCBRepeaterFields->tab_background(),
 				    	$FCBRepeaterFields->background_image(),
 				    	$FCBRepeaterFields->background_color(),
+			            $FCBRepeaterFields->background_color_placeholder(),
+			            $FCBRepeaterFields->theme_color(),
+			            $FCBRepeaterFields->choose_color(),
 
 				    	// Tab Endpoint
 				    	$FCBRepeaterFields->tab_endpoint(),
@@ -125,6 +128,9 @@
 				    	$FCBRepeaterFields->tab_background(),
 				    	$FCBRepeaterFields->background_image(),
 				    	$FCBRepeaterFields->background_color(),
+			            $FCBRepeaterFields->background_color_placeholder(),
+			            $FCBRepeaterFields->theme_color(),
+			            $FCBRepeaterFields->choose_color(),
 
 				    	// Tab Endpoint
 				    	$FCBRepeaterFields->tab_endpoint(),
@@ -195,6 +201,9 @@
 				    	$FCBRepeaterFields->tab_background(),
 				    	$FCBRepeaterFields->background_image(),
 				    	$FCBRepeaterFields->background_color(),
+			            $FCBRepeaterFields->background_color_placeholder(),
+			            $FCBRepeaterFields->theme_color(),
+			            $FCBRepeaterFields->choose_color(),
 
 				    	// Tab Endpoint
 				    	$FCBRepeaterFields->tab_endpoint(),
