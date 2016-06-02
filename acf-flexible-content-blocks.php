@@ -159,6 +159,30 @@ License: MIT
 
 
 
+   /**
+     * Set up available color schemes for backgrounds and other color selection fields. These can be overridden or added to with a filter like the following:
+     *     add_filter( 'fcb_set_theme_colors', 'custom_theme_colors' );
+     *     function custom_theme_colors($colors) {
+     *         $colors['secondary']   =  'Secondary Color';
+     *         return $colors;
+     *     }
+     *         
+     * @return string string of classes
+     */
+    function fcb_theme_colors() {
+        $colors    = array();
+        $colors['default']  = 'Default';
+        $colors['primary']  = 'Primary';
+        $colors['success']  = 'Success';
+        $colors['info']     = 'Info';
+        $colors['warning']  = 'Warning';
+        $colors['danger']   = 'Danger';
+
+        return apply_filters( 'fcb_set_theme_colors', $colors );
+    }
+
+
+
     /**
      * Set classes for a tabs. These can be overridden or added to with a filter like the following:
      *     add_filter( 'fcb_set_tab_classes', 'custom_tab_classes' );
