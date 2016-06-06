@@ -199,7 +199,13 @@
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => fcb_theme_colors(),
+					'choices' => array (
+						'primary' => 'Primary',
+						'success' => 'Success',
+						'info' => 'Info',
+						'warning' => 'Warning',
+						'danger' => 'Danger',
+					),
 					'default_value' => array (
 					),
 					'allow_null' => 0,
@@ -1106,7 +1112,14 @@
 				        'class' => '',
 				        'id' => '',
 				    ),
-				    'choices' => fcb_theme_colors(),
+				    'choices' => array (
+				        'default' => 'Default',
+				        'primary' => 'Primary',
+				        'success' => 'Success',
+				        'info' => 'Info',
+				        'warning' => 'Warning',
+				        'danger' => 'Danger',
+				    ),
 				    'default_value' => array (
 				    ),
 				    'allow_null' => 0,

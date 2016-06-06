@@ -8,7 +8,7 @@
 
 <?php if( have_rows('slides') ): ?>
 
-    <div id="carousel-<?=$title_attr?>" class="carousel slide" data-ride="carousel">
+    <div id="carousel-<?=$title_attr?>" class="block-addon carousel slide" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <?php $i = 0; while($i < $count): ?>

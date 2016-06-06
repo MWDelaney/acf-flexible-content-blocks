@@ -1,7 +1,7 @@
 <?php cfb_template('blocks/parts/block-content', get_row_layout()); ?>
 
 <?php if( have_rows('linked_items') ): ?>
-	<div class="link-list-wrap">
+	<div class="block-addon link-list-wrap">
 		<ul class="link-list">
 		    <?php while ( have_rows('linked_items') ) : the_row(); ?>
 

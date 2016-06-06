@@ -3,7 +3,7 @@
 $posts = get_sub_field('featured_content');
 
 if( $posts ): ?>
-<div class="block-featured-content">
+<div class="block-addon block-featured-content">
     <ul class="featured-content-list">
     <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
         <?php setup_postdata($post); ?>

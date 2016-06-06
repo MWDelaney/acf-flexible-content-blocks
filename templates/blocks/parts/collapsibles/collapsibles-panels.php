@@ -3,7 +3,7 @@
   $accordion_title = get_sub_field('title'); 
 
 ?>
-<div class="panel-group" id="accordion-<?php fcb_the_block_id($accordion_title); ?>" role="tablist" aria-multiselectable="true">
+<div class="block-addon panel-group" id="accordion-<?php fcb_the_block_id($accordion_title); ?>" role="tablist" aria-multiselectable="true">
   <?php $i = 0; while ( have_rows('collapsibles') ) : the_row(); ?>
 
   <div class="panel panel-<?php the_sub_field('panel_type'); ?>">

@@ -1,4 +1,4 @@
-            <div class="tabs-wrapper">
+            <div class="block-addon tabs-wrapper">
                 <ul role="tablist" class="nav nav-tabs">
                 <?php $i = 0; while ( have_rows('tabs') ) : the_row(); ?>
                     <li role="presentation" class="<?php fcb_is_active($i); ?>">

@@ -63,16 +63,14 @@ License: MIT
      * @param  string $htag  The default header tag (defaults to h2)
      * @return string        The formatted title wrapped in the proper h-tag.
      */
-    function block_htag_level($title, $htag) {
-        return '<' . $htag . '>' . $title . '</' . $htag . '>';
+    function block_htag_level() {
+        return 'h2';
     }
 
-
-
-    /**
-     * Set a filter to change the block title output.
-     */
-    add_filter( 'fcb_set_block_htag', 'block_htag_level', 10, 2 );
+    function build_block_title($title) {
+        $htag = apply_filters( 'fcb_set_block_htag', null, null);
+        return '<' . $htag . ' id="' . sanitize_title_with_dashes($title) . '">' . $title . '</' . $htag . '>';
+    }
 
 
 
@@ -81,8 +79,15 @@ License: MIT
      * @return string The formatted title
      */
     function the_block_title() {
-        echo apply_filters( 'fcb_set_block_htag', get_sub_field('title'), 'h2' );
+        echo build_block_title( get_sub_field('title') );
     }
+
+
+
+    /**
+     * Set a filter to change the block title output.
+     */
+    add_filter( 'fcb_set_block_htag', 'block_htag_level', 10);
 
 
 
@@ -155,30 +160,6 @@ License: MIT
         
         $classes = array_filter(array_map('trim', $classes));
         echo trim(implode(' ', apply_filters( 'fcb_set_collapsible_classes', $classes )));
-    }
-
-
-
-   /**
-     * Set up available color schemes for backgrounds and other color selection fields. These can be overridden or added to with a filter like the following:
-     *     add_filter( 'fcb_set_theme_colors', 'custom_theme_colors' );
-     *     function custom_theme_colors($colors) {
-     *         $colors['secondary']   =  'Secondary Color';
-     *         return $colors;
-     *     }
-     *         
-     * @return string string of classes
-     */
-    function fcb_theme_colors() {
-        $colors    = array();
-        $colors['default']  = 'Default';
-        $colors['primary']  = 'Primary';
-        $colors['success']  = 'Success';
-        $colors['info']     = 'Info';
-        $colors['warning']  = 'Warning';
-        $colors['danger']   = 'Danger';
-
-        return apply_filters( 'fcb_set_theme_colors', $colors );
     }
 
 
@@ -321,8 +302,8 @@ License: MIT
             function acffcb_add_to_content( $content ) {
                 // Only edit the_content() if blocks have been added to this $post
                 if(have_rows('blocks')) {
-                    $content_before     = (!empty($content)) ? '<section class="block-wrap block-wp-content"><div class="block">' : '';
-                    $content_after      = (!empty($content)) ? '</div></section>' : '';
+                    $content_before     = (!empty($content)) ? '<section class="block-wrap block-wrap-wp-content"><div class="block block-wp-content"><div class="block-inner"><article class="block-the-content">' : '';
+                    $content_after      = (!empty($content)) ? '</article></div></div></section>' : '';
                     $content = $content_before . $content . $content_after . do_shortcode('[acffcb-blocks]');
                     return $content;
                 } else {
