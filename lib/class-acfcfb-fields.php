@@ -1230,18 +1230,18 @@
 
 		/**
 		 *
-		 * Field: Linked Items Tab
+		 * Field: Cards Tab
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
-		 * Tab titled "Linked Items"
+		 * Tab titled "Cards"
 		 */
-		function tab_linked_items() {
+		function tab_cards() {
 			return( 
 				array (
 					'key' => $this->key . __FUNCTION__,
-					'label' => 'Linked Items',
+					'label' => 'Cards',
 					'name' => '',
 					'type' => 'tab',
 					'instructions' => '',

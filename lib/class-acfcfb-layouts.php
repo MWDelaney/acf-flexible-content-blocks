@@ -352,22 +352,22 @@
 
 		/**
 		 *
-		 * Layout: Link List
+		 * Layout: Cards
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
 		 * List of links with titles and content
 		 */
-		function link_list() {
+		function cards() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
 	        return( 
 			    array ( 'order' => '100', 
 			    	'layout' => array (
 					    'key' => $this->key . __FUNCTION__,
-						'name' => 'link_list',
-						'label' => 'Link List',
+						'name' => 'cards',
+						'label' => 'Cards',
 						'display' => 'block',
 						'sub_fields' => array (
 				            // Titles
@@ -379,8 +379,8 @@
 				            $FCBFields->content(),
 
 				            // Linked Items repeater
-				            $FCBFields->tab_linked_items(),
-				            $FCBRepeaters->linked_items(),
+				            $FCBFields->tab_cards(),
+				            $FCBRepeaters->cards(),
 
 				            // Background tab
 				            $FCBFields->tab_background(),

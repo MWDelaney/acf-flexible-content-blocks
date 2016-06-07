@@ -14,20 +14,20 @@
 
 		/**
 		 *
-		 * Repeater: Linked Items
+		 * Repeater: Cards
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
 		 * Linked content items repeater
 		 */
-		function linked_items() {
+		function cards() {
 	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
 			return( 
 				array (
 				    'key' => $this->key . __FUNCTION__,
-					'label' => 'Linked Items',
-					'name' => 'linked_items',
+					'label' => 'Cards',
+					'name' => 'cards',
 					'type' => 'repeater',
 					'instructions' => '',
 					'required' => 0,
@@ -53,6 +53,14 @@
 				    	$FCBRepeaterFields->content_source(),
 				    	$FCBRepeaterFields->content_excerpt_placeholder(),
 				    	$FCBRepeaterFields->content_conditional(),
+
+				        // Media
+				        $FCBRepeaterFields->tab_media(),
+			            $FCBRepeaterFields->type_of_media(),
+			            $FCBRepeaterFields->media_placeholder(),
+			            $FCBRepeaterFields->media_image(),
+			            $FCBRepeaterFields->media_video(),
+			            $FCBRepeaterFields->media_content(),
 
 				    	// Background Tab 
 				    	$FCBRepeaterFields->tab_background(),
