@@ -250,18 +250,38 @@
 				    'collapsed' => 'field_573b50b3ebf4d',
 				    'min' => '',
 				    'max' => '',
-				    'layout' => 'row',
+				    'layout' => 'block',
 				    'button_label' => 'Add Slide',
 				    'sub_fields' => array (
 						// Title
 				        $FCBRepeaterFields->title(),
 
+				    	// Content Tab 
+				    	$FCBRepeaterFields->tab_content(),
+				    	$FCBRepeaterFields->content(),
+
+			            // Call to Action
+			            $FCBRepeaterFields->cta_checkbox(),
+			            $FCBRepeaterFields->cta_placeholder(),
+			            $FCBRepeaterFields->cta_text(),
+			            $FCBRepeaterFields->cta_link(),
+			            $FCBRepeaterFields->cta_type(),
+
 				        // Media
+				        $FCBRepeaterFields->tab_media(),
 			            $FCBRepeaterFields->type_of_media(),
 			            $FCBRepeaterFields->media_placeholder(),
 			            $FCBRepeaterFields->media_image(),
 			            $FCBRepeaterFields->media_video(),
 			            $FCBRepeaterFields->media_content(),
+
+				    	// Background Tab 
+				    	$FCBRepeaterFields->tab_background(),
+				    	$FCBRepeaterFields->background_image(),
+				    	$FCBRepeaterFields->background_color(),
+			            $FCBRepeaterFields->background_color_placeholder(),
+			            $FCBRepeaterFields->theme_color(),
+			            $FCBRepeaterFields->choose_color(),
 					)
 				)
 			);

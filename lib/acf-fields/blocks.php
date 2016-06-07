@@ -10,6 +10,11 @@
  * @version   1.0
  */
 
+add_action( 'admin_init', 'fcb_create_blocks' );
+if(!is_admin()) {
+    add_action( 'wp_loaded', 'fcb_create_blocks' );
+}
+function fcb_create_blocks() {
 if( function_exists('acf_add_local_field_group') ):
 
     /**
@@ -142,3 +147,4 @@ if( function_exists('acf_add_local_field_group') ):
     acf_add_local_field_group($args);
 
 endif;
+}
