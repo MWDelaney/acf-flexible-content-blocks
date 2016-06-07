@@ -24,11 +24,14 @@
             <?php $active = ($i < 1) ? "active" : ""; ?>
             <div class="item <?=$active?>" style="<?php fcb_block_wrapper_styles(); ?>">
 
-                <?php cfb_template('blocks/parts/block-media', get_row_layout()); ?>
-                <?php cfb_template('blocks/parts/block-content', get_row_layout()); ?>
-
-                <div class="carousel-caption">
-                    <?php the_sub_field('title'); ?>
+                <div class="carousel-content">
+                    <div class="carousel-content-inner">
+                        <?php cfb_template('blocks/parts/block-media', get_row_layout()); ?>
+                        <?php cfb_template('blocks/parts/block-content', get_row_layout()); ?>
+                        <div class="carousel-caption">
+                            <?php the_sub_field('title'); ?>
+                        </div>
+                    </div>
                 </div>
 
 
