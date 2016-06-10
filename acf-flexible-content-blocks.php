@@ -18,7 +18,7 @@ License: MIT
 
 /**
  * Require classes
- *b
+ *
  * Require classes to load template files from site theme with fallback to plugin directory
  */
 
