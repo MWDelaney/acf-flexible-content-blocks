@@ -18,7 +18,7 @@ License: MIT
 
 /**
  * Require classes
- *
+ *b
  * Require classes to load template files from site theme with fallback to plugin directory
  */
 
@@ -271,7 +271,9 @@ License: MIT
 
             function acffcb_blocks() { 
                 ob_start();
+                do_action('before_blocks');
                 cfb_template( 'content', 'blocks' );
+                do_action('after_blocks');
                 return ob_get_clean();
             }
 

@@ -1,5 +1,5 @@
 <?php if(get_sub_field('display_call_to_action')): ?>
-
+    <aside>
     <?php
 
         // Set the button classes
@@ -15,5 +15,5 @@
     ?>
 
     <a class="<?=$classes?>" href="<?=$link?>"><?=$text?></a>
-
+    </aside>
 <?php endif; ?>
