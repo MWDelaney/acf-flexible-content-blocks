@@ -91,6 +91,58 @@
 
 		/**
 		 *
+		 * Field: Column Width
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Select field for column width, 1-12
+		 */
+		function column_width() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+					'label' => 'Column Width',
+					'name' => 'column_width',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array (),
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array (
+						'1' => '1',
+						'2' => '2',
+						'3' => '3',
+						'4' => '4',
+						'5' => '5',
+						'6' => '6',
+						'7' => '7',
+						'8' => '8',
+						'9' => '9',
+						'10' => '10',
+						'11' => '11',
+						'12' => '12',
+					),
+					'default_value' => '6',
+					'allow_null' => 0,
+					'multiple' => 0,
+					'ui' => 0,
+					'ajax' => 0,
+					'placeholder' => '',
+					'disabled' => 0,
+					'readonly' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
 		 * Field: Background Color
 		 *
 		 * @author Michael W. Delaney
@@ -918,7 +970,7 @@
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
-		 * WYSIWYG field for media selector, intended for shortcode output
+		 * WYSIWYG field for media selector
 		 */
 		function media_content() {
 			return( 
@@ -927,7 +979,7 @@
 				    'label' => 'Content',
 				    'name' => 'media_content',
 					'type' => 'wysiwyg',
-				    'instructions' => 'Intended for shortcode output',
+				    'instructions' => '',
 				    'required' => 0,
 				    'conditional_logic' => array (
 				        array (

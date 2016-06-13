@@ -1,6 +1,6 @@
 <?php
     class FCBLayouts {
-
+    	public $key = '';
 		function __construct() {
 			$this->key 		= 'acffcb-';
 			$this->key 		.= 'layout-';
@@ -59,6 +59,42 @@
 				)
 			);
 		}
+
+
+
+		/**
+		 *
+		 * Repeater: Content
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Basic content block
+		 */
+		function columns() {
+	        $FCBFields = new FCBFields(__FUNCTION__);
+	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
+
+			return( 
+			    array ( 'order' => '10', 
+					'layout' => array (
+						'key' => $this->key . __FUNCTION__,
+				        'name' => 'columns',
+				        'label' => 'Columns',
+				        'display' => 'block',
+				        'sub_fields' => array (
+				            // Titles
+				            $FCBFields->title(),
+				            $FCBFields->navigation_title(),
+
+				            $FCBRepeaters->columns(),
+
+				        )
+				    )
+				)
+			);
+		}
+
 
 
 		/**

@@ -41,7 +41,7 @@
 					'min' => '',
 					'max' => '',
 					'layout' => 'block',
-					'button_label' => 'Add Item',
+					'button_label' => 'Add Card',
 					'sub_fields' => array (
 
 						// Title
@@ -76,6 +76,65 @@
 				    	// Link
 				    	$FCBRepeaterFields->link_text(),
 				    	$FCBRepeaterFields->link(),
+
+					)
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Repeater: Columns
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Columns repeater
+		 */
+		function columns() {
+	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+					'label' => 'Columns',
+					'name' => 'columns',
+					'type' => 'repeater',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => 'acf-media',
+						'id' => '',
+					),
+					'collapsed' => 'field_573e0e481c7f7',
+					'min' => '',
+					'max' => '',
+					'layout' => 'block',
+					'button_label' => 'Add Column',
+					'sub_fields' => array (
+
+				        // Media
+				        $FCBRepeaterFields->tab_content(),
+			            $FCBRepeaterFields->column_width(),
+			            $FCBRepeaterFields->type_of_media(),
+			            $FCBRepeaterFields->media_placeholder(),
+			            $FCBRepeaterFields->media_image(),
+			            $FCBRepeaterFields->media_video(),
+			            $FCBRepeaterFields->media_content(),
+
+				    	// Background Tab 
+				    	$FCBRepeaterFields->tab_background(),
+				    	$FCBRepeaterFields->background_image(),
+				    	$FCBRepeaterFields->background_color(),
+			            $FCBRepeaterFields->background_color_placeholder(),
+			            $FCBRepeaterFields->theme_color(),
+			            $FCBRepeaterFields->choose_color(),
+
+				    	// Tab Endpoint
+				    	$FCBRepeaterFields->tab_endpoint(),
 
 					)
 				)
