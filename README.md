@@ -68,6 +68,22 @@ function custom_htag_level($title, $htag) {
 }
 ````
 
+### Filter: fcb_set_block_wrapper_classes
+Set the classes applied to content block wrappers. This filter runs each time a block is rendered, so classes can be conditionally applied per-block. 
+
+````{r, engine='php', count_lines}
+/**
+* Give the first block an additional class of 'block-first'
+*/
+add_filter( 'fcb_set_block_wrapper_classes', 'custom_block_wrapper_classes' );
+function custom_block_wrapper_classes($classes) {
+    if($GLOBALS['fcb_rows_count'] == 0) {
+        $classes[]   = 'block-wrapper-first';
+    }
+    return $classes;
+}
+````
+
 ### Filter: fcb_set_block_classes
 Set the classes applied to content blocks. This filter runs each time a block is rendered, so classes can be conditionally applied per-block. 
 

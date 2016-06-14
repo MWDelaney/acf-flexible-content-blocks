@@ -135,7 +135,7 @@ License: MIT
 
         
         $classes = array_filter(array_map('trim', $classes));
-        echo trim(implode(' ', apply_filters( 'fcb_set_block_classes', $classes )));
+        echo trim(implode(' ', apply_filters( 'fcb_set_block_wrapper_classes', $classes )));
     }
 
 
@@ -248,6 +248,9 @@ License: MIT
             // Append shortcode to the_content
             add_filter( 'the_content', array( $this, 'acffcb_add_to_content' ) );
 
+            // Enable layouts
+            add_filter( 'fcb_add_layouts', array( $this, 'add_layouts' ) );
+
             // Create the ACF fields
             add_action( 'acf/init', array( $this, 'fcb_create_blocks') );
 
@@ -287,18 +290,8 @@ License: MIT
           }
 
 
-        function fcb_create_blocks($class) {
-            if(!$class) {
-                $class = 'FCBLayouts';
-            }
+        function fcb_create_blocks() {
             if( function_exists('acf_add_local_field_group') ):
-
-                /**
-                 * Variable holding the ACF fields definition to be automatically created
-                 */
-
-
-
 
                 /**
                 * Check for declared post types to attach fields to
@@ -345,35 +338,14 @@ License: MIT
                 * @since 1.0
                 *
                 * Declare theme support for specific layouts. Default is to include all layouts: 
-                *   add_theme_support( 'flexible-content-blocks', array( 'content', 'content-with-media' ) );
+                *   add_theme_support( 'flexible-content-blocks', array( 'content', 'content_with_media' ) );
                 */
-                    
-                //Check if theme support is explicitly defined. If so, only enable layouts declared in theme support.
-                if( current_theme_supports( 'flexible-content-blocks' ) ) {
-                    $layouts_supported = get_theme_support( 'flexible-content-blocks' );
-                    $layouts_enabled = $layouts_supported[0];
-                } else {
-                    // If theme support is not explicitly defined, enable all layouts as a fallback.
-                    $layouts_enabled = array();
-                    foreach(get_class_methods($class) as $layout_name) {
-                        if($layout_name != '__construct') {
-                            $layouts_enabled[] = $layout_name;
-                        }
-                    }
-                }
-
-                // Enable each layout
-                $FCBLayouts     = new $class();
                 $layouts_array  = array();
-                foreach ($layouts_enabled as $layout) {
-                    $layouts_array[]    = $FCBLayouts->$layout();
-                }
-                // Sort layouts by the 'order' element
-                usort($layouts_array, function ($a, $b) {
-                    if ($a['order'] == $b['order']) return 0;
-                    return $a['order'] < $b['order'] ? -1 : 1;
-                });
+                $layouts_array = apply_filters('fcb_add_layouts', $layouts_array);
+                $layouts_array = $this->layout_sort($layouts_array);
+                $layouts_array = $this->filter_layouts($layouts_array);
                 // Insert each layouts into the $args array
+
                 foreach ( $layouts_array as $layout) {
                     $this->args['fields'][0]['layouts'][] = $layout['layout'];
                 }
@@ -392,6 +364,67 @@ License: MIT
 
             endif;
         }
+
+
+        /**
+         * Function called from filter to execute adding layouts to the passed array
+         * @param array $layouts_array the current layouts array
+         */
+        function add_layouts($layouts_array) {
+            return $this->insert_the_layouts('FCBLayouts', $layouts_array);
+        }
+
+
+
+        /**
+         * Insert all functions from the passed $class into $layouts_array as layouts
+         * @param  string $class         class to search for functions
+         * @param  array $layouts_array  the current layouts array
+         * @return array                 the layouts array with all class functions inserted into it
+         */
+        function insert_the_layouts($class, $layouts_array) {
+            foreach(get_class_methods($class) as $layout_name) {
+                $layouts     = new $class();
+                if($layout_name != '__construct') {
+                    $layouts_array[] = $layouts->$layout_name();
+                }
+            }
+            return $layouts_array;
+        }
+
+
+
+        /**
+         * Check for theme support and extending classes and enable all appropriate layouts
+         */
+        function filter_layouts($layouts_array) {
+
+            //Check if theme support is explicitly defined. If so, only enable layouts declared in theme support.
+            if( current_theme_supports( 'flexible-content-blocks' ) ) {
+                $layouts_supported = get_theme_support( 'flexible-content-blocks' );
+                foreach($layouts_array as $subKey => $subArray){
+                    if(!in_array($subArray['layout']['name'], $layouts_supported[0])){
+                        unset($layouts_array[$subKey]);
+                    }
+                }
+            }
+            return $layouts_array;
+        }
+
+
+
+        /**
+         * Sort the layouts array
+         */
+        function layout_sort($array) {
+            // Sort layouts by the 'order' element
+            usort($array, function ($a, $b) {
+                if ($a['order'] == $b['order']) return 0;
+                return $a['order'] < $b['order'] ? -1 : 1;
+            });
+            return $array;
+        }
+
 
 
         /**
