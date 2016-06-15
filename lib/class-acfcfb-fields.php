@@ -251,13 +251,7 @@
 						'class' => '',
 						'id' => '',
 					),
-					'choices' => array (
-						'primary' => 'Primary',
-						'success' => 'Success',
-						'info' => 'Info',
-						'warning' => 'Warning',
-						'danger' => 'Danger',
-					),
+					'choices' => fcb_bg_colors(),
 					'default_value' => array (
 					),
 					'allow_null' => 0,
@@ -696,15 +690,7 @@
 				        'class' => 'acf-cta',
 				        'id' => '',
 				    ),
-				    'choices' => array (
-				        'primary' => 'Primary',
-				        'default' => 'Default',
-				        'success' => 'Success',
-				        'info' => 'Info',
-				        'warning' => 'Warning',
-				        'danger' => 'Danger',
-				        'link' => 'Link Only',
-				    ),
+				    'choices' => fcb_btn_colors(),
 				    'default_value' => array (
 				    ),
 				    'allow_null' => 0,

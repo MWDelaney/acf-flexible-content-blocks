@@ -75,6 +75,52 @@ License: MIT
 
 
     /**
+     * Available background colors by semantic name. These can be overridden or added to with a filter like the following:
+     *     add_filter( 'fcb_bg_colors', 'custom_bg_colors');
+     *     function custom_bg_colors($array) {
+     *         $array['secondary'] = 'Secondary';
+     *         return $array;
+     *     }
+     */
+    function fcb_bg_colors() {
+        $colors = array (
+            'primary'   => 'Primary',
+            'success'   => 'Success',
+            'info'      => 'Info',
+            'warning'   => 'Warning',
+            'danger'    => 'Danger',
+        );
+        $colors = apply_filters('fcb_bg_colors', $colors);
+        return $colors;
+    }
+
+
+
+    /**
+     * Available button colors by semantic name. These can be overridden or added to with a filter like the following:
+     *     add_filter( 'fcb_btn_colors', 'custom_btn_colors');
+     *     function custom_btn_colors($array) {
+     *         $array['secondary'] = 'Secondary';
+     *         return $array;
+     *     }
+     */
+    function fcb_btn_colors() {
+        $colors = array (
+            'primary'   => 'Primary',
+            'default'   => 'Default',
+            'success'   => 'Success',
+            'info'      => 'Info',
+            'warning'   => 'Warning',
+            'danger'    => 'Danger',
+            'link'      => 'Link Only',
+        );
+        $colors = apply_filters('fcb_btn_colors', $colors);
+        return $colors;
+    }
+
+
+
+    /**
      * Echo the block title with applied filters
      * @return string The formatted title
      */
@@ -137,8 +183,6 @@ License: MIT
         $classes = array_filter(array_map('trim', $classes));
         echo trim(implode(' ', apply_filters( 'fcb_set_block_wrapper_classes', $classes )));
     }
-
-
 
 
     /**
