@@ -298,6 +298,11 @@ License: MIT
             // Create the ACF fields
             add_action( 'acf/init', array( $this, 'fcb_create_blocks') );
 
+            // Armor the original WordPress content
+            add_filter('fcb_content_before', 'acfcfb_content_before');
+            add_filter('fcb_content_after', 'acfcfb_content_after');
+
+
             $this->args = array (
                 'key' => 'cfb_blocks',
                 'title' => 'Content Blocks',
@@ -506,8 +511,13 @@ License: MIT
             function acffcb_add_to_content( $content ) {
                 // Only edit the_content() if blocks have been added to this $post
                 if(have_rows('blocks')) {
-                    $content_before     = (!empty($content)) ? '<section class="block-wrap block-wrap-wp-content"><div class="block block-wp-content"><div class="block-inner"><article class="block-the-content">' : '';
+                    $content_before     = '';
+                    $content_after      = '';
+                    $content_before     = (!empty($content)) ? apply_filters('fcb_content_before', $content_before) : '';
+                    $content_after      = (!empty($content)) ? apply_filters('fcb_content_after', $content_after) : '';
                     $content_after      = (!empty($content)) ? '</article></div></div></section>' : '';
+                    $content_before     = apply_filters('fcb_content_before', $content_before);
+                    $content_after      = apply_filters('fcb_content_after', $content_after);
                     $content = $content_before . $content . $content_after . do_shortcode('[acffcb-blocks]');
                     return $content;
                 } else {
@@ -516,6 +526,14 @@ License: MIT
                 }
             }
 
+        }
+
+        function acfcfb_content_before($content_before) {
+            return '<section class="block-wrap block-wrap-wp-content"><div class="block block-wp-content"><div class="block-inner"><article class="block-the-content">' . $content_before;
+        }
+
+        function acfcfb_content_after($content_after) {
+            return $content_after . '</article></div></div></section>';
         }
 
 
