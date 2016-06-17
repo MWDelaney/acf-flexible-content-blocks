@@ -524,7 +524,6 @@ License: MIT
                     }
                 }
             }
-
         }
 
         function acfcfb_content_before($content_before) {
