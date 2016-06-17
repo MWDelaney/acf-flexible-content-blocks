@@ -10,7 +10,7 @@
 
 		/**
 		 *
-		 * Repeater: Content
+		 * Layout: Content
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
@@ -64,47 +64,12 @@
 
 		/**
 		 *
-		 * Repeater: Content
+		 * Layout: Tabs
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
-		 * Basic content block
-		 */
-		function columns() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-
-			return( 
-			    array ( 'order' => '10', 
-					'layout' => array (
-						'key' => $this->key . __FUNCTION__,
-				        'name' => 'columns',
-				        'label' => 'Columns',
-				        'display' => 'block',
-				        'sub_fields' => array (
-				            // Titles
-				            $FCBFields->title(),
-				            $FCBFields->navigation_title(),
-
-				            $FCBRepeaters->columns(),
-
-				        )
-				    )
-				)
-			);
-		}
-
-
-
-		/**
-		 *
-		 * Repeater: Tabs
-		 *
-		 * @author Michael W. Delaney
-		 * @since 1.0
-		 * 
-		 * Repeater field for tabs
+		 * Layout for tabbed content
 		 */
 		function tabs() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
@@ -156,12 +121,70 @@
 
 		/**
 		 *
-		 * Repeater: Collapsibles
+		 * Layout: Gallery
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
-		 * Repeater field for tabs
+		 * Image gallery layout
+		 */
+		function gallery() {
+	        $FCBFields = new FCBFields(__FUNCTION__);
+	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
+
+			return( 
+			    array ( 'order' => '70', 
+					'layout' => array (
+						'key' => $this->key . __FUNCTION__,
+				        'name' => 'gallery',
+				        'label' => 'Gallery',
+				        'display' => 'block',
+				        'sub_fields' => array (
+				            // Titles
+				            $FCBFields->title(),
+				            $FCBFields->navigation_title(),
+
+				            // Content tab
+				            $FCBFields->tab_content(),
+				            $FCBFields->content(),
+
+				            // Gallery tab
+				            $FCBFields->tab_gallery(),
+				            $FCBFields->gallery(),
+
+				            // Background tab
+				            $FCBFields->tab_background(),
+				            $FCBFields->background_image(),
+				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
+
+				            // Tab Endpoint
+				            $FCBFields->tab_endpoint(),
+
+				            // Call to Action
+				            $FCBFields->cta_checkbox(),
+				            $FCBFields->cta_placeholder(),
+				            $FCBFields->cta_text(),
+				            $FCBFields->cta_link(),
+				            $FCBFields->cta_type(),
+				        )
+				    )
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Layout: Collapsibles
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Layout for collapsible or "accordion" content
 		 */
 		function collapsibles() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
@@ -213,12 +236,12 @@
 
 		/**
 		 *
-		 * Repeater: Slides
+		 * Layout: Slides
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
-		 * Repeater field for slides
+		 * Layout for a carousel of images or other media content
 		 */
 		function slides() {
 	        $FCBFields = new FCBFields(__FUNCTION__);

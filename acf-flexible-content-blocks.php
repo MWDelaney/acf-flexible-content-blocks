@@ -509,17 +509,19 @@ License: MIT
          * @return string
          */
             function acffcb_add_to_content( $content ) {
-                // Only edit the_content() if blocks have been added to this $post
-                if(have_rows('blocks')) {
-                    $content_before     = '';
-                    $content_after      = '';
-                    $content_before     = (!empty($content)) ? apply_filters('fcb_content_before', $content_before) : '';
-                    $content_after      = (!empty($content)) ? apply_filters('fcb_content_after', $content_after) : '';
-                    $content = $content_before . $content . $content_after . do_shortcode('[acffcb-blocks]');
-                    return $content;
-                } else {
-                    // If no blocks are present, return the content unmolested
-                    return $content;
+                if(in_the_loop ()) {
+                    // Only edit the_content() if blocks have been added to this $post
+                    if(have_rows('blocks')) {
+                        $content_before     = '';
+                        $content_after      = '';
+                        $content_before     = (!empty($content)) ? apply_filters('fcb_content_before', $content_before) : '';
+                        $content_after      = (!empty($content)) ? apply_filters('fcb_content_after', $content_after) : '';
+                        $content = $content_before . $content . $content_after . do_shortcode('[acffcb-blocks]');
+                        return $content;
+                    } else {
+                        // If no blocks are present, return the content unmolested
+                        return $content;
+                    }
                 }
             }
 

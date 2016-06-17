@@ -1096,30 +1096,39 @@
 
 		/**
 		 *
-		 * Field: Collapsibles Tab
+		 * Field: Panel Type
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
-		 * Tab titled "Collapsibles"
+		 * Select field to choose the semantic button type for the CTA
 		 */
-		function tab_collapsibles() {
+		function gallery() {
 			return( 
 				array (
 					'key' => $this->key . __FUNCTION__,
-				    'label' => 'Collapsibles',
-				    'name' => '',
-				    'type' => 'tab',
-				    'instructions' => '',
-				    'required' => 0,
-				    'conditional_logic' => 0,
-				    'wrapper' => array (
-				        'width' => '',
-				        'class' => '',
-				        'id' => '',
-				    ),
-				    'placement' => 'top',
-				    'endpoint' => 0,
+					'label' => 'Gallery',
+					'name' => 'gallery',
+					'type' => 'gallery',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'min' => '',
+					'max' => '',
+					'preview_size' => 'medium',
+					'library' => 'all',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
 				)
 			);
 		}
@@ -1167,6 +1176,38 @@
 				    'placeholder' => '',
 				    'disabled' => 0,
 				    'readonly' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Collapsibles Tab
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Tab titled "Collapsibles"
+		 */
+		function tab_collapsibles() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Collapsibles',
+				    'name' => '',
+				    'type' => 'tab',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => '',
+				        'id' => '',
+				    ),
+				    'placement' => 'top',
+				    'endpoint' => 0,
 				)
 			);
 		}
@@ -1358,5 +1399,36 @@
 			);
 		}
 
+
+
+		/**
+		 *
+		 * Field: Gallery Tab
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Tab titled "Gallery"
+		 */
+		function tab_gallery() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Gallery',
+				    'name' => '',
+				    'type' => 'tab',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => '',
+				        'id' => '',
+				    ),
+				    'placement' => 'top',
+				    'endpoint' => 0,
+				)
+			);
+		}
 
     }
