@@ -304,7 +304,7 @@
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
 	        return( 
-			    array ( 'order' => '20', 
+			    apply_filters('fcb_content_with_media', array ( 'order' => '20', 
 			    	'layout' => array (
 					    'key' => $this->key . __FUNCTION__,
 				        'name' => 'content_with_media',
@@ -326,6 +326,7 @@
 				            $FCBFields->media_image(),
 				            $FCBFields->media_video(),
 				            $FCBFields->media_content(),
+				            $FCBFields->media_code(),
 
 				            // Background tab
 				            $FCBFields->tab_background(),
@@ -347,7 +348,7 @@
 				        )
 				    )
 				)
-			);
+			) );
 		}
 
 

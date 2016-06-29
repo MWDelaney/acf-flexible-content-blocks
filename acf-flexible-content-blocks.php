@@ -518,7 +518,7 @@ License: MIT
                         $content_after      = '';
                         $content_before     = (!empty($content)) ? apply_filters('fcb_content_before', $content_before) : '';
                         $content_after      = (!empty($content)) ? apply_filters('fcb_content_after', $content_after) : '';
-                        $content = $content_before . $content . $content_after . do_shortcode('[acffcb-blocks]');
+                        $content = $content_before . $content . $content_after . '[acffcb-blocks]';
                         return $content;
                     } else {
                         // If no blocks are present, return the content unmolested

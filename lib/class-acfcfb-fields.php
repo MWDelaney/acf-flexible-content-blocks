@@ -1018,10 +1018,12 @@
 				        'id' => '',
 				    ),
 				    'choices' => array (
-				        'none' => 'None',
-				        'image' => 'Image',
-				        'video' => 'Video',
+				        'none' 			=> 'None',
+				        'image' 		=> 'Image',
+				        'video' 		=> 'Video',
 				        'media_content' => 'Content',
+				        'code' 			=> 'Code',
+
 				    ),
 				    'other_choice' => 0,
 				    'save_other_choice' => 0,
@@ -1120,6 +1122,45 @@
 			);
 		}
 
+
+
+		/**
+		 *
+		 * Field: Media Code
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Code field for media selector
+		 */
+		function media_code() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Code',
+				    'name' => 'code',
+				    'type' => 'textarea',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => array (
+				        array (
+				            array (
+				                'field' => $this->key . 'type_of_media',
+				                'operator' => '==',
+				                'value' => 'code',
+				            ),
+				        ),
+				    ),
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-media',
+				        'id' => '',
+				    ),
+					'default_value' => '',
+					'placeholder' => '',
+				)
+			);
+		}
 
 
 		/**
