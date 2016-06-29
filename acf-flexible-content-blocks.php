@@ -272,6 +272,8 @@ License: MIT
         echo trim(implode(' ', apply_filters( 'set_block_styles', $styles )));
     }
 
+
+
 /**
  * Main Flexible Content Blocks class
  */

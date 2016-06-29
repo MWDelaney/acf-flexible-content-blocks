@@ -577,4 +577,65 @@
 				)
 			);
 		}
+
+
+		/**
+		 *
+		 * Layout: Post List
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * List of posts
+		 */
+		function post_list() {
+	        $FCBFields = new FCBFields(__FUNCTION__);
+	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
+
+			return( 
+			    array ( 'order' => '500', 
+					'layout' => array (
+						'key' => $this->key . __FUNCTION__,
+				        'name' => 'post_list',
+				        'label' => 'Post List',
+				        'display' => 'block',
+				        'sub_fields' => array (
+				            // Titles
+				            $FCBFields->title(),
+				            $FCBFields->navigation_title(),
+
+				            // Content tab
+				            $FCBFields->tab_content(),
+				            $FCBFields->content(),
+
+				            // Post List Tab
+				            $FCBFields->tab_post_list(),
+							$FCBFields->posts_per_page(),
+							$FCBFields->show_author(),
+							$FCBFields->show_date(),
+							$FCBFields->show_featured_image(),
+							$FCBFields->category(),
+
+				            // Background tab
+				            $FCBFields->tab_background(),
+				            $FCBFields->background_image(),
+				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
+
+				            // Tab Endpoint
+				            $FCBFields->tab_endpoint(),
+
+				            // Call to Action
+				            $FCBFields->cta_checkbox(),
+				            $FCBFields->cta_placeholder(),
+				            $FCBFields->cta_text(),
+				            $FCBFields->cta_link(),
+				            $FCBFields->cta_type(),
+				        )
+				    )
+				)
+			);
+		}
 }

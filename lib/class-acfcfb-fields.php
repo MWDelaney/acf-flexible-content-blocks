@@ -91,6 +91,179 @@
 
 		/**
 		 *
+		 * Field: Number of Posts to Show
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Number field for posts to show per page
+		 */
+		function posts_per_page() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Number to Show',
+				    'name' => 'posts_per_page',
+				    'type' => 'number',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '20',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'min' => '',
+					'max' => '',
+					'step' => '',
+					'readonly' => 0,
+					'disabled' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Category
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Taxonomy field to select category
+		 */
+		function category() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Category',
+				    'name' => 'category',
+				    'type' => 'taxonomy',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'taxonomy' => 'category',
+					'field_type' => 'checkbox',
+					'allow_null' => 0,
+					'add_term' => 0,
+					'save_terms' => 0,
+					'load_terms' => 0,
+					'return_format' => 'id',
+					'multiple' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Show Author?
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * True/False field for showing author in post list
+		 */
+		function show_author() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Show Author?',
+				    'name' => 'show_author',
+				    'type' => 'true_false',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '20',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'default_value' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Show Featured Image?
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * True/False field for showing featured image in post list
+		 */
+		function show_featured_image() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Show Featured Image?',
+				    'name' => 'show_featured_image',
+				    'type' => 'true_false',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '20',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'default_value' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Show Date?
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * True/False field for showing date in post list
+		 */
+		function show_date() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Show Date?',
+				    'name' => 'show_date',
+				    'type' => 'true_false',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+					'wrapper' => array (
+						'width' => '20',
+						'class' => '',
+						'id' => '',
+					),
+					'message' => '',
+					'default_value' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
 		 * Field: Column Width
 		 *
 		 * @author Michael W. Delaney
@@ -1076,6 +1249,38 @@
 				array (
 					'key' => $this->key . __FUNCTION__,
 				    'label' => 'Tabs',
+				    'name' => '',
+				    'type' => 'tab',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => '',
+				        'id' => '',
+				    ),
+				    'placement' => 'top',
+				    'endpoint' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Post List Tab
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Tab titled "Post List"
+		 */
+		function tab_post_list() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Post List',
 				    'name' => '',
 				    'type' => 'tab',
 				    'instructions' => '',
