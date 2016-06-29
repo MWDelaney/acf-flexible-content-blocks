@@ -498,6 +498,7 @@
 				            $FCBFields->media_image(),
 				            $FCBFields->media_video(),
 				            $FCBFields->media_content(),
+				            $FCBFields->media_code(),				            
 
 				            // Background tab
 				            $FCBFields->tab_background(),
