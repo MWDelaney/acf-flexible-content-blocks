@@ -304,7 +304,7 @@
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
 	        return( 
-			    apply_filters('fcb_content_with_media', array ( 'order' => '20', 
+			    array ( 'order' => '20', 
 			    	'layout' => array (
 					    'key' => $this->key . __FUNCTION__,
 				        'name' => 'content_with_media',
@@ -348,7 +348,7 @@
 				        )
 				    )
 				)
-			) );
+			);
 		}
 
 
