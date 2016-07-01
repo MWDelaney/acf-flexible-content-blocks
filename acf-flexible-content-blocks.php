@@ -176,8 +176,8 @@ License: MIT
         $classes[]  = (get_sub_field('background_image')) ? 'block-with-bg-image' : '';
         $classes[]  = (get_sub_field('title')) ? '' : 'block-no-title';
         $classes[]  = 'block-' . $GLOBALS['fcb_rows_count'];
-        $classes[]  = (get_sub_field('background_color') == "theme") ? 'bg-' . get_sub_field('theme_color') : '';
-        $classes[]  = (get_sub_field('background_color') == "choose") ? 'bg-choose' : '';
+        $classes[]  = (get_sub_field('background_color') == "theme") ? 'block-bg bg-' . get_sub_field('theme_color') : '';
+        $classes[]  = (get_sub_field('background_color') == "choose") ? 'block-bg bg-choose' : '';
 
         
         $classes = array_filter(array_map('trim', $classes));
