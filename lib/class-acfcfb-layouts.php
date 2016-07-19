@@ -47,6 +47,10 @@
 
 				            // Dev Mode tab
 				            $FCBFields->tab_dev(),
+				            $FCBFields->dev_block_message(),
+				            $FCBRepeaters->block_data_attributes(),
+				            $FCBFields->block_classes(),
+
 				            $FCBFields->dev_content_message(),
 				            $FCBRepeaters->content_data_attributes(),
 				            $FCBFields->content_classes(),
