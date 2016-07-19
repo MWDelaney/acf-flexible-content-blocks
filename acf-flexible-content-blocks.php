@@ -130,7 +130,6 @@ License: MIT
     }
 
 
-
     /**
      * Set a filter to change the block title output.
      */
@@ -177,9 +176,9 @@ License: MIT
         $classes[]  = (get_sub_field('background_image')) ? 'block-with-bg-image' : '';
         $classes[]  = (get_sub_field('title')) ? '' : 'block-no-title';
         $classes[]  = 'block-' . $GLOBALS['fcb_rows_count'];
-        $classes[]  = (get_sub_field('background_color') == "theme") ? 'bg-' . get_sub_field('theme_color') : '';
-        $classes[]  = (get_sub_field('background_color') == "choose") ? 'bg-choose' : '';
-
+        $classes[]  = (get_sub_field('background_color') == "theme") ? 'block-with-bg-color bg-' . get_sub_field('theme_color') : '';
+        $classes[]  = (get_sub_field('background_color') == "choose") ? 'block-with-bg-color bg-choose' : '';
+        $classes[]  = (get_sub_field('block_classes'));
         
         $classes = array_filter(array_map('trim', $classes));
         echo trim(implode(' ', apply_filters( 'fcb_set_block_wrapper_classes', $classes )));
@@ -227,7 +226,51 @@ License: MIT
         $classes[]  = (get_sub_field('type_of_media') != 'none' ) ? 'tab-with-media' : '';
         
         $classes = array_filter(array_map('trim', $classes));
-        echo trim(implode(' ', apply_filters( 'fcb_set_collapsible_classes', $classes )));
+        echo trim(implode(' ', apply_filters( 'fcb_set_tab_classes', $classes )));
+    }
+
+
+    /**
+     * Set classes for a content. These can be overridden or added to with a filter like the following:
+     *     add_filter( 'fcb_set_content_classes', 'custom_content_classes' );
+     *     function custom_content_classes($classes) {
+     *         if(is_page_template('template-landing-page.php') {
+     *             $classes[]   = 'on-landing-page';
+     *         }
+     *         return $classes;
+     *     }
+     *         
+     * @return string string of classes
+     */
+    function fcb_content_classes() {
+        $classes    = array();
+        $classes[]  = 'block-the-content';
+        $classes[]  = get_sub_field('content_classes');
+        
+        $classes = array_filter(array_map('trim', $classes));
+        echo trim(implode(' ', apply_filters( 'fcb_set_content_classes', $classes )));
+    }
+
+
+    /**
+     * Set classes for a media. These can be overridden or added to with a filter like the following:
+     *     add_filter( 'fcb_set_media_classes', 'custom_media_classes' );
+     *     function custom_media_classes($classes) {
+     *         if(is_page_template('template-landing-page.php') {
+     *             $classes[]   = 'on-landing-page';
+     *         }
+     *         return $classes;
+     *     }
+     *         
+     * @return string string of classes
+     */
+    function fcb_media_classes() {
+        $classes    = array();
+        $classes[]  = 'block-addon block-figure';
+        $classes[]  = get_sub_field('media_classes');
+        
+        $classes = array_filter(array_map('trim', $classes));
+        echo trim(implode(' ', apply_filters( 'fcb_set_media_classes', $classes )));
     }
 
 
@@ -256,9 +299,9 @@ License: MIT
 
 
     /**
-     * Set styles for a block. These can be overridden or added to with a filter like the following:
-     *     add_filter( 'set_block_styles', 'custom_block_styles' );
-     *     function custom_block_styles($styles) {
+     * Set styles for a block-wrapper. These can be overridden or added to with a filter like the following:
+     *     add_filter( 'set_block_wrapper_styles', 'custom_block_wrapper_styles' );
+     *     function custom_block_wrapper_styles($styles) {
      *         $styles[]   = 'border: 1px solid green;';
      *         return $styles;
      *     }
@@ -270,7 +313,7 @@ License: MIT
         $styles     = array();
         $styles[]   = (get_sub_field('background_color') == "choose" ) ? 'background-color: ' . get_sub_field('choose_color') . ';' : '';
         $styles[]   = ($image) ? 'background-image: url(' . $image['url'] . ');' : '';
-        echo trim(implode(' ', apply_filters( 'set_block_styles', $styles )));
+        echo trim(implode(' ', apply_filters( 'set_block_wrapper_styles', $styles )));
     }
 
 
