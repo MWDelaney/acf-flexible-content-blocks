@@ -49,6 +49,16 @@
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
+				            
+				            // Dev Mode tab
+				            $FCBFields->tab_dev(),
+				            $FCBFields->dev_content_message(),
+				            $FCBRepeaters->content_data_attributes(),
+				            $FCBFields->content_classes(),
+
+				            $FCBFields->dev_background_message(),
+				            $FCBRepeaters->background_data_attributes(),
+				            $FCBFields->background_classes(),
 
 				            // Call to Action
 				            $FCBFields->cta_checkbox(),
