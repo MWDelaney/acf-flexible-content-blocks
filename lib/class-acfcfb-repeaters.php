@@ -355,17 +355,16 @@
 		}
 
 
-
 		/**
 		 *
-		 * Field: Content Data Attributes
+		 * Field: Block Data Attributes
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
-		 * Repeater for data attributes on content tabs
+		 * Repeater for data attributes on blocks
 		 */
-		function content_data_attributes() {
+		function block_data_attributes() {
 	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
 			return( 
 				array (
@@ -396,17 +395,16 @@
 		}
 
 
-
 		/**
 		 *
-		 * Field: Background Data Attributes
+		 * Field: Content Data Attributes
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
-		 * Repeater for data attributes on background tabs
+		 * Repeater for data attributes on content tabs
 		 */
-		function background_data_attributes() {
+		function content_data_attributes() {
 	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
 			return( 
 				array (
@@ -478,3 +476,4 @@
 		}
 
 	}
+
