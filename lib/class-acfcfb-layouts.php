@@ -36,7 +36,6 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
-				            $FCBRepeaters->content_data_attributes(),
 
 				            // Background tab
 				            $FCBFields->tab_background(),
@@ -45,7 +44,6 @@
 				            $FCBFields->background_color_placeholder(),
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
-				            $FCBRepeaters->background_data_attributes(),
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
