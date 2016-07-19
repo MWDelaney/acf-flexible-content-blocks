@@ -1784,6 +1784,43 @@
 		}
 
 
+
+		/**
+		 *
+		 * Field: Block Classes
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Additional Classes for blocks
+		 */
+		function block_classes() {
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+				    'label' => 'Classes',
+				    'name' => 'block_classes',
+				    'type' => 'text',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-dev',
+				        'id' => '',
+				    ),
+				    'default_value' => '',
+				    'placeholder' => '',
+					'prepend' => '',
+				    'append' => '',
+				    'maxlength' => '',
+				    'readonly' => 0,
+				    'disabled' => 0,
+				)
+			);
+		}
+
+
 		/**
 		 *
 		 * Field: Content Classes
@@ -1858,20 +1895,20 @@
 
 		/**
 		 *
-		 * Field: Background Classes
+		 * Field: Dev Mode Block Message
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
 		 * 
-		 * Additional Classes for "Content" blocks
+		 * "Message" field for Dev Mode Content fields
 		 */
-		function background_classes() {
+		function dev_block_message() {
 			return( 
 				array (
 				    'key' => $this->key . __FUNCTION__,
-				    'label' => 'Classes',
-				    'name' => 'backgrund_classes',
-				    'type' => 'text',
+				    'label' => 'Block',
+				    'name' => 'dev_block_message',
+				    'type' => 'message',
 				    'instructions' => '',
 				    'required' => 0,
 				    'conditional_logic' => 0,
@@ -1880,13 +1917,9 @@
 				        'class' => 'acf-dev',
 				        'id' => '',
 				    ),
-				    'default_value' => '',
-				    'placeholder' => '',
-					'prepend' => '',
-				    'append' => '',
-				    'maxlength' => '',
-				    'readonly' => 0,
-				    'disabled' => 0,
+					'message' => 'Developer fields for the whole block.',
+					'new_lines' => 'wpautop',
+					'esc_html' => 0,
 				)
 			);
 		}
@@ -1955,36 +1988,5 @@
 			);
 		}
 
-
-		/**
-		 *
-		 * Field: Dev Mode Background Message
-		 *
-		 * @author Michael W. Delaney
-		 * @since 1.0
-		 * 
-		 * "Message" field for Dev Mode Media fields
-		 */
-		function dev_background_message() {
-			return( 
-				array (
-				    'key' => $this->key . __FUNCTION__,
-				    'label' => 'Background',
-				    'name' => 'dev_background_message',
-				    'type' => 'message',
-				    'instructions' => '',
-				    'required' => 0,
-				    'conditional_logic' => 0,
-				    'wrapper' => array (
-				        'width' => '',
-				        'class' => 'acf-dev',
-				        'id' => '',
-				    ),
-					'message' => 'Developer fields on the \'Background\' tab.',
-					'new_lines' => 'wpautop',
-					'esc_html' => 0,
-				)
-			);
-		}
-
     }
+
