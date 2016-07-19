@@ -54,10 +54,6 @@
 				            $FCBFields->dev_content_message(),
 				            $FCBRepeaters->content_data_attributes(),
 				            $FCBFields->content_classes(),
-
-				            $FCBFields->dev_background_message(),
-				            $FCBRepeaters->background_data_attributes(),
-				            $FCBFields->background_classes(),
 				            
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
@@ -364,9 +360,6 @@
 				            $FCBRepeaters->media_data_attributes(),
 				            $FCBFields->media_classes(),
 
-				            $FCBFields->dev_background_message(),
-				            $FCBRepeaters->background_data_attributes(),
-				            $FCBFields->background_classes(),
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
