@@ -354,4 +354,127 @@
 			);
 		}
 
+
+
+		/**
+		 *
+		 * Field: Content Data Attributes
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Repeater for data attributes on content tabs
+		 */
+		function content_data_attributes() {
+	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+				    'label' => 'Data Attributes',
+				    'name' => 'data_attributes',
+				    'type' => 'repeater',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-dev',
+				        'id' => '',
+				    ),
+				    'collapsed' => '',
+				    'min' => '',
+				    'max' => '',
+				    'layout' => 'table',
+				    'button_label' => 'Add Data Attribute',
+				    'sub_fields' => array (
+						// Data Attributes
+				        $FCBRepeaterFields->data_attribute(),
+				        $FCBRepeaterFields->data_value(),
+					)
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Background Data Attributes
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Repeater for data attributes on background tabs
+		 */
+		function background_data_attributes() {
+	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+				    'label' => 'Data Attributes',
+				    'name' => 'data_attributes',
+				    'type' => 'repeater',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-dev',
+				        'id' => '',
+				    ),
+				    'collapsed' => '',
+				    'min' => '',
+				    'max' => '',
+				    'layout' => 'table',
+				    'button_label' => 'Add Data Attribute',
+				    'sub_fields' => array (
+						// Data Attributes
+				        $FCBRepeaterFields->data_attribute(),
+				        $FCBRepeaterFields->data_value(),
+					)
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Media Data Attributes
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Repeater for data attributes on media tabs
+		 */
+		function media_data_attributes() {
+	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+				    'label' => 'Data Attributes',
+				    'name' => 'data_attributes',
+				    'type' => 'repeater',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-dev',
+				        'id' => '',
+				    ),
+				    'collapsed' => '',
+				    'min' => '',
+				    'max' => '',
+				    'layout' => 'table',
+				    'button_label' => 'Add Data Attribute',
+				    'sub_fields' => array (
+						// Data Attributes
+				        $FCBRepeaterFields->data_attribute(),
+				        $FCBRepeaterFields->data_value(),
+					)
+				)
+			);
+		}
+
 	}

@@ -36,6 +36,7 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
+				            $FCBRepeaters->content_data_attributes(),
 
 				            // Background tab
 				            $FCBFields->tab_background(),
@@ -44,6 +45,7 @@
 				            $FCBFields->background_color_placeholder(),
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
+				            $FCBRepeaters->background_data_attributes(),
 
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
@@ -89,6 +91,7 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
+				            $FCBRepeaters->content_data_attributes(),
 
 				            // Tabs tab
 				            $FCBFields->tab_tabs(),
@@ -147,6 +150,7 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
+				            $FCBRepeaters->content_data_attributes(),
 
 				            // Gallery tab
 				            $FCBFields->tab_gallery(),
@@ -204,10 +208,69 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
+				            $FCBRepeaters->content_data_attributes(),
 
 				            // Collapsibles tab
 				            $FCBFields->tab_collapsibles(),
 				            $FCBRepeaters->collapsibles(),
+
+				            // Background tab
+				            $FCBFields->tab_background(),
+				            $FCBFields->background_image(),
+				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
+
+				            // Tab Endpoint
+				            $FCBFields->tab_endpoint(),
+
+				            // Call to Action
+				            $FCBFields->cta_checkbox(),
+				            $FCBFields->cta_placeholder(),
+				            $FCBFields->cta_text(),
+				            $FCBFields->cta_link(),
+				            $FCBFields->cta_type(),
+						)
+					)
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Layout: Slides
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Layout for a carousel of images or other media content
+		 */
+		function slides() {
+	        $FCBFields = new FCBFields(__FUNCTION__);
+	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
+	        return( 
+			    array ( 'order' => '90', 
+					'layout' => array (
+						'key' => $this->key . __FUNCTION__,
+				        'name' => 'slides',
+				        'label' => 'Slides',
+				        'display' => 'block',
+				        'sub_fields' => array (
+				            // Titles
+				            $FCBFields->title(),
+				            $FCBFields->navigation_title(),
+
+				            // Content tab
+				            $FCBFields->tab_content(),
+				            $FCBFields->content(),
+				            $FCBRepeaters->content_data_attributes(),
+
+				            // Slides tab
+				            $FCBFields->tab_slides(),
+				            $FCBRepeaters->slides(),
 
 				            // Background tab
 				            $FCBFields->tab_background(),
@@ -279,6 +342,20 @@
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
 
+				            // Dev Mode tab
+				            $FCBFields->tab_dev(),
+				            $FCBFields->dev_content_message(),
+				            $FCBRepeaters->content_data_attributes(),
+				            $FCBFields->content_classes(),
+
+				            $FCBFields->dev_media_message(),
+				            $FCBRepeaters->media_data_attributes(),
+				            $FCBFields->media_classes(),
+
+				            $FCBFields->dev_background_message(),
+				            $FCBRepeaters->background_data_attributes(),
+				            $FCBFields->background_classes(),
+
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
 
@@ -323,6 +400,7 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
+				            $FCBRepeaters->content_data_attributes(),
 
 				            // Features tab
 				            $FCBFields->tab_features(),
@@ -380,6 +458,7 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
+				            $FCBRepeaters->content_data_attributes(),
 
 				            // Linked Items repeater
 				            $FCBFields->tab_cards(),
@@ -495,6 +574,7 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
+				            $FCBRepeaters->content_data_attributes(),
 
 				            // Slides tab
 				            $FCBFields->tab_slides(),
@@ -552,6 +632,7 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
+				            $FCBRepeaters->content_data_attributes(),
 
 				            // Post List Tab
 				            $FCBFields->tab_post_list(),

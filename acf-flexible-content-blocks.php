@@ -15,6 +15,7 @@ License: MIT
  */
 
     define( 'ACFFCB_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+    define( 'ACFFCB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 /**
  * Require classes
@@ -176,8 +177,8 @@ License: MIT
         $classes[]  = (get_sub_field('background_image')) ? 'block-with-bg-image' : '';
         $classes[]  = (get_sub_field('title')) ? '' : 'block-no-title';
         $classes[]  = 'block-' . $GLOBALS['fcb_rows_count'];
-        $classes[]  = (get_sub_field('background_color') == "theme") ? 'block-bg bg-' . get_sub_field('theme_color') : '';
-        $classes[]  = (get_sub_field('background_color') == "choose") ? 'block-bg bg-choose' : '';
+        $classes[]  = (get_sub_field('background_color') == "theme") ? 'bg-' . get_sub_field('theme_color') : '';
+        $classes[]  = (get_sub_field('background_color') == "choose") ? 'bg-choose' : '';
 
         
         $classes = array_filter(array_map('trim', $classes));
@@ -293,6 +294,11 @@ License: MIT
 
             // Append shortcode to the_content
             add_filter( 'the_content', array( $this, 'acffcb_add_to_content' ) );
+
+            // Enqueue admin styles and scripts
+            add_action('admin_enqueue_scripts', array( $this, 'admin_styles' ) );
+            add_action('admin_enqueue_scripts', array( $this, 'dev_mode' ) );
+            add_action('admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 
             // Enable layouts
             add_filter( 'fcb_add_layouts', array( $this, 'add_layouts' ) );
@@ -414,6 +420,26 @@ License: MIT
                 acf_add_local_field_group($this->args);
 
             endif;
+        }
+
+
+        /**
+         * Enqueue admin scripts and styles
+         */
+        function admin_scripts() {
+            wp_enqueue_script( 'acf-flexible-content-fields-admin-script', ACFFCB_PLUGIN_URL . 'assets/js/admin-script.js' );
+        }
+        
+        function admin_styles() {
+            wp_enqueue_style( 'acf-flexible-content-fields-admin-style', ACFFCB_PLUGIN_URL . 'assets/css/admin.css' );
+        }
+        
+        function dev_mode() {
+            if( current_theme_supports( 'flexible-content-dev-mode' ) ) {
+                wp_enqueue_style( 'acf-flexible-content-fields-dev-mode', ACFFCB_PLUGIN_URL . 'assets/css/dev-mode.css' );
+            } else {
+                wp_enqueue_style( 'acf-flexible-content-fields-no-dev-mode', ACFFCB_PLUGIN_URL . 'assets/css/no-dev-mode.css' );
+            }
         }
 
 

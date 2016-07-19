@@ -23,12 +23,6 @@ By default all included layouts are available:
 3. Content With Media
 4. Featured Content
 5. Slider
-6. Tabs
-7. Gallery
-8. Collapsibles
-9. Featured Content
-10. Cards
-11. Post List
 
 ### Enable only some layouts
 To remove layouts from the available list, declare theme support for only the layouts you wish to use:
@@ -54,28 +48,6 @@ Like the base template, each template part's file name can be appended with a la
 
 ## Actions and filters
 Several filters are available to alter the plugin's output.
-
-### Filter: fcb_bg_colors
-Change or add to the available "theme" background colors for blocks
-
-````
-add_filter( 'fcb_bg_colors', 'custom_bg_colors');
-function custom_bg_colors($array) {
-    $array['secondary'] = 'Secondary';
-    return $array;
-}
-````
-
-### Filter: fcb_btn_colors
-Change or add to the available button colors for block calls to action
-
-````
-add_filter( 'fcb_btn_colors', 'custom_btn_colors');
-function custom_btn_colors($array) {
-    $array['secondary'] = 'Secondary';
-    return $array;
-}
-````
 
 ### Filter: fcb_set_block_htag
 Set the tag that block titles are wrapped in. This defaults to `<h2>`. First remove the existing filter and then add your own:
@@ -128,7 +100,7 @@ function custom_block_classes($classes) {
 }
 ````
 
-### Filter: fcb_set_block_wrapper_styles
+### Filter: fcb_set_block_styles
 Set the styles applied to content blocks. This filter runs each time a block is rendered, so styles can be conditionally applied per-block.
 
 This filter isn't recommended for use --it's used by the plugin to apply background styles which are set in the block. Semantic styles are always preferrable to style attributes applied per block.
@@ -137,55 +109,11 @@ This filter isn't recommended for use --it's used by the plugin to apply backgro
 /**
 * Give the first block an ugly green border
 */
-add_filter( 'fcb_set_block_wrapper_styles', 'custom_block_styles' );
+add_filter( 'fcb_set_block_styles', 'custom_block_styles' );
 function custom_block_styles($styles) {
     if($GLOBALS['fcb_rows_count'] == 0) {
         $styles[]   = 'border: 1px solid green;';
     }
 return $styles;
-}
-````
-
-### Filter: fcb_content_before
-This plugin armors the main WordPress content (`the_content()`), by default. This filter can be used to modify the armor and output of `the_content()`.
-
-````
-**
- * Add "Contact Us" button before the_content() on landing pages
- */
-add_filter( 'fcb_content_before', 'contact_us_button', 10 );
-function contact_us_button( $content ) {
-    if ( on_landing_page() && !empty($content))  {
-        // Add image to the beginning of each page
-        $content = sprintf(
-            '<aside class="btn-content-cta-wrap"><a class="btn btn-content-cta" href="#talk">%s</a></aside>%s',
-            "Contact Us",
-            $content
-        );
-    }
-    // Returns the content.
-    return $content;
-}
-````
-
-### Filter: fcb_content_after
-This plugin armors the main WordPress content (`the_content()`), by default. This filter can be used to modify the armor and output of `the_content()`.
-
-````
-**
- * Add "Contact Us" button after the_content() on landing pages
- */
-add_filter( 'fcb_content_after', 'contact_us_button', 10 );
-function contact_us_button( $content ) {
-    if ( on_landing_page() && !empty($content))  {
-        // Add image to the beginning of each page
-        $content = sprintf(
-            '<aside class="btn-content-cta-wrap"><a class="btn btn-content-cta" href="#talk">%s</a></aside>%s',
-            "Contact Us",
-            $content
-        );
-    }
-    // Returns the content.
-    return $content;
 }
 ````

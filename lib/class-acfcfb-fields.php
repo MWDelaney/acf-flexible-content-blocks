@@ -1278,6 +1278,38 @@
 
 		/**
 		 *
+		 * Field: Background Tab
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Tab titled "Background"
+		 */
+		function tab_dev() {
+			return( 
+				array (
+					'key' => $this->key . __FUNCTION__,
+				    'label' => 'Dev Mode',
+				    'name' => '',
+				    'type' => 'tab',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-dev',
+				        'id' => '',
+				    ),
+				    'placement' => 'top',
+				    'endpoint' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
 		 * Field: Tabs Tab
 		 *
 		 * @author Michael W. Delaney
@@ -1673,6 +1705,284 @@
 				    ),
 				    'placement' => 'top',
 				    'endpoint' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Data Attribute
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Data attribute for developer mode
+		 */
+		function data_attribute() {
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+				    'label' => 'Attribute',
+				    'name' => 'attribute',
+				    'type' => 'text',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => '',
+				        'id' => '',
+				    ),
+				    'default_value' => '',
+				    'placeholder' => '',
+					'prepend' => 'data-',
+				    'append' => '',
+				    'maxlength' => '',
+				    'readonly' => 0,
+				    'disabled' => 0,
+				)
+			);
+		}
+
+
+
+		/**
+		 *
+		 * Field: Data Value
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Data value for developer mode
+		 */
+		function data_value() {
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+				    'label' => 'Value',
+				    'name' => 'value',
+				    'type' => 'text',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => 50,
+				        'class' => '',
+				        'id' => '',
+				    ),
+				    'default_value' => '',
+				    'placeholder' => '',
+					'prepend' => '',
+				    'append' => '',
+				    'maxlength' => '',
+				    'readonly' => 0,
+				    'disabled' => 0,
+				)
+			);
+		}
+
+
+		/**
+		 *
+		 * Field: Content Classes
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Additional Classes for "Content" blocks
+		 */
+		function content_classes() {
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+				    'label' => 'Classes',
+				    'name' => 'content_classes',
+				    'type' => 'text',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-dev',
+				        'id' => '',
+				    ),
+				    'default_value' => '',
+				    'placeholder' => '',
+					'prepend' => '',
+				    'append' => '',
+				    'maxlength' => '',
+				    'readonly' => 0,
+				    'disabled' => 0,
+				)
+			);
+		}
+
+
+		/**
+		 *
+		 * Field: Media Classes
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Additional Classes for "Content" blocks
+		 */
+		function media_classes() {
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+				    'label' => 'Classes',
+				    'name' => 'media_classes',
+				    'type' => 'text',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-dev',
+				        'id' => '',
+				    ),
+				    'default_value' => '',
+				    'placeholder' => '',
+					'prepend' => '',
+				    'append' => '',
+				    'maxlength' => '',
+				    'readonly' => 0,
+				    'disabled' => 0,
+				)
+			);
+		}
+
+
+		/**
+		 *
+		 * Field: Background Classes
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * Additional Classes for "Content" blocks
+		 */
+		function background_classes() {
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+				    'label' => 'Classes',
+				    'name' => 'backgrund_classes',
+				    'type' => 'text',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-dev',
+				        'id' => '',
+				    ),
+				    'default_value' => '',
+				    'placeholder' => '',
+					'prepend' => '',
+				    'append' => '',
+				    'maxlength' => '',
+				    'readonly' => 0,
+				    'disabled' => 0,
+				)
+			);
+		}
+
+
+		/**
+		 *
+		 * Field: Dev Mode Content Message
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * "Message" field for Dev Mode Content fields
+		 */
+		function dev_content_message() {
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+				    'label' => 'Content',
+				    'name' => 'dev_content_message',
+				    'type' => 'message',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-dev',
+				        'id' => '',
+				    ),
+					'message' => 'Developer fields on the \'content\' tab.',
+					'new_lines' => 'wpautop',
+					'esc_html' => 0,
+				)
+			);
+		}
+
+
+		/**
+		 *
+		 * Field: Dev Mode Media Message
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * "Message" field for Dev Mode Media fields
+		 */
+		function dev_media_message() {
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+				    'label' => 'Media',
+				    'name' => 'dev_media_message',
+				    'type' => 'message',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-dev',
+				        'id' => '',
+				    ),
+					'message' => 'Developer fields on the \'media\' tab.',
+					'new_lines' => 'wpautop',
+					'esc_html' => 0,
+				)
+			);
+		}
+
+
+		/**
+		 *
+		 * Field: Dev Mode Background Message
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 * 
+		 * "Message" field for Dev Mode Media fields
+		 */
+		function dev_background_message() {
+			return( 
+				array (
+				    'key' => $this->key . __FUNCTION__,
+				    'label' => 'Background',
+				    'name' => 'dev_background_message',
+				    'type' => 'message',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => 'acf-dev',
+				        'id' => '',
+				    ),
+					'message' => 'Developer fields on the \'Background\' tab.',
+					'new_lines' => 'wpautop',
+					'esc_html' => 0,
 				)
 			);
 		}

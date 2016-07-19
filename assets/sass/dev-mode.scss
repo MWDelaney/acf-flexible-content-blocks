@@ -1,0 +1,28 @@
+.acf-dev {
+	background: #fcf8e3;
+	top: 0;
+	label {
+		color: #8a6d3b;
+	}
+	.button-primary {
+		background-color: #f0ad4e !important;
+		border-color: #eea236 !important;
+		box-shadow: 0 1px 0 #eea236;
+		text-shadow: 0 -1px 1px #eea236, 1px 0 1px #eea236, 0 1px 1px #eea236, -1px 0 1px #eea236;
+		&:active {
+			box-shadow: inset 0 2px 0 #eea236;
+		}
+	}
+}
+[data-key*='tab_dev'] {
+	background-color: #fcf8e3 !important;
+	&:before {
+		display: inline-block;
+		width: 15px;
+		height: 15px;
+		font-size: 12px;
+		line-height: 1;
+		font-family: dashicons;
+		content: "\f107";
+	}
+}
