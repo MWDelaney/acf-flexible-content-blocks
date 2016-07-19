@@ -29,7 +29,6 @@ By default all included layouts are available:
 9. Featured Content
 10. Cards
 11. Post List
-12. 
 
 ### Enable only some layouts
 To remove layouts from the available list, declare theme support for only the layouts you wish to use:
