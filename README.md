@@ -26,9 +26,8 @@ By default all included layouts are available:
 6. Tabs
 7. Gallery
 8. Collapsibles
-9. Featured Content
-10. Cards
-11. Post List
+9. Cards
+10. Post List
 
 ### Enable only some layouts
 To remove layouts from the available list, declare theme support for only the layouts you wish to use:
