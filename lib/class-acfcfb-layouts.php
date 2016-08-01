@@ -99,7 +99,6 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
-				            $FCBRepeaters->content_data_attributes(),
 
 				            // Tabs tab
 				            $FCBFields->tab_tabs(),
