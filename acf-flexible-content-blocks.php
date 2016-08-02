@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: ACF Flexible Content Blocks
-Plugin URI: 
+Plugin URI:
 Description: Adds flexible content blocks blow the_content();
 Version: 1.0
 Author: Michael W. Delaney
-Author URI: 
+Author URI:
 License: MIT
 */
 
@@ -39,7 +39,7 @@ License: MIT
  */
 
     function cfb_template($slug, $load = null) {
-        $acffcb_templates = new ACFFCB_Template_Loader; 
+        $acffcb_templates = new ACFFCB_Template_Loader;
         $acffcb_templates->get_template_part( $slug, $load );
     }
 
@@ -59,7 +59,7 @@ License: MIT
      *         }
      *         return '<' . $htag . '>' . $title . '</' . $htag . '>';
      *     }
-     *     
+     *
      * @param  string $title The sub-field containing the title.
      * @param  string $htag  The default header tag (defaults to h2)
      * @return string        The formatted title wrapped in the proper h-tag.
@@ -158,6 +158,17 @@ License: MIT
 
 
     /**
+     * Do background classes for any block or element that has backgroud options
+     */
+    add_filter( 'fcb_set_background_classes', 'fcb_background_classes' );
+    function fcb_background_classes($classes) {
+      $classes[]  = (get_sub_field('background_image')) ? 'block-with-bg-image' : '';
+      $classes[]  = (get_sub_field('background_color') == "theme") ? 'block-with-bg-color bg-' . get_sub_field('theme_color') : '';
+      $classes[]  = (get_sub_field('background_color') == "choose") ? 'block-with-bg-color bg-choose' : '';
+      return($classes);
+    }
+
+    /**
      * Set classes for a block wrapper. These can be overridden or added to with a filter like the following:
      *     add_filter( 'fcb_set_block_wrapper_classes', 'custom_block_wrapper_classes' );
      *     function custom_block_wrapper_classes($classes) {
@@ -166,20 +177,18 @@ License: MIT
      *         }
      *         return $classes;
      *     }
-     *         
+     *
      * @return string string of classes
      */
     function fcb_block_wrapper_classes() {
         $classes    = array();
         $classes[]  = 'block-wrap';
         $classes[]  = 'block-wrap-' . get_row_layout();
-        $classes[]  = (get_sub_field('background_image')) ? 'block-with-bg-image' : '';
-        $classes[]  = (get_sub_field('title')) ? '' : 'block-no-title';
         $classes[]  = 'block-' . $GLOBALS['fcb_rows_count'];
-        $classes[]  = (get_sub_field('background_color') == "theme") ? 'block-with-bg-color bg-' . get_sub_field('theme_color') : '';
-        $classes[]  = (get_sub_field('background_color') == "choose") ? 'block-with-bg-color bg-choose' : '';
+        $classes[]  = (get_sub_field('title')) ? '' : 'block-no-title';
         $classes[]  = (get_sub_field('block_classes'));
-        
+        $classes    = apply_filters( 'fcb_set_background_classes', $classes );
+
         $classes = array_filter(array_map('trim', $classes));
         echo trim(implode(' ', apply_filters( 'fcb_set_block_wrapper_classes', $classes )));
     }
@@ -194,14 +203,15 @@ License: MIT
      *         }
      *         return $classes;
      *     }
-     *         
+     *
      * @return string string of classes
      */
     function fcb_panel_classes() {
         $classes    = array();
         $classes[]  = 'panel-body';
         $classes[]  = (get_sub_field('type_of_media') != 'none' ) ? 'panel-with-media' : '';
-        
+        $classes    = apply_filters( 'fcb_set_background_classes', $classes );
+
         $classes = array_filter(array_map('trim', $classes));
         echo trim(implode(' ', apply_filters( 'fcb_set_collapsible_classes', $classes )));
     }
@@ -217,14 +227,15 @@ License: MIT
      *         }
      *         return $classes;
      *     }
-     *         
+     *
      * @return string string of classes
      */
     function fcb_tab_classes() {
         $classes    = array();
         $classes[]  = 'tab-body';
         $classes[]  = (get_sub_field('type_of_media') != 'none' ) ? 'tab-with-media' : '';
-        
+        $classes    = apply_filters( 'fcb_set_background_classes', $classes );
+
         $classes = array_filter(array_map('trim', $classes));
         echo trim(implode(' ', apply_filters( 'fcb_set_tab_classes', $classes )));
     }
@@ -239,14 +250,14 @@ License: MIT
      *         }
      *         return $classes;
      *     }
-     *         
+     *
      * @return string string of classes
      */
     function fcb_content_classes() {
         $classes    = array();
         $classes[]  = 'block-the-content';
         $classes[]  = get_sub_field('content_classes');
-        
+
         $classes = array_filter(array_map('trim', $classes));
         echo trim(implode(' ', apply_filters( 'fcb_set_content_classes', $classes )));
     }
@@ -261,14 +272,14 @@ License: MIT
      *         }
      *         return $classes;
      *     }
-     *         
+     *
      * @return string string of classes
      */
     function fcb_media_classes() {
         $classes    = array();
         $classes[]  = 'block-addon block-figure';
         $classes[]  = get_sub_field('media_classes');
-        
+
         $classes = array_filter(array_map('trim', $classes));
         echo trim(implode(' ', apply_filters( 'fcb_set_media_classes', $classes )));
     }
@@ -284,14 +295,14 @@ License: MIT
      *         }
      *         return $classes;
      *     }
-     *         
+     *
      * @return string string of classes
      */
     function fcb_block_classes() {
         $classes    = array();
         $classes[]  = 'block';
         $classes[]  = 'block-' . get_row_layout();
-        
+
         $classes = array_filter(array_map('trim', $classes));
         echo trim(implode(' ', apply_filters( 'fcb_set_block_classes', $classes )));
     }
@@ -433,11 +444,11 @@ License: MIT
 
                 /**
                 * Include all enabled layouts
-                * 
+                *
                 * @author Michael W. Delaney
                 * @since 1.0
                 *
-                * Declare theme support for specific layouts. Default is to include all layouts: 
+                * Declare theme support for specific layouts. Default is to include all layouts:
                 *   add_theme_support( 'flexible-content-blocks', array( 'content', 'content_with_media' ) );
                 */
                 $layouts_array  = array();
@@ -459,7 +470,7 @@ License: MIT
                 * @since 1.0
                 *
                 */
-               
+
                 acf_add_local_field_group($this->args);
 
             endif;
@@ -472,11 +483,11 @@ License: MIT
         function admin_scripts() {
             wp_enqueue_script( 'acf-flexible-content-fields-admin-script', ACFFCB_PLUGIN_URL . 'assets/js/admin-script.js' );
         }
-        
+
         function admin_styles() {
             wp_enqueue_style( 'acf-flexible-content-fields-admin-style', ACFFCB_PLUGIN_URL . 'assets/css/admin.css' );
         }
-        
+
         function dev_mode() {
             if( current_theme_supports( 'flexible-content-dev-mode' ) ) {
                 wp_enqueue_style( 'acf-flexible-content-fields-dev-mode', ACFFCB_PLUGIN_URL . 'assets/css/dev-mode.css' );
@@ -563,7 +574,7 @@ License: MIT
          * Build the shortcode, call templates
          */
 
-            function acffcb_blocks() { 
+            function acffcb_blocks() {
                 ob_start();
                 do_action('before_blocks');
                 cfb_template( 'content', 'blocks' );
@@ -575,7 +586,7 @@ License: MIT
 
         /**
          * Append content blocks to the WordPress the_content()
-         * 
+         *
          * @param string $content The original WordPress content
          * @return string
          */
