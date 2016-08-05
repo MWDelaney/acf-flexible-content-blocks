@@ -447,7 +447,7 @@ License: MIT
                     );
                 }
                 // Insert each location into the $args array
-                $args['location'] = $locations_enabled;
+                $this->args['location'] = $locations_enabled;
 
 
 
