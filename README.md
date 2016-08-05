@@ -39,8 +39,22 @@ add_theme_support( 'flexible-content-blocks', array( 'content', 'content-with-me
 By default content blocks are enabled for Pages, to define which post types blocks should be available on, declare theme support:
 
 ````{r, engine='php', count_lines}
-add_theme_support( 'flexible-content-location', array( array('post_type', '==', 'page'), array('post_type', '==', 'post') ) );
-````
+ $landing_page_templates = array(
+   array (
+     array (
+       'param' => 'post_type',
+       'operator' => '==',
+       'value' => 'page',
+     ),
+     array (
+       'param' => 'page_template',
+       'operator' => '!=',
+       'value' => 'template-no-header-image.php',
+     ),
+   ),
+ );
+ add_theme_support( 'flexible-content-location', $landing_page_templates );
+ ````
 
 ## Templates
 Basic templates for each layout are included. These templates are designed to be simple for styling via your theme. To override the included templates, copy the template(s) you wish to override from `templates` to your theme in a sub-directory called `fcb-templates`
