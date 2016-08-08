@@ -10,7 +10,7 @@
 			$this->key 		= 'acffcb-';
 			$this->key 		.= 'layout-' . $layout;
 			$this->key 		.= (isset($repeater)) ? '-repeater-' . $repeater : null;
-        	$this->key 		.= '-field-';
+        		$this->key 		.= '-field-';
 		}
 
 
