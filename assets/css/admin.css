@@ -1,11 +1,11 @@
-.acf-media {
+#acf-cfb_blocks .acf-media {
   min-height: 300px; }
 
-.acf-cta {
+#acf-cfb_blocks .acf-cta {
   background-color: #efefef;
   min-height: 100px !important; }
 
-.acf-field {
+#acf-cfb_blocks .acf-field {
   transition: all .5s ease-in-out;
   position: relative;
   z-index: 10;
