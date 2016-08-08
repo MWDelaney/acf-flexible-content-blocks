@@ -7,7 +7,7 @@
 			$this->layout 	= $layout;
 			$this->key 	= 'acffcb-';
 			$this->key 	.= 'layout-' . $layout;
-        	$this->key      .= '-repeater-';
+        		$this->key      .= '-repeater-';
 		}
 
 
@@ -18,14 +18,14 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Linked content items repeater
 		 */
 		function cards() {
-	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
-			return( 
+	    $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
+			return(
 				array (
-				    'key' => $this->key . __FUNCTION__,
+				  'key' => $this->key . __FUNCTION__,
 					'label' => 'Cards',
 					'name' => 'cards',
 					'type' => 'repeater',
@@ -37,7 +37,7 @@
 						'class' => 'acf-media',
 						'id' => '',
 					),
-					'collapsed' => 'field_573e0e481c7f7',
+          				'collapsed' => $this->key . __FUNCTION__ . '-field-title',
 					'min' => '',
 					'max' => '',
 					'layout' => 'block',
@@ -47,8 +47,8 @@
 						// Title
 				        $FCBRepeaterFields->title(),
 				        $FCBRepeaterFields->navigation_title(),
-				        
-				    	// Content Tab 
+
+				    	// Content Tab
 				    	$FCBRepeaterFields->tab_content(),
 				    	$FCBRepeaterFields->content_source(),
 				    	$FCBRepeaterFields->content_excerpt_placeholder(),
@@ -56,19 +56,19 @@
 
 				        // Media
 				        $FCBRepeaterFields->tab_media(),
-			            $FCBRepeaterFields->type_of_media(),
-			            $FCBRepeaterFields->media_placeholder(),
-			            $FCBRepeaterFields->media_image(),
-			            $FCBRepeaterFields->media_video(),
-			            $FCBRepeaterFields->media_content(),
+				        $FCBRepeaterFields->type_of_media(),
+				        $FCBRepeaterFields->media_placeholder(),
+				        $FCBRepeaterFields->media_image(),
+				        $FCBRepeaterFields->media_video(),
+				        $FCBRepeaterFields->media_content(),
 
-				    	// Background Tab 
+				    	// Background Tab
 				    	$FCBRepeaterFields->tab_background(),
 				    	$FCBRepeaterFields->background_image(),
 				    	$FCBRepeaterFields->background_color(),
-			            $FCBRepeaterFields->background_color_placeholder(),
-			            $FCBRepeaterFields->theme_color(),
-			            $FCBRepeaterFields->choose_color(),
+				    	$FCBRepeaterFields->background_color_placeholder(),
+				    	$FCBRepeaterFields->theme_color(),
+				    	$FCBRepeaterFields->choose_color(),
 
 				    	// Tab Endpoint
 				    	$FCBRepeaterFields->tab_endpoint(),
