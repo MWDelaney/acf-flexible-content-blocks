@@ -1,2 +1,3 @@
-.acf-dev {
-  display: none; }
+.acf-dev,
+[data-key="acffcb-layout-content-field-tab_dev"] {
+  display: none !important; }
