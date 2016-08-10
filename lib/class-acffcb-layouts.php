@@ -14,15 +14,16 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Basic content block
 		 */
 		function content() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
+					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
 
-			return( 
-			    array ( 'order' => '10', 
+			return(
+			    array ( 'order' => '10',
 					'layout' => array (
 						'key' => $this->key . __FUNCTION__,
 				        'name' => 'content',
@@ -45,6 +46,10 @@
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
 
+										// Call to Action
+										$FCBFields->tab_cta(),
+				            $FCBFlexibleContent->cta(),
+
 				            // Dev Mode tab
 				            $FCBFields->tab_dev(),
 				            $FCBFields->dev_block_message(),
@@ -54,16 +59,10 @@
 				            $FCBFields->dev_content_message(),
 				            $FCBRepeaters->content_data_attributes(),
 				            $FCBFields->content_classes(),
-				            
+
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
-				        
-				            // Call to Action
-				            $FCBFields->cta_checkbox(),
-				            $FCBFields->cta_placeholder(),
-				            $FCBFields->cta_text(),
-				            $FCBFields->cta_link(),
-				            $FCBFields->cta_type(),
+
 				        )
 				    )
 				)
@@ -78,14 +77,16 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Layout for tabbed content
 		 */
 		function tabs() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-	        return( 
-			    array ( 'order' => '300', 
+					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
+	        return(
+			    array ( 'order' => '300',
 					'layout' => array (
 						'key' => $this->key . __FUNCTION__,
 				        'name' => 'tabs',
@@ -112,15 +113,13 @@
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
 
+										// Call to Action
+										$FCBFields->tab_cta(),
+				            $FCBFlexibleContent->cta(),
+
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
 
-				            // Call to Action
-				            $FCBFields->cta_checkbox(),
-				            $FCBFields->cta_placeholder(),
-				            $FCBFields->cta_text(),
-				            $FCBFields->cta_link(),
-				            $FCBFields->cta_type(),
 						)
 					)
 				)
@@ -135,15 +134,16 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Image gallery layout
 		 */
 		function gallery() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
+					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
 
-			return( 
-			    array ( 'order' => '70', 
+			return(
+			    array ( 'order' => '70',
 					'layout' => array (
 						'key' => $this->key . __FUNCTION__,
 				        'name' => 'gallery',
@@ -171,15 +171,13 @@
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
 
+										// Call to Action
+										$FCBFields->tab_cta(),
+				            $FCBFlexibleContent->cta(),
+
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
 
-				            // Call to Action
-				            $FCBFields->cta_checkbox(),
-				            $FCBFields->cta_placeholder(),
-				            $FCBFields->cta_text(),
-				            $FCBFields->cta_link(),
-				            $FCBFields->cta_type(),
 				        )
 				    )
 				)
@@ -194,14 +192,16 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Layout for collapsible or "accordion" content
 		 */
 		function collapsibles() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-	        return( 
-			    array ( 'order' => '400', 
+					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
+	        return(
+			    array ( 'order' => '400',
 					'layout' => array (
 						'key' => $this->key . __FUNCTION__,
 				        'name' => 'collapsibles',
@@ -229,15 +229,13 @@
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
 
+										// Call to Action
+										$FCBFields->tab_cta(),
+				            $FCBFlexibleContent->cta(),
+
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
 
-				            // Call to Action
-				            $FCBFields->cta_checkbox(),
-				            $FCBFields->cta_placeholder(),
-				            $FCBFields->cta_text(),
-				            $FCBFields->cta_link(),
-				            $FCBFields->cta_type(),
 						)
 					)
 				)
@@ -252,14 +250,16 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Layout for a carousel of images or other media content
 		 */
 		function slides() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-	        return( 
-			    array ( 'order' => '90', 
+					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
+	        return(
+			    array ( 'order' => '90',
 					'layout' => array (
 						'key' => $this->key . __FUNCTION__,
 				        'name' => 'slides',
@@ -273,7 +273,6 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
-				            $FCBRepeaters->content_data_attributes(),
 
 				            // Slides tab
 				            $FCBFields->tab_slides(),
@@ -287,15 +286,13 @@
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
 
+										// Call to Action
+										$FCBFields->tab_cta(),
+				            $FCBFlexibleContent->cta(),
+
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
 
-				            // Call to Action
-				            $FCBFields->cta_checkbox(),
-				            $FCBFields->cta_placeholder(),
-				            $FCBFields->cta_text(),
-				            $FCBFields->cta_link(),
-				            $FCBFields->cta_type(),
 						)
 					)
 				)
@@ -310,14 +307,16 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * A simple content block with optional media include (image or video) and optional Call to Action button
 		 */
 		function content_with_media() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-	        return( 
-			    array ( 'order' => '20', 
+					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
+	        return(
+			    array ( 'order' => '20',
 			    	'layout' => array (
 					    'key' => $this->key . __FUNCTION__,
 				        'name' => 'content_with_media',
@@ -334,12 +333,7 @@
 
 				            // Media tab
 				            $FCBFields->tab_media(),
-				            $FCBFields->type_of_media(),
-				            $FCBFields->media_placeholder(),
-				            $FCBFields->media_image(),
-				            $FCBFields->media_video(),
-				            $FCBFields->media_content(),
-				            $FCBFields->media_code(),
+										$FCBFlexibleContent->media(),
 
 				            // Background tab
 				            $FCBFields->tab_background(),
@@ -348,6 +342,10 @@
 				            $FCBFields->background_color_placeholder(),
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
+
+										// Call to Action
+										$FCBFields->tab_cta(),
+				            $FCBFlexibleContent->cta(),
 
 				            // Dev Mode tab
 				            $FCBFields->tab_dev(),
@@ -363,12 +361,6 @@
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
 
-				            // Call to Action
-				            $FCBFields->cta_checkbox(),
-				            $FCBFields->cta_placeholder(),
-				            $FCBFields->cta_text(),
-				            $FCBFields->cta_link(),
-				            $FCBFields->cta_type(),
 				        )
 				    )
 				)
@@ -383,14 +375,16 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Content block with relationship field to feature other site content and optional Call to Action button
 		 */
 		function featured_content() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-	        return( 
-			    array ( 'order' => '100', 
+					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
+	        return(
+			    array ( 'order' => '100',
 			    	'layout' => array (
 					    'key' => $this->key . __FUNCTION__,
 				        'name' => 'featured_content',
@@ -418,15 +412,13 @@
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
 
+										// Call to Action
+										$FCBFields->tab_cta(),
+				            $FCBFlexibleContent->cta(),
+
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
 
-				            // Call to Action
-				            $FCBFields->cta_checkbox(),
-				            $FCBFields->cta_placeholder(),
-				            $FCBFields->cta_text(),
-				            $FCBFields->cta_link(),
-				            $FCBFields->cta_type(),
 			        	)
 				    )
 				)
@@ -441,14 +433,16 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * List of links with titles and content
 		 */
 		function cards() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-	        return( 
-			    array ( 'order' => '100', 
+					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
+	        return(
+			    array ( 'order' => '100',
 			    	'layout' => array (
 					    'key' => $this->key . __FUNCTION__,
 						'name' => 'cards',
@@ -476,15 +470,13 @@
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
 
+										// Call to Action
+										$FCBFields->tab_cta(),
+				            $FCBFlexibleContent->cta(),
+
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
 
-				            // Call to Action
-				            $FCBFields->cta_checkbox(),
-				            $FCBFields->cta_placeholder(),
-				            $FCBFields->cta_text(),
-				            $FCBFields->cta_link(),
-				            $FCBFields->cta_type(),
 			        	)
 				    )
 				)
@@ -499,32 +491,29 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * A simple media block optional Call to Action button
 		 */
 		function media() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-	        return( 
-			    array ( 'order' => '60', 
+					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
+	        return(
+			    array ( 'order' => '60',
 			    	'layout' => array (
-					    'key' => $this->key . __FUNCTION__,
-				        'name' => 'media',
-				        'label' => 'Media',
+					  'key' => $this->key . __FUNCTION__,
+				    'name' => 'media',
+				    'label' => 'Media',
 						'display' => 'block',
 						'sub_fields' => array (
 				            // Titles
 				            $FCBFields->title(),
 				            $FCBFields->navigation_title(),
 
-				            // Media tab
+										// Media tab
 				            $FCBFields->tab_media(),
-				            $FCBFields->type_of_media(),
-				            $FCBFields->media_placeholder(),
-				            $FCBFields->media_image(),
-				            $FCBFields->media_video(),
-				            $FCBFields->media_content(),
-				            $FCBFields->media_code(),				            
+										$FCBFlexibleContent->media(),
 
 				            // Background tab
 				            $FCBFields->tab_background(),
@@ -534,15 +523,13 @@
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
 
+										// Call to Action
+										$FCBFields->tab_cta(),
+										$FCBFlexibleContent->cta(),
+
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
 
-				            // Call to Action
-				            $FCBFields->cta_checkbox(),
-				            $FCBFields->cta_placeholder(),
-				            $FCBFields->cta_text(),
-				            $FCBFields->cta_link(),
-				            $FCBFields->cta_type(),
 			        	)
 				    )
 				)
@@ -557,18 +544,20 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Media slider with optional Call to Action button
 		 */
 		function slider() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-	        return( 
-			    array ( 'order' => '200', 
+					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
+	        return(
+			    array ( 'order' => '200',
 			    	'layout' => array (
-					    'key' => $this->key . __FUNCTION__,
-				        'name' => 'slider',
-				        'label' => 'Slider',
+					  'key' => $this->key . __FUNCTION__,
+				    'name' => 'slider',
+				    'label' => 'Slider',
 						'display' => 'block',
 						'sub_fields' => array (
 				            // Titles
@@ -592,15 +581,13 @@
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
 
+										// Call to Action
+										$FCBFields->tab_cta(),
+				            $FCBFlexibleContent->cta(),
+
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
 
-				            // Call to Action
-				            $FCBFields->cta_checkbox(),
-				            $FCBFields->cta_placeholder(),
-				            $FCBFields->cta_text(),
-				            $FCBFields->cta_link(),
-				            $FCBFields->cta_type(),
 			        	)
 				    )
 				)
@@ -614,15 +601,16 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * List of posts
 		 */
 		function post_list() {
 	        $FCBFields = new FCBFields(__FUNCTION__);
 	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
+					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
 
-			return( 
-			    array ( 'order' => '500', 
+			return(
+			    array ( 'order' => '500',
 					'layout' => array (
 						'key' => $this->key . __FUNCTION__,
 				        'name' => 'post_list',
@@ -640,11 +628,11 @@
 
 				            // Post List Tab
 				            $FCBFields->tab_post_list(),
-							$FCBFields->posts_per_page(),
-							$FCBFields->show_author(),
-							$FCBFields->show_date(),
-							$FCBFields->show_featured_image(),
-							$FCBFields->category(),
+										$FCBFields->posts_per_page(),
+										$FCBFields->show_author(),
+										$FCBFields->show_date(),
+										$FCBFields->show_featured_image(),
+										$FCBFields->category(),
 
 				            // Background tab
 				            $FCBFields->tab_background(),
@@ -654,15 +642,13 @@
 				            $FCBFields->theme_color(),
 				            $FCBFields->choose_color(),
 
+										// Call to Action
+										$FCBFields->tab_cta(),
+				            $FCBFlexibleContent->cta(),
+
 				            // Tab Endpoint
 				            $FCBFields->tab_endpoint(),
 
-				            // Call to Action
-				            $FCBFields->cta_checkbox(),
-				            $FCBFields->cta_placeholder(),
-				            $FCBFields->cta_text(),
-				            $FCBFields->cta_link(),
-				            $FCBFields->cta_type(),
 				        )
 				    )
 				)

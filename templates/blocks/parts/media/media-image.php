@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $image = get_sub_field('image');
 

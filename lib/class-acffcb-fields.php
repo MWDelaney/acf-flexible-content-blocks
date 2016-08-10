@@ -10,7 +10,7 @@
 			$this->key 		= 'acffcb-';
 			$this->key 		.= 'layout-' . $layout;
 			$this->key 		.= (isset($repeater)) ? '-repeater-' . $repeater : null;
-        		$this->key 		.= '-field-';
+      $this->key 		.= '-field-';
 		}
 
 
@@ -21,13 +21,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Title fields shared by all layouts
 		 */
-		function title() {
-			return( 
+		function title($thisKey = 'field') {
+			return(
 				array (
-				    'key' => $this->key . __FUNCTION__,
+				    'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Title',
 				    'name' => 'title',
 				    'type' => 'text',
@@ -58,13 +58,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Navigation Title fields shared by all layouts
 		 */
-		function navigation_title() {
-			return( 
+		function navigation_title($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Navigation Title',
 				    'name' => 'navigation_title',
 				    'type' => 'text',
@@ -95,13 +95,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Number field for posts to show per page
 		 */
-		function posts_per_page() {
-			return( 
+		function posts_per_page($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Number to Show',
 				    'name' => 'posts_per_page',
 				    'type' => 'number',
@@ -134,13 +134,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Taxonomy field to select category
 		 */
-		function category() {
-			return( 
+		function category($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Category',
 				    'name' => 'category',
 				    'type' => 'taxonomy',
@@ -172,13 +172,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * True/False field for showing author in post list
 		 */
-		function show_author() {
-			return( 
+		function show_author($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Show Author?',
 				    'name' => 'show_author',
 				    'type' => 'true_false',
@@ -204,13 +204,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * True/False field for showing featured image in post list
 		 */
-		function show_featured_image() {
-			return( 
+		function show_featured_image($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Show Featured Image?',
 				    'name' => 'show_featured_image',
 				    'type' => 'true_false',
@@ -236,13 +236,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * True/False field for showing date in post list
 		 */
-		function show_date() {
-			return( 
+		function show_date($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Show Date?',
 				    'name' => 'show_date',
 				    'type' => 'true_false',
@@ -268,13 +268,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Select field for column width, 1-12
 		 */
-		function column_width() {
-			return( 
+		function column_width($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 					'label' => 'Column Width',
 					'name' => 'column_width',
 					'type' => 'select',
@@ -320,13 +320,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Radio button field to choose background color
 		 */
-		function background_color() {
-			return( 
+		function background_color($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 					'label' => 'Background Color',
 					'name' => 'background_color',
 					'type' => 'radio',
@@ -359,13 +359,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Background color selector field
 		 */
-		function choose_color() {
-			return( 
+		function choose_color($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 					'label' => 'Choose Color',
 					'name' => 'choose_color',
 					'type' => 'color_picker',
@@ -374,7 +374,7 @@
 					'conditional_logic' => array (
 						array (
 							array (
-				                'field' => $this->key . 'background_color',
+								'field' => $this->key . '-' . $thisKey . '-' . 'background_color',
 								'operator' => '==',
 								'value' => 'choose',
 							),
@@ -398,13 +398,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Select field for choosing a theme background color
 		 */
-		function theme_color() {
-			return( 
+		function theme_color($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 					'label' => 'Theme Color',
 					'name' => 'theme_color',
 					'type' => 'select',
@@ -413,7 +413,7 @@
 					'conditional_logic' => array (
 						array (
 							array (
-				                'field' => $this->key . 'background_color',
+								'field' => $this->key . '-' . $thisKey . '-' . 'background_color',
 								'operator' => '==',
 								'value' => 'theme',
 							),
@@ -445,13 +445,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Placeholder for when the "background color" is not selected
 		 */
-		function background_color_placeholder() {
-			return( 
+		function background_color_placeholder($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 					'label' => 'Background Color Placeholder',
 					'name' => '',
 					'type' => 'message',
@@ -460,7 +460,7 @@
 					'conditional_logic' => array (
 						array (
 							array (
-				                'field' => $this->key . 'background_color',
+								'field' => $this->key . '-' . $thisKey . '-' . 'background_color',
 								'operator' => '==',
 								'value' => 'none',
 							),
@@ -486,13 +486,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Background image
 		 */
-		function background_image() {
-			return( 
+		function background_image($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Background Image',
 				    'name' => 'background_image',
 				    'type' => 'image',
@@ -526,13 +526,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Radio button to select the source of content to be shown.
 		 */
-		function content_source() {
-			return( 
+		function content_source($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 					'label' => 'Content Source',
 					'name' => 'content_source',
 					'type' => 'radio',
@@ -554,7 +554,7 @@
 					'layout' => 'horizontal',
 				)
 			);
-		}		
+		}
 
 
 		/**
@@ -563,13 +563,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Placeholder for when the "excerpt" is selected as the source of content
 		 */
-		function content_excerpt_placeholder() {
-			return( 
+		function content_excerpt_placeholder($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 					'label' => 'Excerpt Placeholder',
 					'name' => '',
 					'type' => 'message',
@@ -578,7 +578,7 @@
 					'conditional_logic' => array (
 						array (
 							array (
-				                'field' => $this->key . 'content_source',
+								'field' => $this->key . '-' . $thisKey . '-' . 'content_source',
 								'operator' => '==',
 								'value' => 'excerpt',
 							),
@@ -604,13 +604,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Content field shown when "manual" is entered as the content source.
 		 */
-		function content_conditional() {
-			return( 
+		function content_conditional($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 					'label' => 'Content',
 					'name' => 'content',
 					'type' => 'wysiwyg',
@@ -619,7 +619,7 @@
 					'conditional_logic' => array (
 						array (
 							array (
-				                'field' => $this->key . 'content_source',
+								'field' => $this->key . '-' . $thisKey . '-' . 'content_source',
 								'operator' => '==',
 								'value' => 'manual',
 							),
@@ -646,13 +646,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * WYSIWYG content field
 		 */
-		function content() {
-			return( 
+		function content($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Content',
 				    'name' => 'content',
 				    'type' => 'wysiwyg',
@@ -673,36 +673,6 @@
 		}
 
 
-		/**
-		 *
-		 * Field: Display Call to Action? Checkbox
-		 *
-		 * @author Michael W. Delaney
-		 * @since 1.0
-		 * 
-		 * True/False field to display call to action or not
-		 */
-		function cta_checkbox() {
-			return( 
-				array (
-					'key' => $this->key . __FUNCTION__,
-				    'label' => 'Display Call to Action?',
-				    'name' => 'display_call_to_action',
-				    'type' => 'true_false',
-				    'instructions' => '',
-				    'required' => 0,
-				    'conditional_logic' => 0,
-				    'wrapper' => array (
-				        'width' => 20,
-				        'class' => 'acf-cta',
-				        'id' => '',
-				    ),
-				    'message' => '',
-				    'default_value' => 0,
-				)
-			);
-		}
-
 
 		/**
 		 *
@@ -710,27 +680,19 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Page Link field for call to action link
 		 */
-		function cta_link() {
-			return( 
+		function cta_link($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Link',
 				    'name' => 'call_to_action_link',
 				    'type' => 'page_link',
 				    'instructions' => '',
 				    'required' => 0,
-				    'conditional_logic' => array (
-				        array (
-				            array (
-				                'field' => $this->key . 'cta_checkbox',
-				                'operator' => '==',
-				                'value' => '1',
-				            ),
-				        ),
-				    ),
+						'conditional_logic' => 0,
 				    'wrapper' => array (
 				        'width' => 30,
 				        'class' => 'acf-cta',
@@ -749,42 +711,39 @@
 
 		/**
 		 *
-		 * Field: Placeholder for CTA if none is to be shown
+		 * Field: Call to Action Arbitrary Link
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
-		 * Message field for CTA placeholder
+		 *
+		 * Text field for arbitrary (non-internal) CTA links
 		 */
-		function cta_placeholder() {
-			return( 
+		function cta_external($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
-				    'label' => 'Placeholder',
-				    'name' => '',
-				    'type' => 'message',
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
+				    'label' => 'Text',
+				    'name' => 'call_to_action_text',
+				    'type' => 'text',
 				    'instructions' => '',
 				    'required' => 0,
-				    'conditional_logic' => array (
-				        array (
-				            array (
-				                'field' => $this->key . 'cta_checkbox',
-				                'operator' => '!=',
-				                'value' => '1',
-				            ),
-				        ),
-				    ),
+				    'conditional_logic' => 0,
 				    'wrapper' => array (
-				        'width' => 80,
-				        'class' => '',
+				        'width' => 30,
+				        'class' => 'acf-cta',
 				        'id' => '',
 				    ),
-				    'message' => 'No Call to Action will be displayed.',
-				    'new_lines' => 'wpautop',
-				    'esc_html' => 0,
+				    'default_value' => '',
+				    'placeholder' => '',
+				    'prepend' => '',
+				    'append' => '',
+				    'maxlength' => '',
+				    'readonly' => 0,
+				    'disabled' => 0,
 				)
 			);
 		}
+
 
 
 		/**
@@ -793,27 +752,19 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Text field for CTA
 		 */
-		function cta_text() {
-			return( 
+		function cta_text($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Text',
 				    'name' => 'call_to_action_text',
 				    'type' => 'text',
 				    'instructions' => '',
 				    'required' => 0,
-				    'conditional_logic' => array (
-				        array (
-				            array (
-				                'field' => $this->key . 'cta_checkbox',
-				                'operator' => '==',
-				                'value' => '1',
-				            ),
-				        ),
-				    ),
+						'conditional_logic' => 0,
 				    'wrapper' => array (
 				        'width' => 30,
 				        'class' => 'acf-cta',
@@ -837,27 +788,19 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Select field to choose the semantic button type for the CTA
 		 */
-		function cta_type() {
-			return( 
+		function cta_type($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Type',
 				    'name' => 'call_to_action_type',
 				    'type' => 'select',
 				    'instructions' => '',
 				    'required' => 0,
-				    'conditional_logic' => array (
-				        array (
-				            array (
-				                'field' => $this->key . 'cta_checkbox',
-				                'operator' => '==',
-				                'value' => '1',
-				            ),
-				        ),
-				    ),
+						'conditional_logic' => 0,
 				    'wrapper' => array (
 				        'width' => 20,
 				        'class' => 'acf-cta',
@@ -884,13 +827,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Relationship field for featured content
 		 */
-		function featured_content() {
-			return( 
+		function featured_content($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Featured Content',
 				    'name' => 'featured_content',
 				    'type' => 'relationship',
@@ -926,13 +869,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Text field for a link's text.
 		 */
-		function link_text() {
-			return( 
+		function link_text($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 					'label' => 'Link Text',
 					'name' => 'link_text',
 					'type' => 'text',
@@ -962,13 +905,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Post Object field for link
 		 */
-		function link() {
-			return( 
+		function link($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 					'label' => 'Link',
 					'name' => 'link',
 					'type' => 'post_object',
@@ -999,13 +942,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Radio button field for Type of Media attachment
 		 */
-		function type_of_media() {
-			return( 
+		function type_of_media($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Type of Media',
 				    'name' => 'type_of_media',
 				    'type' => 'radio',
@@ -1041,27 +984,19 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Placeholder for when no media is selected
 		 */
-		function media_placeholder() {
-			return( 
+		function media_placeholder($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Media Placeholder',
 				    'name' => '',
 				    'type' => 'message',
 				    'instructions' => '',
 				    'required' => 0,
-				    'conditional_logic' => array (
-				        array (
-				            array (
-				                'field' => $this->key . 'type_of_media',
-				                'operator' => '==',
-				                'value' => 'none',
-				            ),
-				        ),
-				    ),
+				    'conditional_logic' => 0,
 				    'wrapper' => array (
 				        'width' => '',
 				        'class' => 'acf-media',
@@ -1082,27 +1017,19 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Image field for media selector
 		 */
-		function media_image() {
-			return( 
+		function media_image($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Image',
 				    'name' => 'image',
 				    'type' => 'image',
 				    'instructions' => '',
 				    'required' => 0,
-				    'conditional_logic' => array (
-				        array (
-				            array (
-				                'field' => $this->key . 'type_of_media',
-				                'operator' => '==',
-				                'value' => 'image',
-				            ),
-				        ),
-				    ),
+				    'conditional_logic' => 0,
 				    'wrapper' => array (
 				        'width' => '',
 				        'class' => 'acf-media',
@@ -1130,27 +1057,19 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Code field for media selector
 		 */
-		function media_code() {
-			return( 
+		function media_code($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Code',
 				    'name' => 'code',
 				    'type' => 'textarea',
 				    'instructions' => '',
 				    'required' => 0,
-				    'conditional_logic' => array (
-				        array (
-				            array (
-				                'field' => $this->key . 'type_of_media',
-				                'operator' => '==',
-				                'value' => 'code',
-				            ),
-				        ),
-				    ),
+				    'conditional_logic' => 0,
 				    'wrapper' => array (
 				        'width' => '',
 				        'class' => 'acf-media',
@@ -1169,27 +1088,19 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * WYSIWYG field for media selector
 		 */
-		function media_content() {
-			return( 
+		function media_content($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Content',
 				    'name' => 'media_content',
 					'type' => 'wysiwyg',
 				    'instructions' => '',
 				    'required' => 0,
-				    'conditional_logic' => array (
-				        array (
-				            array (
-				                'field' => $this->key . 'type_of_media',
-				                'operator' => '==',
-				                'value' => 'media_content',
-				            ),
-				        ),
-				    ),
+				    'conditional_logic' => 0,
 				    'wrapper' => array (
 				        'width' => '',
 				        'class' => 'acf-media',
@@ -1211,27 +1122,19 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Video field for media selector
 		 */
-		function media_video() {
-			return( 
+		function media_video($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Video',
 				    'name' => 'video',
 				    'type' => 'oembed',
 				    'instructions' => '',
 				    'required' => 0,
-				    'conditional_logic' => array (
-				        array (
-				            array (
-				                'field' => $this->key . 'type_of_media',
-				                'operator' => '==',
-				                'value' => 'video',
-				            ),
-				        ),
-				    ),
+				    'conditional_logic' => 0,
 				    'wrapper' => array (
 				        'width' => '',
 				        'class' => 'acf-media',
@@ -1250,13 +1153,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Tab titled "Background"
 		 */
-		function tab_background() {
-			return( 
+		function tab_background($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Background',
 				    'name' => '',
 				    'type' => 'tab',
@@ -1278,17 +1181,48 @@
 
 		/**
 		 *
+		 * Field: Calls to Action Tab
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 *
+		 * Tab titled "Calls to Action"
+		 */
+		function tab_cta($thisKey = 'field') {
+			return(
+				array (
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
+				    'label' => 'Calls to Action',
+				    'name' => '',
+				    'type' => 'tab',
+				    'instructions' => '',
+				    'required' => 0,
+				    'conditional_logic' => 0,
+				    'wrapper' => array (
+				        'width' => '',
+				        'class' => '',
+				        'id' => '',
+				    ),
+				    'placement' => 'top',
+				    'endpoint' => 0,
+				)
+			);
+		}
+
+
+		/**
+		 *
 		 * Field: Background Tab
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Tab titled "Background"
 		 */
-		function tab_dev() {
-			return( 
+		function tab_dev($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Dev Mode',
 				    'name' => '',
 				    'type' => 'tab',
@@ -1314,13 +1248,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Tab titled "Tabs"
 		 */
-		function tab_tabs() {
-			return( 
+		function tab_tabs($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Tabs',
 				    'name' => '',
 				    'type' => 'tab',
@@ -1346,13 +1280,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Tab titled "Post List"
 		 */
-		function tab_post_list() {
-			return( 
+		function tab_post_list($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Post List',
 				    'name' => '',
 				    'type' => 'tab',
@@ -1374,17 +1308,17 @@
 
 		/**
 		 *
-		 * Field: Panel Type
+		 * Field: Gallery
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
-		 * Select field to choose the semantic button type for the CTA
+		 *
+		 * Gallery Field
 		 */
-		function gallery() {
-			return( 
+		function gallery($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 					'label' => 'Gallery',
 					'name' => 'gallery',
 					'type' => 'gallery',
@@ -1419,13 +1353,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Select field to choose the semantic button type for the CTA
 		 */
-		function panel_type() {
-			return( 
+		function panel_type($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Type',
 				    'name' => 'panel_type',
 				    'type' => 'select',
@@ -1466,13 +1400,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Tab titled "Collapsibles"
 		 */
-		function tab_collapsibles() {
-			return( 
+		function tab_collapsibles($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Collapsibles',
 				    'name' => '',
 				    'type' => 'tab',
@@ -1498,13 +1432,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Tab titled "Content"
 		 */
-		function tab_content() {
-			return( 
+		function tab_content($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Content',
 				    'name' => '',
 				    'type' => 'tab',
@@ -1529,13 +1463,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Endpoint field for content tabs
 		 */
-		function tab_endpoint() {
+		function tab_endpoint($thisKey = 'field') {
 			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => '',
 				    'name' => '',
 				    'type' => 'tab',
@@ -1560,13 +1494,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Tab titled "Features"
 		 */
-		function tab_features() {
-			return( 
+		function tab_features($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Features',
 				    'name' => '',
 				    'type' => 'tab',
@@ -1591,13 +1525,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Tab titled "Cards"
 		 */
-		function tab_cards() {
-			return( 
+		function tab_cards($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 					'label' => 'Cards',
 					'name' => '',
 					'type' => 'tab',
@@ -1622,13 +1556,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Tab titled "Media"
 		 */
-		function tab_media() {
-			return( 
+		function tab_media($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Media',
 				    'name' => '',
 				    'type' => 'tab',
@@ -1653,13 +1587,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Tab titled "Slides"
 		 */
-		function tab_slides() {
-			return( 
+		function tab_slides($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Slides',
 				    'name' => '',
 				    'type' => 'tab',
@@ -1685,13 +1619,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Tab titled "Gallery"
 		 */
-		function tab_gallery() {
-			return( 
+		function tab_gallery($thisKey = 'field') {
+			return(
 				array (
-					'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Gallery',
 				    'name' => '',
 				    'type' => 'tab',
@@ -1717,13 +1651,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Data attribute for developer mode
 		 */
-		function data_attribute() {
-			return( 
+		function data_attribute($thisKey = 'field') {
+			return(
 				array (
-				    'key' => $this->key . __FUNCTION__,
+				    'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Attribute',
 				    'name' => 'attribute',
 				    'type' => 'text',
@@ -1754,13 +1688,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Data value for developer mode
 		 */
-		function data_value() {
-			return( 
+		function data_value($thisKey = 'field') {
+			return(
 				array (
-				    'key' => $this->key . __FUNCTION__,
+				    'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Value',
 				    'name' => 'value',
 				    'type' => 'text',
@@ -1791,13 +1725,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Additional Classes for blocks
 		 */
-		function block_classes() {
-			return( 
+		function block_classes($thisKey = 'field') {
+			return(
 				array (
-				    'key' => $this->key . __FUNCTION__,
+				    'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Classes',
 				    'name' => 'block_classes',
 				    'type' => 'text',
@@ -1827,13 +1761,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Additional Classes for "Content" blocks
 		 */
-		function content_classes() {
-			return( 
+		function content_classes($thisKey = 'field') {
+			return(
 				array (
-				    'key' => $this->key . __FUNCTION__,
+				    'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Classes',
 				    'name' => 'content_classes',
 				    'type' => 'text',
@@ -1863,13 +1797,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Additional Classes for "Content" blocks
 		 */
-		function media_classes() {
-			return( 
+		function media_classes($thisKey = 'field') {
+			return(
 				array (
-				    'key' => $this->key . __FUNCTION__,
+				    'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Classes',
 				    'name' => 'media_classes',
 				    'type' => 'text',
@@ -1899,13 +1833,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * "Message" field for Dev Mode Content fields
 		 */
-		function dev_block_message() {
-			return( 
+		function dev_block_message($thisKey = 'field') {
+			return(
 				array (
-				    'key' => $this->key . __FUNCTION__,
+				    'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Block',
 				    'name' => 'dev_block_message',
 				    'type' => 'message',
@@ -1931,13 +1865,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * "Message" field for Dev Mode Content fields
 		 */
-		function dev_content_message() {
-			return( 
+		function dev_content_message($thisKey = 'field') {
+			return(
 				array (
-				    'key' => $this->key . __FUNCTION__,
+				    'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Content',
 				    'name' => 'dev_content_message',
 				    'type' => 'message',
@@ -1963,13 +1897,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * "Message" field for Dev Mode Media fields
 		 */
-		function dev_media_message() {
-			return( 
+		function dev_media_message($thisKey = 'field') {
+			return(
 				array (
-				    'key' => $this->key . __FUNCTION__,
+				    'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Media',
 				    'name' => 'dev_media_message',
 				    'type' => 'message',
@@ -1988,5 +1922,4 @@
 			);
 		}
 
-    }
-
+  }

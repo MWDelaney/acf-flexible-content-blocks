@@ -26,9 +26,10 @@ License: MIT
     require ACFFCB_PLUGIN_DIR . 'lib/class-gamajo-template-loader.php';
     require ACFFCB_PLUGIN_DIR . 'lib/class-acffcb-template-loader.php';
 
-    require ACFFCB_PLUGIN_DIR . 'lib/class-acfcfb-fields.php';
-    require ACFFCB_PLUGIN_DIR . 'lib/class-acfcfb-repeaters.php';
-    require ACFFCB_PLUGIN_DIR . 'lib/class-acfcfb-layouts.php';
+    require ACFFCB_PLUGIN_DIR . 'lib/class-acffcb-fields.php';
+    require ACFFCB_PLUGIN_DIR . 'lib/class-acffcb-repeaters.php';
+		require ACFFCB_PLUGIN_DIR . 'lib/class-acffcb-flexible-content.php';
+    require ACFFCB_PLUGIN_DIR . 'lib/class-acffcb-layouts.php';
 
 
 /**

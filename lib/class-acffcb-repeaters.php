@@ -4,10 +4,10 @@
 		private $layout;
 
 		function __construct($layout) {
-			$this->layout 	= $layout;
-			$this->key 	= 'acffcb-';
-			$this->key 	.= 'layout-' . $layout;
-        		$this->key      .= '-repeater-';
+			$this->layout		= $layout;
+			$this->key			= 'acffcb-';
+			$this->key			.= 'layout-' . $layout;
+      $this->key			.= '-repeater-';
 		}
 
 
@@ -23,6 +23,8 @@
 		 */
 		function cards() {
 	    $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
+			$FCBRepeaterFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
 			return(
 				array (
 				  'key' => $this->key . __FUNCTION__,
@@ -37,16 +39,16 @@
 						'class' => 'acf-media',
 						'id' => '',
 					),
-          				'collapsed' => $this->key . __FUNCTION__ . '-field-title',
+          'collapsed' => $this->key . __FUNCTION__ . '-field-title',
 					'min' => '',
 					'max' => '',
 					'layout' => 'block',
 					'button_label' => 'Add Card',
 					'sub_fields' => array (
 
-						// Title
-				        $FCBRepeaterFields->title(),
-				        $FCBRepeaterFields->navigation_title(),
+							// Title
+			        $FCBRepeaterFields->title(),
+			        $FCBRepeaterFields->navigation_title(),
 
 				    	// Content Tab
 				    	$FCBRepeaterFields->tab_content(),
@@ -54,13 +56,9 @@
 				    	$FCBRepeaterFields->content_excerpt_placeholder(),
 				    	$FCBRepeaterFields->content_conditional(),
 
-				        // Media
-				        $FCBRepeaterFields->tab_media(),
-				        $FCBRepeaterFields->type_of_media(),
-				        $FCBRepeaterFields->media_placeholder(),
-				        $FCBRepeaterFields->media_image(),
-				        $FCBRepeaterFields->media_video(),
-				        $FCBRepeaterFields->media_content(),
+							// Media tab
+							$FCBRepeaterFields->tab_media(),
+							$FCBRepeaterFlexibleContent->media(),
 
 				    	// Background Tab
 				    	$FCBRepeaterFields->tab_background(),
@@ -86,77 +84,20 @@
 
 		/**
 		 *
-		 * Repeater: Columns
-		 *
-		 * @author Michael W. Delaney
-		 * @since 1.0
-		 * 
-		 * Columns repeater
-		 */
-		function columns() {
-	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
-			return( 
-				array (
-				    'key' => $this->key . __FUNCTION__,
-					'label' => 'Columns',
-					'name' => 'columns',
-					'type' => 'repeater',
-					'instructions' => '',
-					'required' => 0,
-					'conditional_logic' => 0,
-					'wrapper' => array (
-						'width' => '',
-						'class' => 'acf-media',
-						'id' => '',
-					),
-					'collapsed' => 'field_573e0e481c7f7',
-					'min' => '',
-					'max' => '',
-					'layout' => 'block',
-					'button_label' => 'Add Column',
-					'sub_fields' => array (
-
-				        // Media
-				        $FCBRepeaterFields->tab_content(),
-			            $FCBRepeaterFields->column_width(),
-			            $FCBRepeaterFields->type_of_media(),
-			            $FCBRepeaterFields->media_placeholder(),
-			            $FCBRepeaterFields->media_image(),
-			            $FCBRepeaterFields->media_video(),
-			            $FCBRepeaterFields->media_content(),
-
-				    	// Background Tab 
-				    	$FCBRepeaterFields->tab_background(),
-				    	$FCBRepeaterFields->background_image(),
-				    	$FCBRepeaterFields->background_color(),
-			            $FCBRepeaterFields->background_color_placeholder(),
-			            $FCBRepeaterFields->theme_color(),
-			            $FCBRepeaterFields->choose_color(),
-
-				    	// Tab Endpoint
-				    	$FCBRepeaterFields->tab_endpoint(),
-
-					)
-				)
-			);
-		}
-
-
-
-		/**
-		 *
 		 * Repeater: Tabs
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Tabs repeater
 		 */
 		function tabs() {
 	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
-			return( 
+					$FCBRepeaterFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
+			return(
 				array (
-				    'key' => $this->key . __FUNCTION__,
+				  'key' => $this->key . __FUNCTION__,
 					'label' => 'Tabs',
 					'name' => 'tabs',
 					'type' => 'repeater',
@@ -176,38 +117,31 @@
 					'sub_fields' => array (
 
 						// Title
-				        $FCBRepeaterFields->title(),
-				        $FCBRepeaterFields->navigation_title(),
-				        
-				    	// Content Tab 
-				    	$FCBRepeaterFields->tab_content(),
-				    	$FCBRepeaterFields->content(),
+						$FCBRepeaterFields->title(),
+						$FCBRepeaterFields->navigation_title(),
 
-				        // Media
-				        $FCBRepeaterFields->tab_media(),
-			            $FCBRepeaterFields->type_of_media(),
-			            $FCBRepeaterFields->media_placeholder(),
-			            $FCBRepeaterFields->media_image(),
-			            $FCBRepeaterFields->media_video(),
-			            $FCBRepeaterFields->media_content(),
+						// Content Tab
+						$FCBRepeaterFields->tab_content(),
+						$FCBRepeaterFields->content(),
 
-				    	// Background Tab 
-				    	$FCBRepeaterFields->tab_background(),
-				    	$FCBRepeaterFields->background_image(),
-				    	$FCBRepeaterFields->background_color(),
-			            $FCBRepeaterFields->background_color_placeholder(),
-			            $FCBRepeaterFields->theme_color(),
-			            $FCBRepeaterFields->choose_color(),
+						// Media tab
+						$FCBRepeaterFields->tab_media(),
+						$FCBRepeaterFlexibleContent->media(),
 
-				    	// Tab Endpoint
-				    	$FCBRepeaterFields->tab_endpoint(),
+						// Background Tab
+						$FCBRepeaterFields->tab_background(),
+						$FCBRepeaterFields->background_image(),
+						$FCBRepeaterFields->background_color(),
+						$FCBRepeaterFields->background_color_placeholder(),
+						$FCBRepeaterFields->theme_color(),
+						$FCBRepeaterFields->choose_color(),
 
-			            // Call to Action
-			            $FCBRepeaterFields->cta_checkbox(),
-			            $FCBRepeaterFields->cta_placeholder(),
-			            $FCBRepeaterFields->cta_text(),
-			            $FCBRepeaterFields->cta_link(),
-			            $FCBRepeaterFields->cta_type(),
+						// Call to Action
+						$FCBRepeaterFields->tab_cta(),
+						$FCBRepeaterFlexibleContent->cta(),
+
+						// Tab Endpoint
+						$FCBRepeaterFields->tab_endpoint(),
 
 					)
 				)
@@ -222,14 +156,16 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Collapsibles repeater
 		 */
 		function collapsibles() {
 	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
-			return( 
+					$FCBRepeaterFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
+			return(
 				array (
-				    'key' => $this->key . __FUNCTION__,
+				  'key' => $this->key . __FUNCTION__,
 					'label' => 'Collapsibles',
 					'name' => 'collapsibles',
 					'type' => 'repeater',
@@ -249,39 +185,33 @@
 					'sub_fields' => array (
 
 						// Title
-				        $FCBRepeaterFields->title(),
-				        $FCBRepeaterFields->navigation_title(),
-				        $FCBRepeaterFields->panel_type(),
-				    	// Content Tab 
-				    	$FCBRepeaterFields->tab_content(),
-				    	$FCBRepeaterFields->content(),
+						$FCBRepeaterFields->title(),
+						$FCBRepeaterFields->navigation_title(),
+						$FCBRepeaterFields->panel_type(),
 
-				        // Media
-				        $FCBRepeaterFields->tab_media(),
-			            $FCBRepeaterFields->type_of_media(),
-			            $FCBRepeaterFields->media_placeholder(),
-			            $FCBRepeaterFields->media_image(),
-			            $FCBRepeaterFields->media_video(),
-			            $FCBRepeaterFields->media_content(),
+						// Content Tab
+						$FCBRepeaterFields->tab_content(),
+						$FCBRepeaterFields->content(),
 
-				    	// Background Tab 
-				    	$FCBRepeaterFields->tab_background(),
-				    	$FCBRepeaterFields->background_image(),
-				    	$FCBRepeaterFields->background_color(),
-			            $FCBRepeaterFields->background_color_placeholder(),
-			            $FCBRepeaterFields->theme_color(),
-			            $FCBRepeaterFields->choose_color(),
+						// Media tab
+						$FCBRepeaterFields->tab_media(),
+						$FCBRepeaterFlexibleContent->media(),
 
-				    	// Tab Endpoint
-				    	$FCBRepeaterFields->tab_endpoint(),
+						// Background Tab
+						$FCBRepeaterFields->tab_background(),
+						$FCBRepeaterFields->background_image(),
+						$FCBRepeaterFields->background_color(),
+						$FCBRepeaterFields->background_color_placeholder(),
+						$FCBRepeaterFields->theme_color(),
+						$FCBRepeaterFields->choose_color(),
 
-			            // Call to Action
-			            $FCBRepeaterFields->cta_checkbox(),
-			            $FCBRepeaterFields->cta_placeholder(),
-			            $FCBRepeaterFields->cta_text(),
-			            $FCBRepeaterFields->cta_link(),
-			            $FCBRepeaterFields->cta_type(),
+						// Call to Action
+						$FCBRepeaterFields->tab_cta(),
+						$FCBRepeaterFlexibleContent->cta(),
 
+						// Tab Endpoint
+						$FCBRepeaterFields->tab_endpoint(),
+						
 					)
 				)
 			);
@@ -295,12 +225,14 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Repeater field for slides
 		 */
 		function slides() {
 	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
-			return( 
+					$FCBRepeaterFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
+			return(
 				array (
 				    'key' => $this->key . __FUNCTION__,
 				    'label' => 'Slides',
@@ -320,35 +252,28 @@
 				    'layout' => 'block',
 				    'button_label' => 'Add Slide',
 				    'sub_fields' => array (
-						// Title
-				        $FCBRepeaterFields->title(),
+							// Title
+							$FCBRepeaterFields->title(),
 
-				    	// Content Tab 
-				    	$FCBRepeaterFields->tab_content(),
-				    	$FCBRepeaterFields->content(),
+							// Content Tab
+							$FCBRepeaterFields->tab_content(),
+							$FCBRepeaterFields->content(),
 
-			            // Call to Action
-			            $FCBRepeaterFields->cta_checkbox(),
-			            $FCBRepeaterFields->cta_placeholder(),
-			            $FCBRepeaterFields->cta_text(),
-			            $FCBRepeaterFields->cta_link(),
-			            $FCBRepeaterFields->cta_type(),
+							// Call to Action
+							$FCBRepeaterFields->tab_cta(),
+							$FCBRepeaterFlexibleContent->cta(),
 
-				        // Media
-				        $FCBRepeaterFields->tab_media(),
-			            $FCBRepeaterFields->type_of_media(),
-			            $FCBRepeaterFields->media_placeholder(),
-			            $FCBRepeaterFields->media_image(),
-			            $FCBRepeaterFields->media_video(),
-			            $FCBRepeaterFields->media_content(),
+							// Media tab
+							$FCBRepeaterFields->tab_media(),
+							$FCBRepeaterFlexibleContent->media(),
 
-				    	// Background Tab 
-				    	$FCBRepeaterFields->tab_background(),
-				    	$FCBRepeaterFields->background_image(),
-				    	$FCBRepeaterFields->background_color(),
-			            $FCBRepeaterFields->background_color_placeholder(),
-			            $FCBRepeaterFields->theme_color(),
-			            $FCBRepeaterFields->choose_color(),
+							// Background Tab
+							$FCBRepeaterFields->tab_background(),
+							$FCBRepeaterFields->background_image(),
+							$FCBRepeaterFields->background_color(),
+							$FCBRepeaterFields->background_color_placeholder(),
+							$FCBRepeaterFields->theme_color(),
+							$FCBRepeaterFields->choose_color(),
 					)
 				)
 			);
@@ -361,12 +286,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Repeater for data attributes on blocks
 		 */
 		function block_data_attributes() {
 	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
-			return( 
+
+			return(
 				array (
 				    'key' => $this->key . __FUNCTION__,
 				    'label' => 'Data Attributes',
@@ -401,12 +327,13 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Repeater for data attributes on content tabs
 		 */
 		function content_data_attributes() {
 	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
-			return( 
+
+			return(
 				array (
 				    'key' => $this->key . __FUNCTION__,
 				    'label' => 'Data Attributes',
@@ -442,12 +369,12 @@
 		 *
 		 * @author Michael W. Delaney
 		 * @since 1.0
-		 * 
+		 *
 		 * Repeater for data attributes on media tabs
 		 */
 		function media_data_attributes() {
 	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
-			return( 
+			return(
 				array (
 				    'key' => $this->key . __FUNCTION__,
 				    'label' => 'Data Attributes',
@@ -476,4 +403,3 @@
 		}
 
 	}
-
