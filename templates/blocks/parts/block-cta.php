@@ -1,4 +1,5 @@
-<?php if(get_sub_field('display_call_to_action')): ?>
+<?php if( have_rows('calls_to_action') ): ?>
+	<?php while ( have_rows('calls_to_action') ) : the_row(); ?>
     <aside>
     <?php
 
@@ -16,4 +17,5 @@
 
     <a class="<?=$classes?>" href="<?=$link?>"><?=$text?></a>
     </aside>
+	<?php endwhile;?>
 <?php endif; ?>
