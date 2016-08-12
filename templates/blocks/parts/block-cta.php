@@ -1,6 +1,6 @@
 <?php if( have_rows('calls_to_action') ): ?>
-	<?php while ( have_rows('calls_to_action') ) : the_row(); ?>
-    <aside>
+<aside>
+<?php while ( have_rows('calls_to_action') ) : the_row(); ?>
     <?php
 
         // Set the button classes
@@ -16,6 +16,6 @@
     ?>
 
     <a class="<?=$classes?>" href="<?=$link?>"><?=$text?></a>
-    </aside>
-	<?php endwhile;?>
+<?php endwhile;?>
+</aside>
 <?php endif; ?>
