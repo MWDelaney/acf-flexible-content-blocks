@@ -721,7 +721,7 @@
 		function cta_external($thisKey = 'field') {
 			return(
 				array (
-					'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
+				    'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
 				    'label' => 'Text',
 				    'name' => 'call_to_action_text',
 				    'type' => 'text',
@@ -802,7 +802,7 @@
 				    'required' => 0,
 						'conditional_logic' => 0,
 				    'wrapper' => array (
-				        'width' => 20,
+				        'width' => 40,
 				        'class' => 'acf-cta',
 				        'id' => '',
 				    ),
