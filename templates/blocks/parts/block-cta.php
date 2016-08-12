@@ -8,7 +8,7 @@
         $classes .= ' btn-' . get_sub_field('call_to_action_type');
 
         // Set the link URL
-        $link = get_sub_field('call_to_action_link');
+        $link = ( get_sub_field('call_to_action_external') ) ? get_sub_field('call_to_action_external') : get_sub_field('call_to_action_link');
 
         // Set the link text
         $text = get_sub_field('call_to_action_text');
