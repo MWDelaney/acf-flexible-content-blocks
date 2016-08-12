@@ -722,8 +722,8 @@
 			return(
 				array (
 				    'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
-				    'label' => 'Text',
-				    'name' => 'call_to_action_text',
+				    'label' => 'Link',
+				    'name' => 'call_to_action_external',
 				    'type' => 'text',
 				    'instructions' => '',
 				    'required' => 0,
