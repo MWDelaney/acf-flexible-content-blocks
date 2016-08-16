@@ -1,5 +1,5 @@
 <?php if( have_rows('calls_to_action') ): ?>
-<aside>
+<aside class="calls-to-action">
 <?php while ( have_rows('calls_to_action') ) : the_row(); ?>
     <?php
 
