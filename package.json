@@ -3,10 +3,15 @@
   "version": "1.0.0",
   "description": "Flexible content blocks for WordPress content types using Advanced Custom Fields Pro 5",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "main-bower-files": "^2.13.1"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.1",
+    "main-bower-files": "^2.13.1",
+    "gulp-uglify": "^1.2.0",
+    "gulp-concat": "^2.6.0",
     "run-sequence": "^1.2.0"
   },
   "scripts": {

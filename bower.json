@@ -1,0 +1,29 @@
+{
+  "name": "acf-flexible-content-blocks",
+  "description": "Flexible content blocks for WordPress content types using Advanced Custom Fields Pro 5",
+  "main": "assets/js/admin-script.js",
+  "authors": [
+    "mwdelaney <michael.delaney@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/MWDelaney/acf-flexible-content-blocks",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ace-builds": "^1.2.5"
+  },
+	"overrides": {
+		"ace-builds": {
+			"main": [
+				"./src-min/ace.js",
+				"./src-min/*-html.js",
+				"./src-min/theme-ambiance.js"
+				]
+		}
+	}
+}

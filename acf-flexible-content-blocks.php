@@ -491,6 +491,7 @@ License: MIT
          * Enqueue admin scripts and styles
          */
         function admin_scripts() {
+						wp_enqueue_script( 'acf-flexible-content-fields-ace', ACFFCB_PLUGIN_URL . 'assets/js/ace/ace.js' );
             wp_enqueue_script( 'acf-flexible-content-fields-admin-script', ACFFCB_PLUGIN_URL . 'assets/js/admin-script.js' );
         }
 

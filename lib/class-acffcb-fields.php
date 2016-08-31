@@ -1072,7 +1072,7 @@
 				    'conditional_logic' => 0,
 				    'wrapper' => array (
 				        'width' => '',
-				        'class' => 'acf-media',
+				        'class' => 'acf-media acf-code',
 				        'id' => '',
 				    ),
 					'default_value' => '',

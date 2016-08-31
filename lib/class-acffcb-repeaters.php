@@ -211,12 +211,11 @@
 
 						// Tab Endpoint
 						$FCBRepeaterFields->tab_endpoint(),
-						
+
 					)
 				)
 			);
 		}
-
 
 
 		/**
