@@ -19,7 +19,7 @@ Also wraps `the_content()` in some basic HTML to make it easy to differentiate f
 By default all included layouts are available:
 
 1. Content
-2. Media
+2. Media (image, oembed, 'content', code)
 3. Content With Media
 4. Featured Content
 5. Slider
@@ -28,6 +28,7 @@ By default all included layouts are available:
 8. Collapsibles
 9. Cards
 10. Post List
+11. Strap
 
 ### Enable only some layouts
 To remove layouts from the available list, declare theme support for only the layouts you wish to use:
