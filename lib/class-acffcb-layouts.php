@@ -73,6 +73,61 @@
 
 		/**
 		 *
+		 * Layout: Strap
+		 *
+		 * @author Michael W. Delaney
+		 * @since 1.0
+		 *
+		 * Basic content block
+		 */
+		function strap() {
+	        $FCBFields = new FCBFields(__FUNCTION__);
+	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
+					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+
+			return(
+			    array ( 'order' => '10',
+					'layout' => array (
+						'key' => $this->key . __FUNCTION__,
+				        'name' => 'strap',
+				        'label' => 'Strap',
+				        'display' => 'block',
+				        'sub_fields' => array (
+
+				            // Content tab
+				            $FCBFields->tab_content(),
+										$FCBFlexibleContent->media('0', '12'),
+
+				            // Background tab
+				            $FCBFields->tab_background(),
+				            $FCBFields->background_image(),
+				            $FCBFields->background_color(),
+				            $FCBFields->background_color_placeholder(),
+				            $FCBFields->theme_color(),
+				            $FCBFields->choose_color(),
+
+				            // Dev Mode tab
+				            $FCBFields->tab_dev(),
+				            $FCBFields->dev_block_message(),
+				            $FCBRepeaters->block_data_attributes(),
+				            $FCBFields->block_classes(),
+
+				            $FCBFields->dev_content_message(),
+				            $FCBRepeaters->content_data_attributes(),
+				            $FCBFields->content_classes(),
+
+				            // Tab Endpoint
+				            $FCBFields->tab_endpoint(),
+
+				        )
+				    )
+				)
+			);
+		}
+
+
+		/**
+		 *
 		 * Layout: Tabs
 		 *
 		 * @author Michael W. Delaney
