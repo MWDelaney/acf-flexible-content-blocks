@@ -105,7 +105,7 @@
 		 *
 		 * Flexible Content field for Calls to Action
 		 */
-		function media() {
+		function media($min = 0, $max = 1) {
 	    $FCBFlexibleContentFields = new FCBFields($this->layout, __FUNCTION__);
 
 			return(
@@ -122,8 +122,8 @@
 						'class' => 'acf-media',
 						'id' => '',
 					),
-					'min' => '0',
-					'max' => '1',
+					'min' => $min,
+					'max' => $max,
 					'button_label' => 'Add Media',
 					'layouts' => array (
 						array (
