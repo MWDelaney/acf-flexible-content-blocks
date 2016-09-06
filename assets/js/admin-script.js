@@ -34,5 +34,5 @@ jQuery( document ).ready(function() {
  * Hide Dev Mode items, append Dev Mode button
  */
 acf.add_action('append', function( $el ){
-	appendAce( $el.find('textarea') );
+	appendAce('.acf-code textarea');
 })
