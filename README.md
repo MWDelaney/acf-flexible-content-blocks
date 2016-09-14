@@ -203,3 +203,67 @@ function contact_us_button( $content ) {
     return $content;
 }
 ````
+
+### Filter: fcb_get_layouts
+Change the PHP class that the plugin looks at for layouts. See [Adding Your Own Layouts](#adding-your-own-layouts).
+
+## Adding Your Own Layouts
+You can append your own layouts to the included set using a filter:
+
+````
+/**
+ * Add layouts to ACFFCB
+ */
+
+ function my_layouts() {
+  // The name of the class we keep our layouts in
+ 	return 'myLayouts';
+ }
+
+add_action( 'acf/init', function() {
+  // Remove the plugin's set default set of layouts
+	 remove_filter ('fcb_get_layouts',  'fcb_layouts_class', 99, 2);
+	 
+	 // Add my own layouts
+	 add_filter ('fcb_get_layouts',  'my_layouts', 99, 2);
+});
+
+
+
+// Extend the original class to include all the default layouts as well as the ones we're adding here.
+class myLayouts extends MWD\ACFFCB\Layouts {
+
+  /**
+  *
+  * Flexible Content Field: Call to Action
+  *
+  * @author Michael W. Delaney
+  *
+  */
+  function feature() {
+   $FCBFields = new MWD\ACFFCB\Fields(__FUNCTION__);
+   $FCBRepeaters = new MWD\ACFFCB\Repeaters(__FUNCTION__);
+   $FCBFlexibleContent = new MWD\ACFFCB\FlexibleContent(__FUNCTION__);
+   return(
+    array ( 'order' => '1000',
+    'layout' => array (
+     'key' => __FUNCTION__,
+     'name' => 'call_to_action',
+     'label' => 'Call to Action',
+     'display' => 'block',
+      'sub_fields' => array (
+       
+       // Call to Action
+       $FCBFields->tab_cta(),
+       $FCBFlexibleContent->cta(),
+       
+       // Tab Endpoint
+       $FCBFields->tab_endpoint(),
+      
+      )
+     )
+    )
+   );
+  }
+ }
+  ````
