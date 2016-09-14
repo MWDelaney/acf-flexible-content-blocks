@@ -1,5 +1,8 @@
 <?php
-    class FCBFlexibleContent {
+
+namespace MWD\ACFFCB;
+
+class FlexibleContent {
 
 		private $layout;
 
@@ -43,7 +46,7 @@
 		 * Flexible Content field for Calls to Action
 		 */
 		function cta() {
-	    $FCBFlexibleContentFields = new FCBFields($this->layout, __FUNCTION__);
+	    $FCBFlexibleContentFields = new Fields($this->layout, __FUNCTION__);
 
 			return(
 				array (
@@ -106,7 +109,7 @@
 		 * Flexible Content field for Calls to Action
 		 */
 		function media($min = 0, $max = 1) {
-	    $FCBFlexibleContentFields = new FCBFields($this->layout, __FUNCTION__);
+			$FCBFlexibleContentFields = new Fields($this->layout, __FUNCTION__);
 
 			return(
 				array (

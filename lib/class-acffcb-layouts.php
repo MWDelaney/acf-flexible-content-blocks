@@ -1,12 +1,15 @@
 <?php
-    class FCBLayouts {
-    	public $key = '';
+
+namespace MWD\ACFFCB;
+
+
+class Layouts {
+  	public $key = '';
+
 		function __construct() {
 			$this->key 		= 'acffcb-';
 			$this->key 		.= 'layout-';
 		}
-
-
 
 		/**
 		 *
@@ -18,9 +21,9 @@
 		 * Basic content block
 		 */
 		function content() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+      $FCBFields = new Fields(__FUNCTION__);
+      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 			return(
 			    array ( 'order' => '10',
@@ -81,9 +84,9 @@
 		 * Basic content block
 		 */
 		function strap() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+      $FCBFields = new Fields(__FUNCTION__);
+      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 			return(
 			    array ( 'order' => '10',
@@ -136,9 +139,9 @@
 		 * Layout for tabbed content
 		 */
 		function tabs() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBFields = new Fields(__FUNCTION__);
+      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '300',
@@ -193,9 +196,9 @@
 		 * Image gallery layout
 		 */
 		function gallery() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBFields = new Fields(__FUNCTION__);
+      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 			return(
 			    array ( 'order' => '70',
@@ -251,9 +254,9 @@
 		 * Layout for collapsible or "accordion" content
 		 */
 		function collapsibles() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBFields = new Fields(__FUNCTION__);
+      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '400',
@@ -309,9 +312,9 @@
 		 * Layout for a carousel of images or other media content
 		 */
 		function slides() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBFields = new Fields(__FUNCTION__);
+      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '90',
@@ -366,9 +369,9 @@
 		 * A simple content block with optional media include (image or video) and optional Call to Action button
 		 */
 		function content_with_media() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBFields = new Fields(__FUNCTION__);
+      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '20',
@@ -434,9 +437,9 @@
 		 * Content block with relationship field to feature other site content and optional Call to Action button
 		 */
 		function featured_content() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBFields = new Fields(__FUNCTION__);
+      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '100',
@@ -453,7 +456,6 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
-				            $FCBRepeaters->content_data_attributes(),
 
 				            // Features tab
 				            $FCBFields->tab_features(),
@@ -492,9 +494,9 @@
 		 * List of links with titles and content
 		 */
 		function cards() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBFields = new Fields(__FUNCTION__);
+      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '100',
@@ -511,7 +513,6 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
-				            $FCBRepeaters->content_data_attributes(),
 
 				            // Linked Items repeater
 				            $FCBFields->tab_cards(),
@@ -550,9 +551,9 @@
 		 * A simple media block optional Call to Action button
 		 */
 		function media() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBFields = new Fields(__FUNCTION__);
+      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '60',
@@ -603,9 +604,9 @@
 		 * Media slider with optional Call to Action button
 		 */
 		function slider() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBFields = new Fields(__FUNCTION__);
+      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '200',
@@ -622,7 +623,6 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
-				            $FCBRepeaters->content_data_attributes(),
 
 				            // Slides tab
 				            $FCBFields->tab_slides(),
@@ -660,9 +660,9 @@
 		 * List of posts
 		 */
 		function post_list() {
-	        $FCBFields = new FCBFields(__FUNCTION__);
-	        $FCBRepeaters = new FCBRepeaters(__FUNCTION__);
-					$FCBFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBFields = new Fields(__FUNCTION__);
+      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 			return(
 			    array ( 'order' => '500',
@@ -679,7 +679,6 @@
 				            // Content tab
 				            $FCBFields->tab_content(),
 				            $FCBFields->content(),
-				            $FCBRepeaters->content_data_attributes(),
 
 				            // Post List Tab
 				            $FCBFields->tab_post_list(),

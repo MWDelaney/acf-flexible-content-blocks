@@ -1,5 +1,8 @@
 <?php
-    class FCBRepeaters {
+
+namespace MWD\ACFFCB;
+
+class Repeaters {
 
 		private $layout;
 
@@ -22,8 +25,8 @@
 		 * Linked content items repeater
 		 */
 		function cards() {
-	    $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
-			$FCBRepeaterFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+	    $FCBRepeaterFields = new Fields($this->layout, __FUNCTION__);
+			$FCBRepeaterFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 			return(
 				array (
@@ -92,8 +95,8 @@
 		 * Tabs repeater
 		 */
 		function tabs() {
-	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
-					$FCBRepeaterFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBRepeaterFields = new Fields($this->layout, __FUNCTION__);
+			$FCBRepeaterFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 			return(
 				array (
@@ -160,8 +163,8 @@
 		 * Collapsibles repeater
 		 */
 		function collapsibles() {
-	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
-					$FCBRepeaterFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBRepeaterFields = new Fields($this->layout, __FUNCTION__);
+			$FCBRepeaterFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 			return(
 				array (
@@ -228,8 +231,8 @@
 		 * Repeater field for slides
 		 */
 		function slides() {
-	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
-					$FCBRepeaterFlexibleContent = new FCBFlexibleContent(__FUNCTION__);
+			$FCBRepeaterFields = new Fields($this->layout, __FUNCTION__);
+			$FCBRepeaterFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 			return(
 				array (
@@ -289,7 +292,7 @@
 		 * Repeater for data attributes on blocks
 		 */
 		function block_data_attributes() {
-	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
+			$FCBRepeaterFields = new Fields($this->layout, __FUNCTION__);
 
 			return(
 				array (
@@ -330,7 +333,7 @@
 		 * Repeater for data attributes on content tabs
 		 */
 		function content_data_attributes() {
-	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
+			$FCBRepeaterFields = new Fields($this->layout, __FUNCTION__);
 
 			return(
 				array (
@@ -372,7 +375,7 @@
 		 * Repeater for data attributes on media tabs
 		 */
 		function media_data_attributes() {
-	        $FCBRepeaterFields = new FCBFields($this->layout, __FUNCTION__);
+	        $FCBRepeaterFields = new Fields($this->layout, __FUNCTION__);
 			return(
 				array (
 				    'key' => $this->key . __FUNCTION__,
