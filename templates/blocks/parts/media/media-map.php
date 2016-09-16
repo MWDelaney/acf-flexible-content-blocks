@@ -9,7 +9,7 @@
 
 
 </style>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZh43PeOBlcuE3eOeVOsMMQkOP1MBrDsk"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?=acf_get_setting('google_api_key')?>"></script>
 <script type="text/javascript">
 (function($) {
 
