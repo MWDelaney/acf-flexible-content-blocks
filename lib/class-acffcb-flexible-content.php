@@ -154,6 +154,18 @@ class FlexibleContent {
 							),
 						),
 						array (
+							'key' => $this->key . $this->getCallingFunctionName() . __FUNCTION__ . '-gallery',
+							'name' => 'gallery',
+							'label' => 'Gallery',
+							'display' => 'block',
+							'sub_fields' => array (
+
+								// Image Field
+								$FCBFlexibleContentFields->gallery(),
+
+							),
+						),
+						array (
 							'key' => $this->key . $this->getCallingFunctionName() . __FUNCTION__ . '-content',
 							'name' => 'content',
 							'label' => 'Content',
@@ -177,7 +189,18 @@ class FlexibleContent {
 
 							),
 						),
+						array (
+							'key' => $this->key . $this->getCallingFunctionName() . __FUNCTION__ . '-map',
+							'name' => 'map',
+							'label' => 'Map',
+							'display' => 'block',
+							'sub_fields' => array (
 
+								// Image Field
+								$FCBFlexibleContentFields->media_map(),
+
+							),
+						),
 					)
 				)
 			);
