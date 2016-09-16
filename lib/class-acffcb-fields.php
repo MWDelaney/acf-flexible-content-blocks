@@ -1399,6 +1399,40 @@ class Fields {
 
 	/**
 	 *
+	 * Field: Map
+	 *
+	 * @author Michael W. Delaney
+	 * @since 1.0
+	 *
+	 * Map field
+	 */
+	function media_map($thisKey = 'field') {
+		return(
+			array (
+			    'key' => $this->key . '-' . $thisKey . '-' . __FUNCTION__,
+			    'label' => 'Map',
+			    'name' => 'map',
+			    'type' => 'google_map',
+			    'instructions' => '',
+			    'required' => 0,
+			    'conditional_logic' => 0,
+			    'wrapper' => array (
+			        'width' => '',
+			        'class' => 'acf-media',
+			        'id' => '',
+			    ),
+					'center_lat' => '',
+					'center_lng' => '',
+					'zoom' => '',
+					'height' => '',
+			)
+		);
+	}
+
+
+
+	/**
+	 *
 	 * Field: Collapsibles Tab
 	 *
 	 * @author Michael W. Delaney
