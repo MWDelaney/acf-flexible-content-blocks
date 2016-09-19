@@ -1,5 +1,6 @@
 function appendAce( $el ) {
 	jQuery( $el ).each(function () {
+		if(jQuery(jQuery(this)).is(":visible")) {
 			var textarea = jQuery(this);
 			var mode = textarea.data('editor');
 			var editDiv = jQuery('<div>', {
@@ -20,19 +21,22 @@ function appendAce( $el ) {
 			textarea.closest('form').submit(function () {
 					textarea.val(editor.getSession().getValue());
 			})
+		}
 	});
 }
 
 jQuery( document ).ready(function() {
 
-
 	 appendAce('.acf-code textarea');
 
 });
 
-/**
- * Hide Dev Mode items, append Dev Mode button
- */
 acf.add_action('append', function( $el ){
 	appendAce('.acf-code textarea');
 })
+
+acf.add_action('show_field', function( $field, context ){
+
+	appendAce('.acf-code textarea');
+
+});
