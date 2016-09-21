@@ -17,10 +17,7 @@ namespace MWD\ACFFCB;
 
             //Initialize shortcodes
             $this->add_shortcodes();
-
-            // Append shortcode to the_content
-            add_filter( 'the_content', array( $this, 'acffcb_add_to_content' ) );
-
+						
             // Enqueue admin styles and scripts
             add_action('admin_enqueue_scripts', array( $this, 'admin_styles' ) );
             add_action('admin_enqueue_scripts', array( $this, 'dev_mode' ) );
@@ -269,7 +266,7 @@ namespace MWD\ACFFCB;
          * @param string $content The original WordPress content
          * @return string
          */
-            function acffcb_add_to_content( $content ) {
+            public static function acffcb_add_to_content( $content ) {
                 if(in_the_loop ()) {
                     // Only edit the_content() if blocks have been added to this $post
                     if(have_rows('blocks')) {
