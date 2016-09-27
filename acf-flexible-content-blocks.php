@@ -26,7 +26,7 @@ License: MIT
 		return 'MWD\ACFFCB\Layouts';
 	}
 
-add_action( 'plugins_loaded', function() {
+add_action( 'init', function() {
 
 	require_once(ACFFCB_PLUGIN_DIR . 'lib/class-init.php');
 	require_once(ACFFCB_PLUGIN_DIR . 'lib/class-gamajo-template-loader.php');
@@ -39,16 +39,16 @@ add_action( 'plugins_loaded', function() {
 
 	class_alias('MWD\ACFFCB\CreateBlocks', 'ACFFlexibleContentBlocks');
 
+	add_filter( 'fcb_get_layouts', 'fcb_layouts_class' );
+
 } );
 
 add_action('wp_loaded', function() {
-
 
 		$acf_flexible_content_blocks = new MWD\ACFFCB\CreateBlocks();
 		$acf_flexible_content_blocks->fcb_create_blocks();
 
 		// Enable layouts
-		add_filter( 'fcb_get_layouts', 'fcb_layouts_class' );
 
 		// Append blocks to content
 		add_filter( 'the_content', array( 'MWD\ACFFCB\CreateBlocks', 'acffcb_add_to_content' ) );
