@@ -28,7 +28,7 @@ class Layouts {
 			return(
 			    array ( 'order' => '10',
 					'layout' => array (
-						'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . __FUNCTION__,
 				        'name' => 'content',
 				        'label' => 'Content',
 				        'display' => 'block',
@@ -84,43 +84,43 @@ class Layouts {
 		 * Basic content block
 		 */
 		function strap() {
-      $FCBFields = new Fields(__FUNCTION__);
-      $FCBRepeaters = new Repeaters(__FUNCTION__);
+      			$FCBFields = new Fields(__FUNCTION__);
+			$FCBRepeaters = new Repeaters(__FUNCTION__);
 			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 			return(
 			    array ( 'order' => '10',
 					'layout' => array (
-						'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . __FUNCTION__,
 				        'name' => 'strap',
 				        'label' => 'Strap',
 				        'display' => 'block',
 				        'sub_fields' => array (
 
-				            // Content tab
-				            $FCBFields->tab_content(),
-										$FCBFlexibleContent->media('0', '12'),
+						// Content tab
+						$FCBFields->tab_content(),
+						$FCBFlexibleContent->media('0', '12'),
 
-				            // Background tab
-				            $FCBFields->tab_background(),
-				            $FCBFields->background_image(),
-				            $FCBFields->background_color(),
-				            $FCBFields->background_color_placeholder(),
-				            $FCBFields->theme_color(),
-				            $FCBFields->choose_color(),
+						// Background tab
+						$FCBFields->tab_background(),
+						$FCBFields->background_image(),
+						$FCBFields->background_color(),
+						$FCBFields->background_color_placeholder(),
+						$FCBFields->theme_color(),
+						$FCBFields->choose_color(),
 
-				            // Dev Mode tab
-				            $FCBFields->tab_dev(),
-				            $FCBFields->dev_block_message(),
-				            $FCBRepeaters->block_data_attributes(),
-				            $FCBFields->block_classes(),
+						// Dev Mode tab
+						$FCBFields->tab_dev(),
+						$FCBFields->dev_block_message(),
+						$FCBRepeaters->block_data_attributes(),
+						$FCBFields->block_classes(),
 
-				            $FCBFields->dev_content_message(),
-				            $FCBRepeaters->content_data_attributes(),
-				            $FCBFields->content_classes(),
+						$FCBFields->dev_content_message(),
+						$FCBRepeaters->content_data_attributes(),
+						$FCBFields->content_classes(),
 
-				            // Tab Endpoint
-				            $FCBFields->tab_endpoint(),
+						// Tab Endpoint
+						$FCBFields->tab_endpoint(),
 
 				        )
 				    )
@@ -140,43 +140,43 @@ class Layouts {
 		 */
 		function tabs() {
 			$FCBFields = new Fields(__FUNCTION__);
-      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBRepeaters = new Repeaters(__FUNCTION__);
 			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '300',
 					'layout' => array (
-						'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . __FUNCTION__,
 				        'name' => 'tabs',
 				        'label' => 'Tabs',
 				        'display' => 'block',
 				        'sub_fields' => array (
-				            // Titles
-				            $FCBFields->title(),
-				            $FCBFields->navigation_title(),
+						// Titles
+						$FCBFields->title(),
+						$FCBFields->navigation_title(),
 
-				            // Content tab
-				            $FCBFields->tab_content(),
-				            $FCBFields->content(),
+						// Content tab
+						$FCBFields->tab_content(),
+						$FCBFields->content(),
 
-				            // Tabs tab
-				            $FCBFields->tab_tabs(),
-				            $FCBRepeaters->tabs(),
+						// Tabs tab
+						$FCBFields->tab_tabs(),
+						$FCBRepeaters->tabs(),
 
-				            // Background tab
-				            $FCBFields->tab_background(),
-				            $FCBFields->background_image(),
-				            $FCBFields->background_color(),
-				            $FCBFields->background_color_placeholder(),
-				            $FCBFields->theme_color(),
-				            $FCBFields->choose_color(),
+						// Background tab
+						$FCBFields->tab_background(),
+						$FCBFields->background_image(),
+						$FCBFields->background_color(),
+						$FCBFields->background_color_placeholder(),
+						$FCBFields->theme_color(),
+						$FCBFields->choose_color(),
 
-										// Call to Action
-										$FCBFields->tab_cta(),
-				            $FCBFlexibleContent->cta(),
+						// Call to Action
+						$FCBFields->tab_cta(),
+						$FCBFlexibleContent->cta(),
 
-				            // Tab Endpoint
-				            $FCBFields->tab_endpoint(),
+						// Tab Endpoint
+						$FCBFields->tab_endpoint(),
 
 						)
 					)
@@ -197,44 +197,44 @@ class Layouts {
 		 */
 		function gallery() {
 			$FCBFields = new Fields(__FUNCTION__);
-      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBRepeaters = new Repeaters(__FUNCTION__);
 			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 			return(
 			    array ( 'order' => '70',
 					'layout' => array (
-						'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . __FUNCTION__,
 				        'name' => 'gallery',
 				        'label' => 'Gallery',
 				        'display' => 'block',
 				        'sub_fields' => array (
-				            // Titles
-				            $FCBFields->title(),
-				            $FCBFields->navigation_title(),
+						// Titles
+						$FCBFields->title(),
+						$FCBFields->navigation_title(),
 
-				            // Content tab
-				            $FCBFields->tab_content(),
-				            $FCBFields->content(),
-				            $FCBRepeaters->content_data_attributes(),
+						// Content tab
+						$FCBFields->tab_content(),
+						$FCBFields->content(),
+						$FCBRepeaters->content_data_attributes(),
 
-				            // Gallery tab
-				            $FCBFields->tab_gallery(),
-				            $FCBFields->gallery(),
+						// Gallery tab
+						$FCBFields->tab_gallery(),
+						$FCBFields->gallery(),
 
-				            // Background tab
-				            $FCBFields->tab_background(),
-				            $FCBFields->background_image(),
-				            $FCBFields->background_color(),
-				            $FCBFields->background_color_placeholder(),
-				            $FCBFields->theme_color(),
-				            $FCBFields->choose_color(),
+						// Background tab
+						$FCBFields->tab_background(),
+						$FCBFields->background_image(),
+						$FCBFields->background_color(),
+						$FCBFields->background_color_placeholder(),
+						$FCBFields->theme_color(),
+						$FCBFields->choose_color(),
 
-										// Call to Action
-										$FCBFields->tab_cta(),
-				            $FCBFlexibleContent->cta(),
+						// Call to Action
+						$FCBFields->tab_cta(),
+						$FCBFlexibleContent->cta(),
 
-				            // Tab Endpoint
-				            $FCBFields->tab_endpoint(),
+						// Tab Endpoint
+						$FCBFields->tab_endpoint(),
 
 				        )
 				    )
@@ -255,44 +255,44 @@ class Layouts {
 		 */
 		function collapsibles() {
 			$FCBFields = new Fields(__FUNCTION__);
-      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBRepeaters = new Repeaters(__FUNCTION__);
 			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '400',
 					'layout' => array (
-						'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . __FUNCTION__,
 				        'name' => 'collapsibles',
 				        'label' => 'Collapsibles',
 				        'display' => 'block',
 				        'sub_fields' => array (
-				            // Titles
-				            $FCBFields->title(),
-				            $FCBFields->navigation_title(),
+						// Titles
+						$FCBFields->title(),
+						$FCBFields->navigation_title(),
 
-				            // Content tab
-				            $FCBFields->tab_content(),
-				            $FCBFields->content(),
-				            $FCBRepeaters->content_data_attributes(),
+						// Content tab
+						$FCBFields->tab_content(),
+						$FCBFields->content(),
+						$FCBRepeaters->content_data_attributes(),
 
-				            // Collapsibles tab
-				            $FCBFields->tab_collapsibles(),
-				            $FCBRepeaters->collapsibles(),
+						// Collapsibles tab
+						$FCBFields->tab_collapsibles(),
+						$FCBRepeaters->collapsibles(),
 
-				            // Background tab
-				            $FCBFields->tab_background(),
-				            $FCBFields->background_image(),
-				            $FCBFields->background_color(),
-				            $FCBFields->background_color_placeholder(),
-				            $FCBFields->theme_color(),
-				            $FCBFields->choose_color(),
+						// Background tab
+						$FCBFields->tab_background(),
+						$FCBFields->background_image(),
+						$FCBFields->background_color(),
+						$FCBFields->background_color_placeholder(),
+						$FCBFields->theme_color(),
+						$FCBFields->choose_color(),
 
-										// Call to Action
-										$FCBFields->tab_cta(),
-				            $FCBFlexibleContent->cta(),
+						// Call to Action
+						$FCBFields->tab_cta(),
+						$FCBFlexibleContent->cta(),
 
-				            // Tab Endpoint
-				            $FCBFields->tab_endpoint(),
+						// Tab Endpoint
+						$FCBFields->tab_endpoint(),
 
 						)
 					)
@@ -313,43 +313,43 @@ class Layouts {
 		 */
 		function slides() {
 			$FCBFields = new Fields(__FUNCTION__);
-      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBRepeaters = new Repeaters(__FUNCTION__);
 			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '90',
 					'layout' => array (
-						'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . __FUNCTION__,
 				        'name' => 'slides',
 				        'label' => 'Slides',
 				        'display' => 'block',
 				        'sub_fields' => array (
-				            // Titles
-				            $FCBFields->title(),
-				            $FCBFields->navigation_title(),
+						// Titles
+						$FCBFields->title(),
+						$FCBFields->navigation_title(),
 
-				            // Content tab
-				            $FCBFields->tab_content(),
-				            $FCBFields->content(),
+						// Content tab
+						$FCBFields->tab_content(),
+						$FCBFields->content(),
 
-				            // Slides tab
-				            $FCBFields->tab_slides(),
-				            $FCBRepeaters->slides(),
+						// Slides tab
+						$FCBFields->tab_slides(),
+						$FCBRepeaters->slides(),
 
-				            // Background tab
-				            $FCBFields->tab_background(),
-				            $FCBFields->background_image(),
-				            $FCBFields->background_color(),
-				            $FCBFields->background_color_placeholder(),
-				            $FCBFields->theme_color(),
-				            $FCBFields->choose_color(),
+						// Background tab
+						$FCBFields->tab_background(),
+						$FCBFields->background_image(),
+						$FCBFields->background_color(),
+						$FCBFields->background_color_placeholder(),
+						$FCBFields->theme_color(),
+						$FCBFields->choose_color(),
 
-										// Call to Action
-										$FCBFields->tab_cta(),
-				            $FCBFlexibleContent->cta(),
+						// Call to Action
+						$FCBFields->tab_cta(),
+						$FCBFlexibleContent->cta(),
 
-				            // Tab Endpoint
-				            $FCBFields->tab_endpoint(),
+						// Tab Endpoint
+						$FCBFields->tab_endpoint(),
 
 						)
 					)
@@ -370,54 +370,54 @@ class Layouts {
 		 */
 		function content_with_media() {
 			$FCBFields = new Fields(__FUNCTION__);
-      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBRepeaters = new Repeaters(__FUNCTION__);
 			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '20',
 			    	'layout' => array (
-					    'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . __FUNCTION__,
 				        'name' => 'content_with_media',
 				        'label' => 'Content with Media',
 				        'display' => 'block',
 				        'sub_fields' => array (
-				            // Titles
-				            $FCBFields->title(),
-				            $FCBFields->navigation_title(),
+						// Titles
+						$FCBFields->title(),
+						$FCBFields->navigation_title(),
 
-				            // Content tab
-				            $FCBFields->tab_content(),
-				            $FCBFields->content(),
+						// Content tab
+						$FCBFields->tab_content(),
+						$FCBFields->content(),
 
-				            // Media tab
-				            $FCBFields->tab_media(),
-										$FCBFlexibleContent->media(),
+						// Media tab
+						$FCBFields->tab_media(),
+						$FCBFlexibleContent->media(),
 
-				            // Background tab
-				            $FCBFields->tab_background(),
-				            $FCBFields->background_image(),
-				            $FCBFields->background_color(),
-				            $FCBFields->background_color_placeholder(),
-				            $FCBFields->theme_color(),
-				            $FCBFields->choose_color(),
+						// Background tab
+						$FCBFields->tab_background(),
+						$FCBFields->background_image(),
+						$FCBFields->background_color(),
+						$FCBFields->background_color_placeholder(),
+						$FCBFields->theme_color(),
+						$FCBFields->choose_color(),
 
-										// Call to Action
-										$FCBFields->tab_cta(),
-				            $FCBFlexibleContent->cta(),
+						// Call to Action
+						$FCBFields->tab_cta(),
+						$FCBFlexibleContent->cta(),
 
-				            // Dev Mode tab
-				            $FCBFields->tab_dev(),
-				            $FCBFields->dev_content_message(),
-				            $FCBRepeaters->content_data_attributes(),
-				            $FCBFields->content_classes(),
+						// Dev Mode tab
+						$FCBFields->tab_dev(),
+						$FCBFields->dev_content_message(),
+						$FCBRepeaters->content_data_attributes(),
+						$FCBFields->content_classes(),
 
-				            $FCBFields->dev_media_message(),
-				            $FCBRepeaters->media_data_attributes(),
-				            $FCBFields->media_classes(),
+						$FCBFields->dev_media_message(),
+						$FCBRepeaters->media_data_attributes(),
+						$FCBFields->media_classes(),
 
 
-				            // Tab Endpoint
-				            $FCBFields->tab_endpoint(),
+						// Tab Endpoint
+						$FCBFields->tab_endpoint(),
 
 				        )
 				    )
@@ -438,43 +438,43 @@ class Layouts {
 		 */
 		function featured_content() {
 			$FCBFields = new Fields(__FUNCTION__);
-      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBRepeaters = new Repeaters(__FUNCTION__);
 			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '100',
 			    	'layout' => array (
-					    'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . __FUNCTION__,
 				        'name' => 'featured_content',
 				        'label' => 'Featured Content',
 				        'display' => 'block',
 				        'sub_fields' => array (
-				            // Titles
-				            $FCBFields->title(),
-				            $FCBFields->navigation_title(),
+						// Titles
+						$FCBFields->title(),
+						$FCBFields->navigation_title(),
 
-				            // Content tab
-				            $FCBFields->tab_content(),
-				            $FCBFields->content(),
+						// Content tab
+						$FCBFields->tab_content(),
+						$FCBFields->content(),
 
-				            // Features tab
-				            $FCBFields->tab_features(),
-				            $FCBFields->featured_content(),
+						// Features tab
+						$FCBFields->tab_features(),
+						$FCBFields->featured_content(),
 
-				            // Background tab
-				            $FCBFields->tab_background(),
-				            $FCBFields->background_image(),
-				            $FCBFields->background_color(),
-				            $FCBFields->background_color_placeholder(),
-				            $FCBFields->theme_color(),
-				            $FCBFields->choose_color(),
+						// Background tab
+						$FCBFields->tab_background(),
+						$FCBFields->background_image(),
+						$FCBFields->background_color(),
+						$FCBFields->background_color_placeholder(),
+						$FCBFields->theme_color(),
+						$FCBFields->choose_color(),
 
-										// Call to Action
-										$FCBFields->tab_cta(),
-				            $FCBFlexibleContent->cta(),
+						// Call to Action
+						$FCBFields->tab_cta(),
+						$FCBFlexibleContent->cta(),
 
-				            // Tab Endpoint
-				            $FCBFields->tab_endpoint(),
+						// Tab Endpoint
+						$FCBFields->tab_endpoint(),
 
 			        	)
 				    )
@@ -495,43 +495,43 @@ class Layouts {
 		 */
 		function cards() {
 			$FCBFields = new Fields(__FUNCTION__);
-      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBRepeaters = new Repeaters(__FUNCTION__);
 			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '100',
 			    	'layout' => array (
-					    'key' => $this->key . __FUNCTION__,
-						'name' => 'cards',
-						'label' => 'Cards',
-						'display' => 'block',
-						'sub_fields' => array (
-				            // Titles
-				            $FCBFields->title(),
-				            $FCBFields->navigation_title(),
+					'key' => $this->key . __FUNCTION__,
+					'name' => 'cards',
+					'label' => 'Cards',
+					'display' => 'block',
+					'sub_fields' => array (
+						// Titles
+						$FCBFields->title(),
+						$FCBFields->navigation_title(),
 
-				            // Content tab
-				            $FCBFields->tab_content(),
-				            $FCBFields->content(),
+						// Content tab
+						$FCBFields->tab_content(),
+						$FCBFields->content(),
 
-				            // Linked Items repeater
-				            $FCBFields->tab_cards(),
-				            $FCBRepeaters->cards(),
+						// Linked Items repeater
+						$FCBFields->tab_cards(),
+						$FCBRepeaters->cards(),
 
-				            // Background tab
-				            $FCBFields->tab_background(),
-				            $FCBFields->background_image(),
-				            $FCBFields->background_color(),
-				            $FCBFields->background_color_placeholder(),
-				            $FCBFields->theme_color(),
-				            $FCBFields->choose_color(),
+						// Background tab
+						$FCBFields->tab_background(),
+						$FCBFields->background_image(),
+						$FCBFields->background_color(),
+						$FCBFields->background_color_placeholder(),
+						$FCBFields->theme_color(),
+						$FCBFields->choose_color(),
 
-										// Call to Action
-										$FCBFields->tab_cta(),
-				            $FCBFlexibleContent->cta(),
+						// Call to Action
+						$FCBFields->tab_cta(),
+						$FCBFlexibleContent->cta(),
 
-				            // Tab Endpoint
-				            $FCBFields->tab_endpoint(),
+						// Tab Endpoint
+						$FCBFields->tab_endpoint(),
 
 			        	)
 				    )
@@ -552,39 +552,39 @@ class Layouts {
 		 */
 		function media() {
 			$FCBFields = new Fields(__FUNCTION__);
-      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBRepeaters = new Repeaters(__FUNCTION__);
 			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '60',
 			    	'layout' => array (
-					  'key' => $this->key . __FUNCTION__,
-				    'name' => 'media',
-				    'label' => 'Media',
-						'display' => 'block',
-						'sub_fields' => array (
-				            // Titles
-				            $FCBFields->title(),
-				            $FCBFields->navigation_title(),
+					'key' => $this->key . __FUNCTION__,
+					'name' => 'media',
+					'label' => 'Media',
+					'display' => 'block',
+					'sub_fields' => array (
+						// Titles
+						$FCBFields->title(),
+						$FCBFields->navigation_title(),
 
-										// Media tab
-				            $FCBFields->tab_media(),
-										$FCBFlexibleContent->media(),
+						// Media tab
+						$FCBFields->tab_media(),
+						$FCBFlexibleContent->media(),
 
-				            // Background tab
-				            $FCBFields->tab_background(),
-				            $FCBFields->background_image(),
-				            $FCBFields->background_color(),
-				            $FCBFields->background_color_placeholder(),
-				            $FCBFields->theme_color(),
-				            $FCBFields->choose_color(),
+						// Background tab
+						$FCBFields->tab_background(),
+						$FCBFields->background_image(),
+						$FCBFields->background_color(),
+						$FCBFields->background_color_placeholder(),
+						$FCBFields->theme_color(),
+						$FCBFields->choose_color(),
 
-										// Call to Action
-										$FCBFields->tab_cta(),
-										$FCBFlexibleContent->cta(),
+						// Call to Action
+						$FCBFields->tab_cta(),
+						$FCBFlexibleContent->cta(),
 
-				            // Tab Endpoint
-				            $FCBFields->tab_endpoint(),
+						// Tab Endpoint
+						$FCBFields->tab_endpoint(),
 
 			        	)
 				    )
@@ -605,43 +605,43 @@ class Layouts {
 		 */
 		function slider() {
 			$FCBFields = new Fields(__FUNCTION__);
-      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBRepeaters = new Repeaters(__FUNCTION__);
 			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 	        return(
 			    array ( 'order' => '200',
 			    	'layout' => array (
-					  'key' => $this->key . __FUNCTION__,
-				    'name' => 'slider',
-				    'label' => 'Slider',
-						'display' => 'block',
-						'sub_fields' => array (
-				            // Titles
-				            $FCBFields->title(),
-				            $FCBFields->navigation_title(),
+					'key' => $this->key . __FUNCTION__,
+					'name' => 'slider',
+					'label' => 'Slider',
+					'display' => 'block',
+					'sub_fields' => array (
+						// Titles
+						$FCBFields->title(),
+						$FCBFields->navigation_title(),
 
-				            // Content tab
-				            $FCBFields->tab_content(),
-				            $FCBFields->content(),
+						// Content tab
+						$FCBFields->tab_content(),
+						$FCBFields->content(),
 
-				            // Slides tab
-				            $FCBFields->tab_slides(),
-				            $FCBRepeaters->slides(),
+						// Slides tab
+						$FCBFields->tab_slides(),
+						$FCBRepeaters->slides(),
 
-				            // Background tab
-				            $FCBFields->tab_background(),
-				            $FCBFields->background_image(),
-				            $FCBFields->background_color(),
-				            $FCBFields->background_color_placeholder(),
-				            $FCBFields->theme_color(),
-				            $FCBFields->choose_color(),
+						// Background tab
+						$FCBFields->tab_background(),
+						$FCBFields->background_image(),
+						$FCBFields->background_color(),
+						$FCBFields->background_color_placeholder(),
+						$FCBFields->theme_color(),
+						$FCBFields->choose_color(),
 
-										// Call to Action
-										$FCBFields->tab_cta(),
-				            $FCBFlexibleContent->cta(),
+						// Call to Action
+						$FCBFields->tab_cta(),
+						$FCBFlexibleContent->cta(),
 
-				            // Tab Endpoint
-				            $FCBFields->tab_endpoint(),
+						// Tab Endpoint
+						$FCBFields->tab_endpoint(),
 
 			        	)
 				    )
@@ -661,47 +661,47 @@ class Layouts {
 		 */
 		function post_list() {
 			$FCBFields = new Fields(__FUNCTION__);
-      $FCBRepeaters = new Repeaters(__FUNCTION__);
+			$FCBRepeaters = new Repeaters(__FUNCTION__);
 			$FCBFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 			return(
 			    array ( 'order' => '500',
 					'layout' => array (
-						'key' => $this->key . __FUNCTION__,
+					'key' => $this->key . __FUNCTION__,
 				        'name' => 'post_list',
 				        'label' => 'Post List',
 				        'display' => 'block',
 				        'sub_fields' => array (
-				            // Titles
-				            $FCBFields->title(),
-				            $FCBFields->navigation_title(),
+						// Titles
+						$FCBFields->title(),
+						$FCBFields->navigation_title(),
 
-				            // Content tab
-				            $FCBFields->tab_content(),
-				            $FCBFields->content(),
+						// Content tab
+						$FCBFields->tab_content(),
+						$FCBFields->content(),
 
-				            // Post List Tab
-				            $FCBFields->tab_post_list(),
-										$FCBFields->posts_per_page(),
-										$FCBFields->show_author(),
-										$FCBFields->show_date(),
-										$FCBFields->show_featured_image(),
-										$FCBFields->category(),
+						// Post List Tab
+						$FCBFields->tab_post_list(),
+						$FCBFields->posts_per_page(),
+						$FCBFields->show_author(),
+						$FCBFields->show_date(),
+						$FCBFields->show_featured_image(),
+						$FCBFields->category(),
 
-				            // Background tab
-				            $FCBFields->tab_background(),
-				            $FCBFields->background_image(),
-				            $FCBFields->background_color(),
-				            $FCBFields->background_color_placeholder(),
-				            $FCBFields->theme_color(),
-				            $FCBFields->choose_color(),
+						// Background tab
+						$FCBFields->tab_background(),
+						$FCBFields->background_image(),
+						$FCBFields->background_color(),
+						$FCBFields->background_color_placeholder(),
+						$FCBFields->theme_color(),
+						$FCBFields->choose_color(),
 
-										// Call to Action
-										$FCBFields->tab_cta(),
-				            $FCBFlexibleContent->cta(),
+						// Call to Action
+						$FCBFields->tab_cta(),
+						$FCBFlexibleContent->cta(),
 
-				            // Tab Endpoint
-				            $FCBFields->tab_endpoint(),
+						// Tab Endpoint
+						$FCBFields->tab_endpoint(),
 
 				        )
 				    )
