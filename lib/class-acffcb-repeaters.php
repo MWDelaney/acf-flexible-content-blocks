@@ -25,7 +25,7 @@ class Repeaters {
 		 * Linked content items repeater
 		 */
 		function cards() {
-	    $FCBRepeaterFields = new Fields($this->layout, __FUNCTION__);
+			$FCBRepeaterFields = new Fields($this->layout, __FUNCTION__);
 			$FCBRepeaterFlexibleContent = new FlexibleContent(__FUNCTION__);
 
 			return(
@@ -42,41 +42,38 @@ class Repeaters {
 						'class' => 'acf-media',
 						'id' => '',
 					),
-          'collapsed' => $this->key . __FUNCTION__ . '-field-title',
+					'collapsed' => $this->key . __FUNCTION__ . '-field-title',
 					'min' => '',
 					'max' => '',
 					'layout' => 'block',
 					'button_label' => 'Add Card',
 					'sub_fields' => array (
+						// Title
+						$FCBRepeaterFields->title(),
+						$FCBRepeaterFields->navigation_title(),
 
-							// Title
-			        $FCBRepeaterFields->title(),
-			        $FCBRepeaterFields->navigation_title(),
+						// Content Tab
+						$FCBRepeaterFields->tab_content(),
+						$FCBRepeaterFields->content,
 
-				    	// Content Tab
-				    	$FCBRepeaterFields->tab_content(),
-				    	$FCBRepeaterFields->content_source(),
-				    	$FCBRepeaterFields->content_excerpt_placeholder(),
-				    	$FCBRepeaterFields->content_conditional(),
+						// Media tab
+						$FCBRepeaterFields->tab_media(),
+						$FCBRepeaterFlexibleContent->media(),
 
-							// Media tab
-							$FCBRepeaterFields->tab_media(),
-							$FCBRepeaterFlexibleContent->media(),
+						// Background Tab
+						$FCBRepeaterFields->tab_background(),
+						$FCBRepeaterFields->background_image(),
+						$FCBRepeaterFields->background_color(),
+						$FCBRepeaterFields->background_color_placeholder(),
+						$FCBRepeaterFields->theme_color(),
+						$FCBRepeaterFields->choose_color(),
 
-				    	// Background Tab
-				    	$FCBRepeaterFields->tab_background(),
-				    	$FCBRepeaterFields->background_image(),
-				    	$FCBRepeaterFields->background_color(),
-				    	$FCBRepeaterFields->background_color_placeholder(),
-				    	$FCBRepeaterFields->theme_color(),
-				    	$FCBRepeaterFields->choose_color(),
+						// Tab Endpoint
+						$FCBRepeaterFields->tab_endpoint(),
 
-				    	// Tab Endpoint
-				    	$FCBRepeaterFields->tab_endpoint(),
-
-				    	// Link
-				    	$FCBRepeaterFields->link_text(),
-				    	$FCBRepeaterFields->link(),
+						// Link
+						$FCBRepeaterFields->link_text(),
+						$FCBRepeaterFields->link(),
 
 					)
 				)
