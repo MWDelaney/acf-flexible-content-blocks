@@ -67,13 +67,13 @@ class Repeaters {
 						$FCBRepeaterFields->background_color_placeholder(),
 						$FCBRepeaterFields->theme_color(),
 						$FCBRepeaterFields->choose_color(),
-
+				
+						// Call to Action
+						$FCBRepeaterFields->tab_cta(),
+						$FCBRepeaterFlexibleContent->cta(),
+				
 						// Tab Endpoint
 						$FCBRepeaterFields->tab_endpoint(),
-
-						// Link
-						$FCBRepeaterFields->link_text(),
-						$FCBRepeaterFields->link(),
 
 					)
 				)
