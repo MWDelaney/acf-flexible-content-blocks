@@ -10,31 +10,31 @@ class FlexibleContent {
 			$this->layout 	= $layout;
 			$this->key 	= 'acffcb-';
 			$this->key 	.= 'layout-' . $layout;
-      $this->key      .= '-flexiblecontent-';
+			$this->key      .= '-flexiblecontent-';
 		}
 
 		public function getCallingFunctionName($completeTrace=false)
-		    {
-		        $trace=debug_backtrace();
-		        if($completeTrace)
-		        {
-		            $str = '';
-		            foreach($trace as $caller)
-		            {
-		                $str .= $caller['function'];
-		                if (isset($caller['class']))
-		                    $str .= '-' . $caller['class'];
-		            }
-		        }
-		        else
-		        {
-		            $caller=$trace[2];
-		            $str = $caller['function'];
-		            if (isset($caller['class']))
-		                $str .= '-' . $caller['class'];
-		        }
-		        return $str;
-		    }
+				{
+						$trace=debug_backtrace();
+						if($completeTrace)
+						{
+								$str = '';
+								foreach($trace as $caller)
+								{
+										$str .= $caller['function'];
+										if (isset($caller['class']))
+												$str .= '-' . $caller['class'];
+								}
+						}
+						else
+						{
+								$caller=$trace[2];
+								$str = $caller['function'];
+								if (isset($caller['class']))
+										$str .= '-' . $caller['class'];
+						}
+						return $str;
+				}
 
 		/**
 		 *
@@ -45,12 +45,12 @@ class FlexibleContent {
 		 *
 		 * Flexible Content field for Calls to Action
 		 */
-		function cta() {
-	    $FCBFlexibleContentFields = new Fields($this->layout, __FUNCTION__);
+		function cta($thisKey = 'flexible') {
+			$FCBFlexibleContentFields = new Fields($this->layout, __FUNCTION__);
 
 			return(
 				array (
-				  'key' => $this->key . $this->getCallingFunctionName() . __FUNCTION__,
+					'key' => $this->key . $thisKey . '-' . $this->getCallingFunctionName() . __FUNCTION__,
 					'label' => 'Calls to Action',
 					'name' => 'calls_to_action',
 					'type' => 'flexible_content',
@@ -74,9 +74,9 @@ class FlexibleContent {
 							'sub_fields' => array (
 
 								// Internal Link
-								$FCBFlexibleContentFields->cta_type('internal'),
-								$FCBFlexibleContentFields->cta_text('internal'),
-								$FCBFlexibleContentFields->cta_link('internal'),
+								$FCBFlexibleContentFields->cta_type($thisKey . 'internal'),
+								$FCBFlexibleContentFields->cta_text($thisKey . 'internal'),
+								$FCBFlexibleContentFields->cta_link($thisKey . 'internal'),
 							),
 						),
 						array (
@@ -87,9 +87,9 @@ class FlexibleContent {
 							'sub_fields' => array (
 
 								// External Link
-								$FCBFlexibleContentFields->cta_type('external'),
-								$FCBFlexibleContentFields->cta_text('external'),
-								$FCBFlexibleContentFields->cta_external('external'),
+								$FCBFlexibleContentFields->cta_type($thisKey . 'external'),
+								$FCBFlexibleContentFields->cta_text($thisKey . 'external'),
+								$FCBFlexibleContentFields->cta_external($thisKey . 'external'),
 							),
 						),
 
@@ -108,12 +108,12 @@ class FlexibleContent {
 		 *
 		 * Flexible Content field for Calls to Action
 		 */
-		function media($min = 0, $max = 1) {
+		function media($min = 0, $max = 1, $thisKey = 'flexible' ) {
 			$FCBFlexibleContentFields = new Fields($this->layout, __FUNCTION__);
 
 			return(
 				array (
-				  'key' => $this->key . $this->getCallingFunctionName() . __FUNCTION__,
+				'key' => $this->key . $thisKey . '-' . $this->getCallingFunctionName() . __FUNCTION__,
 					'label' => 'Media',
 					'name' => 'media',
 					'type' => 'flexible_content',
