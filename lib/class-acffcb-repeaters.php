@@ -67,11 +67,11 @@ class Repeaters {
 						$FCBRepeaterFields->background_color_placeholder(),
 						$FCBRepeaterFields->theme_color(),
 						$FCBRepeaterFields->choose_color(),
-				
+
 						// Call to Action
 						$FCBRepeaterFields->tab_cta(),
-						$FCBRepeaterFlexibleContent->cta(),
-				
+						$FCBRepeaterFlexibleContent->cta('card'),
+
 						// Tab Endpoint
 						$FCBRepeaterFields->tab_endpoint(),
 
@@ -138,7 +138,7 @@ class Repeaters {
 
 						// Call to Action
 						$FCBRepeaterFields->tab_cta(),
-						$FCBRepeaterFlexibleContent->cta(),
+						$FCBRepeaterFlexibleContent->cta('tab'),
 
 						// Tab Endpoint
 						$FCBRepeaterFields->tab_endpoint(),
@@ -207,7 +207,7 @@ class Repeaters {
 
 						// Call to Action
 						$FCBRepeaterFields->tab_cta(),
-						$FCBRepeaterFlexibleContent->cta(),
+						$FCBRepeaterFlexibleContent->cta('collapse'),
 
 						// Tab Endpoint
 						$FCBRepeaterFields->tab_endpoint(),
@@ -260,7 +260,7 @@ class Repeaters {
 
 							// Call to Action
 							$FCBRepeaterFields->tab_cta(),
-							$FCBRepeaterFlexibleContent->cta(),
+							$FCBRepeaterFlexibleContent->cta('slide'),
 
 							// Media tab
 							$FCBRepeaterFields->tab_media(),
