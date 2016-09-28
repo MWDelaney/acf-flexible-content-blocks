@@ -9,7 +9,7 @@ function appendAce( $el ) {
 					height: textarea.closest('.acf-field').height(),
 					'class': textarea.attr('class')
 			}).insertBefore(textarea);
-			textarea.css('display', 'none');
+			textarea.css('display', 'none').removeClass('aced');
 			var editor = ace.edit(editDiv[0]);
 			editor.renderer.setShowGutter(true);
 			editor.getSession().setValue(textarea.val());
@@ -26,17 +26,16 @@ function appendAce( $el ) {
 }
 
 jQuery( document ).ready(function() {
+	 jQuery('.acf-code textarea').addClass('aced');
 
-	 appendAce('.acf-code textarea');
+	 appendAce('.acf-code textarea.aced');
+	 
+	 acf.add_action('append', function( $el ){
+	 	appendAce('.acf-code textarea.aced');
+	 })
 
-});
-
-acf.add_action('append', function( $el ){
-	appendAce('.acf-code textarea');
-})
-
-acf.add_action('show_field', function( $field, context ){
-
-	appendAce('.acf-code textarea');
-
+	 acf.add_action('show_field', function( $field, context ){
+	 	appendAce('.acf-code textarea.aced');
+	 });
+	 
 });
