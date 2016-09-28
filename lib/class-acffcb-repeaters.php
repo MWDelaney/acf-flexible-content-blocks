@@ -54,7 +54,7 @@ class Repeaters {
 
 						// Content Tab
 						$FCBRepeaterFields->tab_content(),
-						$FCBRepeaterFields->content,
+						$FCBRepeaterFields->content(),
 
 						// Media tab
 						$FCBRepeaterFields->tab_media(),
