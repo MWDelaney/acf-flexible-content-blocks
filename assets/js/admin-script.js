@@ -29,13 +29,17 @@ jQuery( document ).ready(function() {
 	 jQuery('.acf-code textarea').addClass('aced');
 
 	 appendAce('.acf-code textarea.aced');
-	 
-	 acf.add_action('append', function( $el ){
-	 	appendAce('.acf-code textarea.aced');
-	 })
 
-	 acf.add_action('show_field', function( $field, context ){
-	 	appendAce('.acf-code textarea.aced');
-	 });
-	 
+	 if(typeof acf !== 'undefined') {
+		 acf.add_action('append', function( $el ){
+		 	appendAce('.acf-code textarea.aced');
+		 })
+	 }
+
+	 if(typeof acf !== 'undefined') {
+		 acf.add_action('show_field', function( $field, context ){
+		 	appendAce('.acf-code textarea.aced');
+		 });
+	 }
+
 });
