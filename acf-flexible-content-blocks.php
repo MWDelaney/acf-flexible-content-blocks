@@ -26,7 +26,7 @@ License: MIT
 		return 'MWD\ACFFCB\Layouts';
 	}
 
-add_action( 'init', function() {
+add_action( 'plugins_loaded', function() {
 
 	require_once(ACFFCB_PLUGIN_DIR . 'lib/class-init.php');
 	require_once(ACFFCB_PLUGIN_DIR . 'lib/class-gamajo-template-loader.php');
