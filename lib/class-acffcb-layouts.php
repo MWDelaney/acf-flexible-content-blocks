@@ -175,6 +175,12 @@ class Layouts {
 						$FCBFields->tab_cta(),
 						$FCBFlexibleContent->cta(),
 
+						// Dev Mode tab
+						$FCBFields->tab_dev(),
+						$FCBFields->dev_block_message(),
+						$FCBRepeaters->block_data_attributes(),
+						$FCBFields->block_classes(),
+
 						// Tab Endpoint
 						$FCBFields->tab_endpoint(),
 
@@ -232,6 +238,12 @@ class Layouts {
 						// Call to Action
 						$FCBFields->tab_cta(),
 						$FCBFlexibleContent->cta(),
+
+						// Dev Mode tab
+						$FCBFields->tab_dev(),
+						$FCBFields->dev_block_message(),
+						$FCBRepeaters->block_data_attributes(),
+						$FCBFields->block_classes(),
 
 						// Tab Endpoint
 						$FCBFields->tab_endpoint(),
@@ -291,6 +303,12 @@ class Layouts {
 						$FCBFields->tab_cta(),
 						$FCBFlexibleContent->cta(),
 
+						// Dev Mode tab
+						$FCBFields->tab_dev(),
+						$FCBFields->dev_block_message(),
+						$FCBRepeaters->block_data_attributes(),
+						$FCBFields->block_classes(),
+
 						// Tab Endpoint
 						$FCBFields->tab_endpoint(),
 
@@ -347,6 +365,12 @@ class Layouts {
 						// Call to Action
 						$FCBFields->tab_cta(),
 						$FCBFlexibleContent->cta(),
+
+						// Dev Mode tab
+						$FCBFields->tab_dev(),
+						$FCBFields->dev_block_message(),
+						$FCBRepeaters->block_data_attributes(),
+						$FCBFields->block_classes(),
 
 						// Tab Endpoint
 						$FCBFields->tab_endpoint(),
@@ -407,6 +431,10 @@ class Layouts {
 
 						// Dev Mode tab
 						$FCBFields->tab_dev(),
+						$FCBFields->dev_block_message(),
+						$FCBRepeaters->block_data_attributes(),
+						$FCBFields->block_classes(),
+
 						$FCBFields->dev_content_message(),
 						$FCBRepeaters->content_data_attributes(),
 						$FCBFields->content_classes(),
@@ -473,6 +501,12 @@ class Layouts {
 						$FCBFields->tab_cta(),
 						$FCBFlexibleContent->cta(),
 
+						// Dev Mode tab
+						$FCBFields->tab_dev(),
+						$FCBFields->dev_block_message(),
+						$FCBRepeaters->block_data_attributes(),
+						$FCBFields->block_classes(),
+
 						// Tab Endpoint
 						$FCBFields->tab_endpoint(),
 
@@ -530,6 +564,12 @@ class Layouts {
 						$FCBFields->tab_cta(),
 						$FCBFlexibleContent->cta(),
 
+						// Dev Mode tab
+						$FCBFields->tab_dev(),
+						$FCBFields->dev_block_message(),
+						$FCBRepeaters->block_data_attributes(),
+						$FCBFields->block_classes(),
+
 						// Tab Endpoint
 						$FCBFields->tab_endpoint(),
 
@@ -582,6 +622,12 @@ class Layouts {
 						// Call to Action
 						$FCBFields->tab_cta(),
 						$FCBFlexibleContent->cta(),
+
+						// Dev Mode tab
+						$FCBFields->tab_dev(),
+						$FCBFields->dev_block_message(),
+						$FCBRepeaters->block_data_attributes(),
+						$FCBFields->block_classes(),
 
 						// Tab Endpoint
 						$FCBFields->tab_endpoint(),
@@ -639,6 +685,12 @@ class Layouts {
 						// Call to Action
 						$FCBFields->tab_cta(),
 						$FCBFlexibleContent->cta(),
+
+						// Dev Mode tab
+						$FCBFields->tab_dev(),
+						$FCBFields->dev_block_message(),
+						$FCBRepeaters->block_data_attributes(),
+						$FCBFields->block_classes(),
 
 						// Tab Endpoint
 						$FCBFields->tab_endpoint(),
@@ -699,6 +751,12 @@ class Layouts {
 						// Call to Action
 						$FCBFields->tab_cta(),
 						$FCBFlexibleContent->cta(),
+
+						// Dev Mode tab
+						$FCBFields->tab_dev(),
+						$FCBFields->dev_block_message(),
+						$FCBRepeaters->block_data_attributes(),
+						$FCBFields->block_classes(),
 
 						// Tab Endpoint
 						$FCBFields->tab_endpoint(),
