@@ -3,6 +3,9 @@
 ?>
 <?php if( have_rows('media') ): ?>
 <?php while ( have_rows('media') ) : the_row(); ?>
-	<figure class="block-addon block-figure block-figure-<?=get_row_layout()?>"><?php cfb_template('blocks/parts/media/media-' . get_row_layout(), $layout); ?></figure>
+	<figure class="block-addon block-figure block-figure-<?=get_row_layout()?>">
+		<?php cfb_template('blocks/parts/media/media-' . get_row_layout(), $layout); ?>
+		<?php cfb_template('blocks/parts/block-cta', get_row_layout()); ?>
+	</figure>
 <?php endwhile; ?>
 <?php endif; ?>
