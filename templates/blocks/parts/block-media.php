@@ -8,4 +8,3 @@
 	</figure>
 <?php endwhile; ?>
 <?php endif; ?>
-<?php cfb_template('blocks/parts/block-cta', get_row_layout()); ?>
